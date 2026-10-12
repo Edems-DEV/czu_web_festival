@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# Node (pokud by někdo omylem spustil npm)
+node_modules/
+package-lock.json
+
+# Internal agent traces
+.agents/
