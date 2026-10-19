@@ -688,9 +688,12 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <img src="images/logo-aurora.svg" alt="Aurora Festival 2026" class="brand-logo-img" width="160" height="38">
           <span class="logo-badge">AURORA</span>
           <span class="brand-text">Festival 2026</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otevřít hlavní menu">☰</button>
 
         <nav class="main-nav" aria-label="Hlavní navigace webu">
           <ul>
@@ -699,6 +702,7 @@
             <li><a href="performers.html" aria-current="page">Účinkující</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Hledat 🔍</a></li>
             <li>
               <a href="program.html?view=my-schedule" class="btn-favorites-nav">
                 ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
@@ -723,30 +727,39 @@
         Kompletní line-up 60 hudebních formací a řečníků z celé Evropy.
       </p>
 
+      <!-- Doplňující info / Aside -->
+      <aside class="info-sidebar" aria-label="Informace o složení line-upu">
+        <h3>🌍 Žánrová pestrost ročníku 2026</h3>
+        <p>V letošním ročníku se představí 60 pečlivě kurátorovaných projektů reprezentujících 6 hudebních žánrů – od nezávislého indie rocku přes analogovou elektroniku až po post-jazz a world music. Každý interpret má na webu svůj detailní profil s časovým rozpisem festivalových vystoupení.</p>
+      </aside>
+
       <!-- Filtr interpretů -->
-      <section class="filter-bar" aria-label="Filtrování účinkujících">
+      <form class="filter-bar" role="search" aria-label="Filtrování účinkujících" onsubmit="return false;">
         <div>
+          <label for="performer-search" class="visually-hidden">Vyhledat interpreta dle jména nebo země</label>
           <input
             type="search"
             id="performer-search"
             class="search-input"
             placeholder="Hledat interpreta dle jména nebo země..."
-            aria-label="Vyhledat interpreta"
           />
         </div>
 
         <div class="filter-group">
           <span class="filter-label">Žánr:</span>
-          <button class="filter-chip genre-filter-chip active" data-genre="all">Všechny žánry</button>
-          <button class="filter-chip genre-filter-chip" data-genre="Indie">Indie</button>
-          <button class="filter-chip genre-filter-chip" data-genre="Elektronika">Elektronika</button>
-          <button class="filter-chip genre-filter-chip" data-genre="Rock">Rock</button>
-          <button class="filter-chip genre-filter-chip" data-genre="Jazz">Jazz</button>
-          <button class="filter-chip genre-filter-chip" data-genre="Hip-Hop">Hip-Hop</button>
-          <button class="filter-chip genre-filter-chip" data-genre="World">World music</button>
+          <button type="button" class="filter-chip genre-filter-chip active" data-genre="all" aria-pressed="true">Všechny žánry</button>
+          <button type="button" class="filter-chip genre-filter-chip" data-genre="Indie" aria-pressed="false">Indie</button>
+          <button type="button" class="filter-chip genre-filter-chip" data-genre="Elektronika" aria-pressed="false">Elektronika</button>
+          <button type="button" class="filter-chip genre-filter-chip" data-genre="Rock" aria-pressed="false">Rock</button>
+          <button type="button" class="filter-chip genre-filter-chip" data-genre="Jazz" aria-pressed="false">Jazz</button>
+          <button type="button" class="filter-chip genre-filter-chip" data-genre="Hip-Hop" aria-pressed="false">Hip-Hop</button>
+          <button type="button" class="filter-chip genre-filter-chip" data-genre="World" aria-pressed="false">World music</button>
           <span style="margin-left: auto; font-size: 0.85rem; color: var(--text-muted);" id="performer-count">Načítání...</span>
         </div>
-      </section>
+      </form>
+
+      <!-- Sekční nadpis pro zachování hierarchie nadpisů -->
+      <h2 style="font-size: 1.3rem; margin: 1.5rem 0 1rem; color: var(--accent-cyan); font-weight: 700;">Katalog účinkujících</h2>
 
       <!-- Mřížka interpretů -->
       <section id="performers-grid" class="grid-3" aria-label="Seznam interpretů">
@@ -774,6 +787,7 @@
             <li><a href="program.html">Program</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Vyhledávání 🔍</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -832,15 +846,19 @@
               <span class="card-badge">${p.genre} • ${p.country}</span>
               <h3>${p.name}</h3>
               <p>${p.bio}</p>
-              <a href="performer-detail.html?id=${p.id}" class="btn btn-secondary">Zobrazit profil & vystoupení →</a>
+              <a href="performer-detail.html?id=${p.id}" class="btn btn-secondary" style="min-height: 44px; display: inline-flex; align-items: center;">Zobrazit profil & vystoupení →</a>
             </article>
           `).join('');
         }
 
         genreChips.forEach(chip => {
           chip.addEventListener('click', () => {
-            genreChips.forEach(c => c.classList.remove('active'));
+            genreChips.forEach(c => {
+              c.classList.remove('active');
+              c.setAttribute('aria-pressed', 'false');
+            });
             chip.classList.add('active');
+            chip.setAttribute('aria-pressed', 'true');
             selectedGenre = chip.dataset.genre;
             render();
           });

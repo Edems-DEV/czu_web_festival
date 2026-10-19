@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
 });
 
-// Zvýraznění aktivní stránky v navigaci
+// Zvýraznění aktivní stránky v navigaci a obsluha mobilního menu
 function initNav() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('nav.main-nav a');
@@ -22,6 +22,15 @@ function initNav() {
       link.removeAttribute('aria-current');
     }
   });
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
 }
 
 // Správa oblíbených položek (localStorage)

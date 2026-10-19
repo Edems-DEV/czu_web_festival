@@ -73,9 +73,12 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <img src="images/logo-aurora.svg" alt="Aurora Festival 2026" class="brand-logo-img" width="160" height="38">
           <span class="logo-badge">AURORA</span>
           <span class="brand-text">Festival 2026</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otevřít hlavní menu">☰</button>
 
         <nav class="main-nav" aria-label="Hlavní navigace webu">
           <ul>
@@ -84,6 +87,7 @@
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html" aria-current="page">Praktické info</a></li>
+            <li><a href="search.html">Hledat 🔍</a></li>
             <li>
               <a href="program.html?view=my-schedule" class="btn-favorites-nav">
                 ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
@@ -108,70 +112,116 @@
         Vše o dopravě, vstupenkách, ubytování, pravidlech v areálu a bezbariérovém servisu.
       </p>
 
-      <div class="grid-3">
-        <!-- Doprava -->
-        <article class="card">
-          <span class="card-badge">Logistika</span>
-          <h3>🚇 Doprava na festival</h3>
-          <p>
-            Areál se nachází v Praze 7 – Holešovicích na Výstavišti. Doporučujeme využít pražskou MHD:
-          </p>
-          <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
-            <li><strong>Tramvaj:</strong> Linky 6, 12 a 17 do zastávky <em>Výstaviště</em> (přímo před branou areálu).</li>
-            <li><strong>Metro:</strong> Trasa C, stanice <em>Nádraží Holešovice</em> (pěšky cca 7 minut nebo 1 zastávka tramvají).</li>
-            <li><strong>Noční doprava:</strong> Noční tramvaje 93 a 94 s intervalem 15 minut po celou noc.</li>
-          </ul>
-        </article>
+      <!-- Důležité bezpečnostní informace / Aside -->
+      <aside class="info-sidebar emergency-info-aside" aria-label="Nouzové kontakty a první pomoc v areálu">
+        <h3>🚨 Důležité kontakty a první pomoc v areálu</h3>
+        <p>Zdravotnická záchranná služba a stanoviště Českého červeného kříže (ČČK) jsou umístěny vedle Hlavního vstupu a u Forum Hall. Non-stop festivalová infolinka: <strong>+420 800 123 456</strong>. Ztráty a nálezy se shromažďují na centrálním infostánku u Gastro &amp; Chill Plazy.</p>
+      </aside>
 
-        <!-- Vstupenky -->
-        <article class="card" id="vstupenky">
-          <span class="card-badge" style="color: var(--accent-amber);">Předprodej</span>
-          <h3>🎟️ Vstupenky a páskování</h3>
-          <p>
-            Vstupenky jsou k dispozici v předprodeji i na místě do vyčerpání kapacity areálu:
-          </p>
-          <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
-            <li><strong>Jednodenní vstupenka:</strong> 990 Kč (platí na vybraný den).</li>
-            <li><strong>Třídenní permanentka:</strong> 2 490 Kč (vstup na všechny 3 dny).</li>
-            <li><strong>VIP pas:</strong> 4 490 Kč (přístup na VIP terasy a rychlý vstup).</li>
-            <li><strong>ZTP / ZTP-P:</strong> Sleva 50 %, doprovod ZTP-P má vstup zdarma.</li>
-          </ul>
-        </article>
+      <!-- Sekce 1: Základní festivalová logistika -->
+      <section aria-labelledby="logistics-heading" style="margin-bottom: 2.5rem;">
+        <h2 id="logistics-heading" style="font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-cyan); font-weight: 700;">1. Základní festivalová logistika</h2>
+        
+        <div class="grid-3">
+          <!-- Doprava -->
+          <article class="card">
+            <span class="card-badge">Logistika</span>
+            <h3>🚇 Doprava na festival</h3>
+            <p>
+              Areál se nachází v Praze 7 – Holešovicích na Výstavišti. Doporučujeme využít pražskou MHD:
+            </p>
+            <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              <li><strong>Tramvaj:</strong> Linky 6, 12 a 17 do zastávky <em>Výstaviště</em> (přímo před branou areálu).</li>
+              <li><strong>Metro:</strong> Trasa C, stanice <em>Nádraží Holešovice</em> (pěšky cca 7 minut nebo 1 zastávka tramvají).</li>
+              <li><strong>Noční doprava:</strong> Noční tramvaje 93 a 94 s intervalem 15 minut po celou noc.</li>
+            </ul>
+          </article>
 
-        <!-- Bezbariérovost -->
-        <article class="card">
-          <span class="card-badge" style="color: var(--accent-emerald);">Přístupnost</span>
-          <h3>♿ Bezbariérovost & Asistence</h3>
-          <p>
-            Festival klade maximální důraz na přístupnost pro všechny návštěvníky:
-          </p>
-          <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
-            <li>Vyvýšená rampa pro vozíčkáře u Aurora Main Stage.</li>
-            <li>Všechny scény i sál Forum Hall mají bezbariérový přístup.</li>
-            <li>Vyhrazená parkovací místa pro držitele průkazů ZTP přímo u vstupu.</li>
-            <li>Asistenční tým dobrovolníků k dispozici u infostánku.</li>
-          </ul>
-        </article>
-      </div>
+          <!-- Vstupenky -->
+          <article class="card" id="vstupenky">
+            <span class="card-badge" style="color: var(--accent-amber);">Předprodej</span>
+            <h3>🎟️ Vstupenky a páskování</h3>
+            <p>
+              Vstupenky jsou k dispozici v předprodeji i na místě do vyčerpání kapacity areálu. Ceny a kategorie naleznete v oficiální tabulce níže.
+            </p>
+          </article>
+
+          <!-- Bezbariérovost -->
+          <article class="card">
+            <span class="card-badge" style="color: var(--accent-emerald);">Přístupnost</span>
+            <h3>♿ Bezbariérovost &amp; Asistence</h3>
+            <p>
+              Festival klade maximální důraz na přístupnost pro všechny návštěvníky:
+            </p>
+            <ul style="margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              <li>Vyvýšená rampa pro vozíčkáře u Aurora Main Stage.</li>
+              <li>Všechny scény i sál Forum Hall mají bezbariérový přístup.</li>
+              <li>Vyhrazená parkovací místa pro držitele průkazů ZTP přímo u vstupu.</li>
+              <li>Asistenční tým dobrovolníků k dispozici u infostánku.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Sémantická tabulka ceníku vstupenek -->
+        <div class="table-container" style="margin-top: 1.5rem;">
+          <table class="table-custom">
+            <caption>Oficiální ceník vstupenek na festival Aurora 2026</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kategorie vstupenky</th>
+                <th scope="col">Platnost</th>
+                <th scope="col">Cena</th>
+                <th scope="col">Zahrnuté služby</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Jednodenní vstupenka</strong></td>
+                <td>Vybraný den (Čtvrtek, Pátek nebo Sobota)</td>
+                <td class="price-cell">990 Kč</td>
+                <td>Vstup na všechny 3 scény a doprovodný program daného dne</td>
+              </tr>
+              <tr>
+                <td><strong>Třídenní permanentka</strong></td>
+                <td>Celý festival (20.–22. 8. 2026)</td>
+                <td class="price-cell">2 490 Kč</td>
+                <td>Vstup na všech 60 vystoupení, talků a workshopů po celé 3 dny</td>
+              </tr>
+              <tr>
+                <td><strong>VIP pas</strong></td>
+                <td>Celý festival (20.–22. 8. 2026)</td>
+                <td class="price-cell">4 490 Kč</td>
+                <td>Přednostní vstup, přístup na vyhlídkovou VIP terasu, welcome drink</td>
+              </tr>
+              <tr>
+                <td><strong>ZTP / ZTP-P sleva</strong></td>
+                <td>Libovolná kategorie vstupenky</td>
+                <td class="price-cell">Sleva 50 %</td>
+                <td>Doprovod ZTP-P má vstup zdarma, vyhrazené parkování P1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <!-- Areálový řád & Cashless -->
       <section class="card" style="margin-bottom: 3rem; padding: 2rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">💳 Cashless systém a ekologie festivalu</h2>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-cyan); font-weight: 700;">2. Cashless systém a ekologie festivalu</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
           <div>
-            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">100% bezhotovostní platby</h4>
+            <h3 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 700;">100% bezhotovostní platby</h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary);">
               V celém areálu platíte platební kartou, chytrým telefonem, hodinkami nebo festivalovým čipem na pásce, který si můžete dobít hotovostí i kartou na dobíjecích místech bez poplatku.
             </p>
           </div>
           <div>
-            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Vratné zálohované kelímky (NICKNACK)</h4>
+            <h3 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 700;">Vratné zálohované kelímky (NICKNACK)</h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary);">
               Nápoje jsou čepovány výhradně do zálohovaných kelímků (záloha 50 Kč). Šetříme životní prostředí a minimalizujeme odpad v areálu Výstaviště.
             </p>
           </div>
           <div>
-            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Bezpečnost a úschovna</h4>
+            <h3 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 700;">Bezpečnost a úschovna</h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary);">
               K dispozici jsou uzamykatelné skříňky (lockerboxy) s možností dobíjení telefonů a hlídaná úschovna kol a batohů.
             </p>
@@ -181,7 +231,7 @@
 
       <!-- Často kladené otázky (FAQ) přes sémantické details/summary -->
       <section aria-labelledby="faq-title" style="margin-bottom: 3rem;">
-        <h2 id="faq-title" class="section-title">Často kladené dotazy (FAQ)</h2>
+        <h2 id="faq-title" class="section-title">3. Často kladené dotazy (FAQ)</h2>
         <p class="section-subtitle">Odpovědi na nejčastější dotazy návštěvníků.</p>
 
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
@@ -224,15 +274,21 @@
           <p>Výstaviště Praha 7 • <time datetime="2026-08-20">20. 8.</time> – <time datetime="2026-08-22">22. 8. 2026</time></p>
         </div>
         <div class="footer-col">
+          <h4>Rychlé odkazy</h4>
+          <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="performers.html">Účinkující</a></li>
+            <li><a href="venues.html">Scény</a></li>
+            <li><a href="search.html">Vyhledávání 🔍</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <h4>Kontaktní centrum</h4>
           <address style="font-style: normal; font-size: 0.9rem; color: var(--text-secondary);">
             Email: <a href="mailto:info@aurorafest.example">info@aurorafest.example</a><br>
-            Infolinka: +420 220 123 456 (po-pá 9:00 - 17:00)
+            Infolinka: +420 800 123 456 (po-pá 9:00 - 17:00)
           </address>
-        </div>
-        <div class="footer-col">
-          <h4>Projekt ČZU WEB</h4>
-          <p>Sémantické značkování, přístupnost WCAG 2.0 AA a strukturovaná data.</p>
         </div>
       </div>
       <div class="footer-bottom">

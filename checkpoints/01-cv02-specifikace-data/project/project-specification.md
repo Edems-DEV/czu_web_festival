@@ -172,31 +172,31 @@ Informační architektura je plně relačně provázána bez slepých uliček:
 
 ## 5. Klíčové uživatelské scénáře
 
-### Scénář 1: Plánování pátečního večera podle oblíbeného žánru (Tereza Novotná)
+### Scénář 1: Plánování zahájení festivalu podle oblíbeného žánru (Tereza Novotná)
 - **Typ uživatele:** Aktivní studentka / fanoušek nezávislé scény (Persona 1).
-- **Cíl:** Zjistit, kteří indie a elektroničtí interpreti vystupují v pátek 21. 8. v podvečerních a nočních hodinách, a vybrat konkrétní koncerty.
-- **Výchozí situace:** Tereza sedí v pátek odpoledne v tramvaji na lince 17 směr Výstaviště, otevírá web na mobilním telefonu v prohlížeči Safari.
+- **Cíl:** Zjistit, kteří indie a elektroničtí interpreti vystupují ve čtvrtek 20. 8. na zahájení festivalu, vybrat konkrétní koncerty a uložit je do svého programu.
+- **Výchozí situace:** Tereza sedí ve čtvrtek dopoledne v tramvaji na lince 17 směr Výstaviště, otevírá web na mobilním telefonu v prohlížeči Safari.
 - **Kroky průchodu scénářem:**
   1. **Vstup:** Tereza otevře hlavní stránku `index.html`, v navigačním menu klepne na položku **Program**.
-  2. **Filtrace dne:** V horní liště výběru dne klepne na čip **„Pátek 21. 8.“**. Harmonogram se okamžitě překreslí na páteční položky.
-  3. **Vyhledání žánru:** Do vyhledávacího pole napíše výraz *„indie“* (případně využije filtr typů akcí).
+  2. **Filtrace dne:** V horní liště výběru dne klepne na čip **„Čtvrtek 20. 8.“**. Harmonogram se okamžitě překreslí na čtvrteční položky.
+  3. **Vyhledání žánru:** Do vyhledávacího pole napíše výraz *„indie“* (případně využije filtr žánru).
   4. **Zobrazení výsledků:** Seznam se okamžitě zúží na relevantní vystoupení; počítadlo výsledků indikuje nalezené shody.
-  5. **Detail vystoupení:** Klepne na kartu koncertu kapely *Lunar Tides* (20:15, *Aurora Main Stage*). Zobrazí se parametrický detail `performer-detail.html?id=p1` s kompletní biografií.
+  5. **Detail vystoupení:** Klepne na kartu koncertu kapely *Lunar Tides* (10:00–11:15, *Aurora Main Stage*). Zobrazí se parametrický detail `performer-detail.html?id=p1` s kompletní biografií.
   6. **Uložení:** Přímo z detailu přidá koncert tlačítkem **★ Přidat do mého programu** do své osobní agendy.
-- **Očekávaný výsledek:** Během 20 sekund má Tereza vybraný klíčový páteční koncert a uložený v lokální paměti mobilu bez registrace či stahování externích aplikací.
+- **Očekávaný výsledek:** Během 20 sekund má Tereza vybraný klíčový úvodní koncert kapely Lunar Tides a uložený v lokální paměti mobilu bez registrace či stahování externích aplikací.
 
 ### Scénář 2: Sestavení osobního rozvrhu a vyřešení časové kolize (Jakub Kovář)
 - **Typ uživatele:** IT analytik / fanoušek elektronické hudby a workshopů (Persona 2).
-- **Cíl:** Sestavit si sobotní rozvrh 4 vystoupení, ověřit návaznost a vyřešit případnou časovou kolizi mezi workshopem a klubovým setem.
+- **Cíl:** Sestavit si sobotní rozvrh vystoupení, ověřit návaznost a vyřešit případnou časovou kolizi mezi klubovým setem a vystoupením ve Forum Hall.
 - **Výchozí situace:** Jakub sedí u notebooku s externím monitorem, má otevřenou stránku `program.html` a plánuje sobotní den.
 - **Kroky průchodu scénářem:**
   1. **Výběr dne:** Zvolí filtr **„Sobota 22. 8.“**.
-  2. **Výběr akcí:** Postupně kliká na tlačítko **★ Přidat do mého programu** u koncertu na *Riverside Club Stage* (15:30–16:45) a u produkčního workshopu ve *Forum Hall* (15:30–17:00).
-  3. **Detekce kolize:** Algoritmus v `schedule.js` okamžitě po přidání druhého slotu vyhodnotí překryv časových intervalů.
+  2. **Výběr akcí:** Postupně kliká na tlačítko **★ Přidat do mého programu** u klubového koncertu *Rain Motel Live* na *Riverside Club Stage* (10:00–11:15, `e41`) a u koncertu *Lunar District Live* ve *Forum Hall* (10:00–11:15, `e51`).
+  3. **Detekce kolize:** Algoritmus v `schedule.js` okamžitě po přidání druhého souběžného slotu vyhodnotí překryv časových intervalů.
   4. **Upozornění:** Nad harmonogramem se okamžitě zobrazí kontrastní varovný panel s ikonou varování a textem:  
-     *„Upozornění na časový konflikt: Máte vybrány akce s překrývajícím se časem! Překryv: 75 minut.“*
+     *„Upozornění na časový konflikt: Máte vybrány akce s překrývajícím se časem! Překryv: 75 minut.“* a obě karty událostí získají varovný rámeček a odznak *⚠️ Časová kolize v mém programu!*.
   5. **Vyřešení konfliktu:** Jakub přepne pohled tlačítkem **★ Zobrazit pouze můj program**. Vidí obě kolidující akce označené varovným rámečkem.
-  6. **Odebrání:** Klikne na tlačítko odebrání u workshopu ve *Forum Hall*. Varovný pruh okamžitě zmizí a harmonogram se stává bezkolizním.
+  6. **Odebrání:** Klikne na tlačítko odebrání u jednoho z koncertů. Varovný pruh i rámeček okamžitě zmizí a harmonogram se stává bezkolizním.
 - **Očekávaný výsledek:** Jakub má v `localStorage` bezpečně uložen reálný bezkolizní program pro sobotu, který si může na festivalu otevřít na svém mobilním telefonu.
 
 ### Scénář 3: Prověření bezbariérovosti a logistiky areálu (Martin Dvořák)

@@ -110,8 +110,8 @@ style: |
 - Sémantický vícestránkový web (MPA) s drobečkovou navigací a Schema.org metadaty.
 
 ### 3 uživatelské scénáře pro prototypování
-1. **Tereza (24 let, fanynka):** Vyfiltrování pátečních indie/elektro koncertů za 15 sekund.
-2. **Jakub (29 let, návštěvník):** Sestavení osobního harmonogramu a automatická detekce, že se mu v 15:30 kryjí dvě vybrané akce.
+1. **Tereza (24 let, fanynka):** Vyfiltrování čtvrtečních indie koncertů (10:00) za méně než 15 sekund.
+2. **Jakub (29 let, návštěvník):** Sestavení osobního harmonogramu a automatická detekce kolize v sobotu v 10:00 (překryv 75 minut).
 3. **Martin (35 let, ZTP):** Prověření bezbariérovosti a programu sálu *Forum Hall*.
 
 ---

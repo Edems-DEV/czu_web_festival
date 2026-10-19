@@ -11,7 +11,7 @@ Doporučený čas řeči: **3:45 – 4:15 min** (ponechává bezpečnou rezervu 
 
 ```
 [0:00 - 0:45] Slide 1 & 2: Úvod a metodika expertního hodnocení (2 formalizované metody)
-[0:45 - 1:45] Slide 3 & 4: Průchod 2 scénáři a kategorizace nálezů (1 kritický, 2 významné, 2 drobné)
+[0:45 - 1:45] Slide 3 & 4: Průchod 2 scénáři a výběr klíčových nálezů (REV-01 až REV-06)
 [1:45 - 2:30] Slide 5: Konstruktivní doporučení a kódová řešení pro oponentní tým
 [2:30 - 3:15] Slide 6: Využití AI při review, odmítnutí falešného DOCTYPE a vágních klišé
 [3:15 - 3:50] Slide 7 & 8: Validace reprodukce, silné stránky a shrnutí do finálního odevzdání
@@ -31,75 +31,68 @@ Doporučený čas řeči: **3:45 – 4:15 min** (ponechává bezpečnou rezervu 
 ### Slide 2: Co se udělalo – Metodika hodnocení (0:20 – 0:50)
 *(👉 Přejít na Slide 2)*
 > *„V souladu se zadáním katedry jsme uplatnili **dvě formalizované metody evaluace**:*  
-> *Zaprvé: **Heuristickou analýzu podle deseti obecných principů Jakoba Nielsena**, kde jsme se zaměřili zejména na viditelnost stavu systému, prevenci chyb a konzistenci.*  
-> *Zadruhé: **Kognitivní průchod (Cognitive Walkthrough)** přes dva klíčové uživatelské scénáře – mobilní výběr programu a zjištění bezbariérovosti.*  
-> *Dále jsme provedli technický audit: test spuštění offline přes protokol `file:///`, validaci sémantiky HTML a měření kontrastů v nástroji WebAIM.“*
+> *Zaprvé: **Heuristickou analýzu podle deseti obecných principů Jakoba Nielsena**, kde jsme se zaměřili zejména na viditelnost stavu systému, prevenci chyb, konzistenci a flexibilitu.*  
+> *Zadruhé: **Kognitivní průchod (Cognitive Walkthrough)** přes dva klíčové uživatelské scénáře – mobilní výběr programu podle žánru a ověření bezbariérovosti pro hendikepované návštěvníky.*  
+> *Dále jsme provedli technický audit: kontrolu běhu přes protokol `file:///`, referenční integritu databáze, validaci sémantiky HTML a měření kontrastů v nástroji WebAIM dle WCAG 2.0 AA.“*
 
 ---
 
-### Slide 3 & 4: Průchod scénáři a kategorizace nálezů (0:50 – 1:50)
+### Slide 3 & 4: Průchod scénáři a výběr klíčových nálezů (0:50 – 1:50)
 *(👉 Přejít na Slide 3 a následně Slide 4)*
-> *„Při průchodu scénáři a analýze jsme identifikovali celkem 5 věcných nálezů:*  
-> *Máme **jeden kritický nález N-01**: při pokusu o spuštění webu přímo poklepáním na soubor přes protokol `file:///` v prohlížeči Chrome se program vůbec nenačte. Oponentní aplikace totiž volá asynchronní `fetch('data.json')`, což prohlížeč zablokuje chybou CORS policy s originem null. V offline režimu je tak hlavní funkce webu nefunkční.*  
-> *Dále evidujeme **dva významné nálezy**:*  
-> *Nález N-02: na úzkých mobilních displejích s šířkou 360 pixelů kolabuje hlavní navigace – odkazy přetékají do šířky, vytvářejí nechtěný horizontální scrollbar o 42 pixelů a překrývají nadpis.*  
-> *Nález N-03: v sekci často kladených dotazů FAQ má šedý text na tmavě šedém pozadí kontrastní poměr pouhých **2.7:1**, což je závažné porušení normy WCAG 2.0 AA.*  
-> *A nalezli jsme **dva drobné nedostatky**: chybějící atribut `aria-current="page"` na aktivním odkazu a absenci prázdného stavu při zadání neexistujícího interpreta do vyhledávače.“*
+> *„V celkovém posudku evidujeme 9 detailních nálezů. Zde uvádíme nejdůležitější z nich:*  
+> *Máme **dva kritické nálezy**:*  
+> *REV-01: Tlačítko oblíbených v programu neukládá stav do `localStorage`. Po obnovení stránky výběr zanikne a systém navíc vůbec nevaruje před časovými kolizemi v harmonogramu.*  
+> *REV-02: Referenční diskrepance v databázi – u interpretů p14 a p27 odkazuje program na `performer-detail.html?id=undefined`, což vede k pádu klientského skriptu v konzoli.*  
+> *Dále uvádíme **čtyři významné nálezy**:*  
+> *REV-03: Sekundární šedý text na tmavém pozadí má kontrast pouhých **3.38:1**, což porušuje normu WCAG 2.0 AA vyžadující alespoň 4.5:1.*  
+> *REV-04: Rigidní jednoúrovňový filtr – výběr scény resetuje volbu dne, a při nulovém výsledku chybí prázdný stav s tlačítkem pro reset.*  
+> *REV-05: Informace o bezbariérovosti jsou vágní, chybí parametry ramp a scéna Warehouse Stage nemá bezbariérovost uvedenou vůbec.*  
+> *REV-06: Mobilní hamburger menu postrádá atribut `aria-expanded` a focus trap – při stisku Tab uniká fokus na prvky pod menu.“*
 
 ---
 
 ### Slide 5: Doporučená řešení pro oponentní tým (1:50 – 2:30)
 *(👉 Přejít na Slide 5)*
 > *„Naše review nestaví na pouhé kritice, ale přináší oponentům přesná a snadno nasaditelná řešení:*  
-> *Pro kritickou chybu CORS doporučujeme zavést **synchronní bootstrap**: data uložit do JavaScriptové proměnné `window.FESTIVAL_DATA` v souboru `data.js` a načíst ji před hlavním skriptem. Tím web okamžitě získá 100% offline funkčnost bez serveru.*  
-> *Pro navigaci na šířce 360 pixelů stačí v CSS přidat vlastnost `flex-wrap: wrap` s mezerou 8 pixelů a mírně snížit padding tlačítek.*  
-> *A pro splnění WCAG AA postačí zesvětlit barvu textu FAQ na `#a1a1aa`, což okamžitě zvedne kontrast na bezpečných 5.8:1.*  
-> *Všechny úpravy zaberou oponentům odhadem 30 minut práce.“*
+> *Pro REV-01 doporučujeme ukládat ID oblíbených do `localStorage` a při změně přepočítat časové překryvy s vizuálním varovným proužkem.*  
+> *Pro REV-02 stačí opravit předávání `id` v šabloně a sjednotit časy kapel v `data.json`.*  
+> *Pro kontrast REV-03 doporučujeme změnit barvu textu z `#71717a` na `#a1a1aa`, čímž kontrast stoupne na bezpečných 6.2:1 splňujících WCAG AA.*  
+> *A pro navigaci a filtry REV-04 a REV-06 doporučujeme provázat filtry jako logický součin, doplnit empty state a ošetřit klávesu Escape.*  
+> *Všechny tyto úpravy oponentní tým snadno zvládne před finálním zápočtem.“*
 
 ---
 
 ### Slide 6: Využití AI při cross-review a odhalené halucinace (2:30 – 3:15)  
 *(⚠️ Klíčový moment prezentace – ukázat kritické zhodnocení AI výstupů!)*
 *(👉 Přejít na Slide 6)*
-> *„Při tvorbě review jsme využili AI k vygenerování strukturovaného checklistu Nielsenových heuristik.*  
+> *„Při tvorbě review jsme využili AI k vygenerování checklistu Nielsenových heuristik a WCAG matice.*  
 > *I zde jsme však museli důsledně zasáhnout:*  
-> *Zaprvé: AI vygenerovalo **falešně pozitivní obvinění**, že oponentnímu webu chybí deklarace `<!DOCTYPE html>`. Přímou lidskou kontrolou v editoru jsme zjistili, že doctype je na prvním řádku naprosto v pořádku. Tvrzení AI jsme škrtli.*  
+> *Zaprvé: AI vygenerovalo **falešně pozitivní obvinění**, že oponentnímu webu chybí deklarace `<!DOCTYPE html>`. Přímou lidskou kontrolou v editoru jsme zjistili, že doctype je na prvním řádku naprosto v pořádku. Tvrzení AI jsme okamžitě škrtli.*  
 > *Zadruhé: AI navrhovalo vágní subjektivní soudy typu 'web by mohl působit živěji'. Tyto fráze jsme odmítli a nahradili je měřitelnými údaji o pixelech a kontrastech.*  
-> *Všechny prezentované nálezy byly osobně reprodukovány a ověřeny členy našeho týmu.“*
+> *Všech 9 nálezů v posudku bylo osobně verifikováno členy našeho týmu.“*
 
 ---
 
 ### Slide 7 & 8: Validace reprodukce a závěr (3:15 – 3:55)
 *(👉 Přejít na Slide 7 a 8)*
-> *„Všechny nálezy jsme nezávisle ověřili v DevTools, v nástroji WebAIM i na fyzickém mobilním telefonu.*  
-> *Rádi bychom zdůraznili, že oponentní projekt má vynikající grafický nápad, moderní barevný koncept i kvalitní textové anotace kapel.*  
-> *Pokud oponentní tým provede doporučené dvě hlavní úpravy – tedy vyřeší offline načítání dat a upraví kontrast textu – jejich projekt bude mít vynikající úroveň a bez problémů získá plný počet bodů.*  
-> *Kompletní rozbor nálezů s přesnými řádky kódu jsme předali v souboru `review/review.md`.*  
+> *„Všechny nálezy jsme nezávisle ověřili v DevTools, v nástroji WebAIM i na fyzických zařízeních.*  
+> *Rádi bychom zdůraznili, že oponentní projekt SoundWave 2026 má velmi pěkný grafický koncept, zajímavou dramaturgii a rychlou odezvu šablon.*  
+> *Pokud oponentní tým vyřeší prioritně kritické vady v perzistenci a odkazech na kapely a zvedne kontrast textu, jejich projekt bude mít špičkovou úroveň.*  
+> *Kompletní posudek o 9 nálezech jsme předali v souboru `project/review.md`.*  
 > *Děkuji vám za pozornost a těším se na vaše dotazy.“*
 
 ---
 
 ## 🛡️ Očekávané otázky cvičícího a neprůstřelné odpovědi
 
-### Otázka 1: *„Proč označujete selhání načítání dat přes protokol file:/// za kritickou závažnost?“*
+### Otázka 1: *„Proč označujete absenci perzistence v localStorage za kritickou vadu?“*
 - **Modelová odpověď:**  
-  *„Vycházíme přímo z oficiálních podmínek zápočtu předmětu WEB: projekt musí být odevzdán jako funkční web, který lze spustit přímo v prohlížeči bez instalace vývojového prostředí, balíčkovačů či webového serveru. Pokud cvičící nebo oponent stáhne odevzdaný ZIP soubor, rozbalí jej a otevře `index.html` dvojklikem, při volání `fetch('data.json')` se v Chrome zablokuje načítání programu kvůli politice CORS. Pro uživatele je to blokující stav – nevidí žádné akce ani kapely. Proto jde o kritickou závažnost H5.“*
+  *„Vycházíme přímo z projektové specifikace a sylabu: osobní program a výběr oblíbených je jednou ze tří povinných klíčových interaktivních funkcí. Pokud uživatel věnuje čas sestavení harmonogramu, ale po kliknutí na detail kapely nebo při náhodném refreshi stránky o výběr přijde, funkce ztrácí jakoukoliv praktickou hodnotu pro festivalového návštěvníka.“*
 
-### Otázka 2: *„Jak přesně souvisí Nielsenova heuristika H5 (Prevence chyb) s tímto problémem CORS?“*
+### Otázka 2: *„Jak jste měřili kontrast textu na webu cizího týmu?“*
 - **Modelová odpověď:**  
-  *„Heuristika H5 říká, že lepší než dobré chybové hlášení je návrh rozhraní, který chybě zcela předejde. Aplikace oponentního týmu nejenže chybě nepředešla, ale ani nezobrazila žádný uživatelský fallback typu 'Data se nepodařilo načíst, spusťte prosím web přes HTTP server'. Uživatel tak zůstane před prázdnou stránkou bez jakéhokoliv vysvětlení.“*
+  *„Použili jsme inspekci CSS stylů v DevTools v kombinaci s oficiálním WebAIM Contrast Checkerem. Zjistili jsme hodnotu barvy textu `#71717a` a barvy pozadí karty `#18181b`. Po dosazení do vzorce relativního jasu vyšel kontrastní poměr 3.38:1, což je pod limitem 4.5:1 předepsaným normou WCAG 2.0 AA.“*
 
-### Otázka 3: *„Jak jste měřili kontrast textu na webu cizího týmu?“*
+### Otázka 3: *„Jak jste se ujistili, že vaše hodnocení není zaujaté nebo příliš přísné?“*
 - **Modelová odpověď:**  
-  *„Použili jsme nástroj Kapátko (EyeDropper) a inspekci CSS stylů v DevTools v kombinaci s oficiálním WebAIM Contrast Checkerem. Zjistili jsme přesnou hodnotu barvy textu `#71717a` a barvy pozadí karty `#27272a`. Po dosazení do W3C vzorce relativního jasu vyšel kontrastní poměr 2.72:1, což je hluboko pod minimálním limitem 4.5:1 předepsaným normou WCAG 2.0 AA.“*
-
-### Otázka 4: *„Jak jste se ujistili, že vaše hodnocení není zaujaté nebo příliš přísné?“*
-- **Modelová odpověď:**  
-  *„Využili jsme striktní formální rámce – 10 Nielsenových heuristik a normu WCAG 2.0 AA. Nehodnotili jsme náš osobní vkus nebo styl hudby, ale objektivní technické a použitelnostní parametry. Každý nález má jasné zdůvodnění podle konkrétní heuristiky a je doprovázen konkrétním návrhem nápravy v kódu, který oponentům reálně pomůže před finálním hodnocením.“*
-
----
-
-## 💡 Tipy pro vystupujícího
-- **Tón vystoupení:** Prezentujte hodnocení kolegiálně, věcně a konstruktivně. Naším cílem není oponentní tým potopit, ale pomoci jim dosáhnout plného hodnocení.
-- **Kritický nález (CORS):** Zde mluvte s největší jistotou – je to učebnicový problém čistě klientských webů v prohlížeči, kterému se náš tým úspěšně vyhnul.
-- **Čas:** Držte se časového rozpadu; při čase 3:45 min přejděte na závěrečné ocenění silných stránek oponentů.
+  *„Využili jsme striktní formální rámce – 10 Nielsenových heuristik a normu WCAG 2.0 AA. Nehodnotili jsme náš osobní vkus nebo styl hudby, ale objektivní technické a použitelnostní parametry. Každý nález má reprodukční kroky a je doprovázen konkrétním návrhem nápravy v kódu, který oponentům reálně pomůže před finálním hodnocením.“*

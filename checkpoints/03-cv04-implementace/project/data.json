@@ -1,7 +1,7 @@
 {
   "festival": {
     "id": "fest2026",
-    "name": "Hudební Festival Aurora",
+    "name": "Hudební Festival Aurora 2026",
     "edition": 1,
     "city": "Praha",
     "startDate": "2026-08-20",
@@ -32,21 +32,24 @@
       "name": "Aurora Main Stage",
       "city": "Praha",
       "address": "Výstaviště 67, Praha 7",
-      "capacity": 7000
+      "capacity": 7000,
+      "access": "Plně bezbariérový přístup, vyvýšená rampa pro vozíčkáře s výhledem na pódium, indukční poslechová smyčka."
     },
     {
       "id": "v2",
       "name": "Riverside Club Stage",
       "city": "Praha",
       "address": "Bubenské nábřeží 306, Praha 7",
-      "capacity": 2200
+      "capacity": 2200,
+      "access": "Bezbariérový přístup po zpevněném nábřeží, bezbariérová toaleta v přízemí, vyhrazená místa pro ZTP/P."
     },
     {
       "id": "v3",
       "name": "Forum Hall",
       "city": "Praha",
       "address": "Výstaviště 170, Praha 7",
-      "capacity": 1300
+      "capacity": 1300,
+      "access": "Klimatizovaný sál s výtahem a rampou, vyhrazená zóna pro vozíčkáře v přední části, indukční smyčka pro nedoslýchavé."
     }
   ],
   "performers": [

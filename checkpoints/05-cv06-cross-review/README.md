@@ -32,11 +32,12 @@
 2. **Obsah posudku `review.md`**:
    - Věcný a konstruktivní tón bez neověřených domněnek.
    - Celkem **9 detailně popsaných nálezů** rozdělených dle závažnosti:
-     - 🔴 **1 Kritický nález:** Selhání `fetch('data.json')` přes `file:///` v prohlížeči Chrome kvůli CORS.
-     - 🟡 **2 Významné nálezy:** Nekonzistentní chování filtrů v programu a nevalidní kontrast na mobilu.
-     - 🟢 **2 Drobné nálezy:** Absence kotvy pro přeskočení na obsah (`skip-to-content`) a formátování data.
-   - U každého nálezu uvedeno: závažnost, způsob odhalení, zdůvodnění a konkrétní návrh kódové úpravy.
+     - 🔴 **2 Kritické nálezy:** Absence perzistence programu v localStorage + nulová detekce časových kolizí (REV-01); referenční diskrepance v databázi a nefunkční dynamické detaily kapel (REV-02).
+     - 🟡 **4 Významné nálezy:** Nedodržení kontrastu textu 3.38:1 dle WCAG 2.0 AA (REV-03); rigidní filtr bez stavu nulových výsledků (REV-04); absence konkrétních údajů o bezbariérovosti a scéně Warehouse Stage (REV-05); chybějící aria-expanded a focus trap v mobilním menu (REV-06).
+     - 🟢 **3 Drobné nálezy:** Nekonzistentní formát času (REV-07); absence prefers-reduced-motion u animace (REV-08); chybějící drobečková navigace (REV-09).
+   - U každého nálezu uvedeno: závažnost, dotčená heuristika, způsob odhalení, popis problému, kroky k reprodukci, dopad na uživatele a konkrétní návrh kódové úpravy.
+   - Sekce 2.4 podrobně dokumentuje metodiku využití AI, lidskou verifikaci a odmítnutí halucinací.
 
 3. **Prezentace a speaker notes**:
-   - Prezentace zaměřená na 3–5 nejdůležitějších zjištění a jejich řešení.
+   - Prezentace zaměřená na 3–5 nejdůležitějších zjištění (REV-01 až REV-06) a jejich řešení.
    - Přesný minutový rozpad kalibrovaný na 3:45–4:15 min s rezervou pro diskuzi.

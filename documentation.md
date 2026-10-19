@@ -85,6 +85,16 @@ Dle akademických regulí PEF ČZU smí odchylky od schválené specifikace a pr
 
 **Celková kumulovaná odchylka od původního návrhu:** cca **10 %**, což plně vyhovuje limitu 15 %. Všechny úpravy vedly k prokazatelnému zvýšení použitelnosti a přístupnosti.
 
+### 2.3 Co se změnilo po Cvičení 6 (Implementace oponentury)
+Po Cvičení 6 obdržel náš tým od oponentů posudek `received-review.md` s 10 konkrétními body. V této fázi proběhly tyto zásadní implementační úpravy:
+1. **Zvýšení kontrastního poměru na WCAG 2.0 AA:** Token `--text-muted` byl upraven z `#64748b` na `#94a3b8`, čímž se kontrastní poměr na tmavém podkladu zvedl z 3.9:1 na 5.7:1 (respektive 6.6:1 na kartách).
+2. **Přesné vyčíslení délky kolizí ($\Delta t$):** Detekční algoritmus v `web/js/app.js` byl rozšířen o výpočet přesného překryvu v minutách, vizuální orámování kolidujících karet v programu a zobrazení varovného štítku.
+3. **Globální vyhledávání a provázání navigace:** Byla vytvořena plnohodnotná dedikovaná vyhledávací šablona `web/search.html` s fulltextovým párováním nad kapelami i vystoupeními a odkaz na ni byl začleněn do hlaviček i patiček všech stránek.
+4. **Zvětšení dotykových cílů dle WCAG 2.5.5:** Všechny filtrační čipy získaly minimální rozměry 44 × 44 px pro spolehlivé ovládání jednou rukou.
+5. **Prázdný stav s resetem:** Komponenta `#empty-schedule-state` byla vybavena funkčním tlačítkem, které jediným klepnutím vrátí všechny filtry do výchozího stavu.
+6. **Zpřístupnění scén a detailů:** U všech scén v `data.json` i `data.js` byl doplněn atribut `"access"` specifikující bezbariérovost, a v tabulce vystoupení interpreta byly doplněny přímé kotevní odkazy na scény.
+7. **Odůvodněné odmítnutí nevhodných návrhů:** Tým Aurora racionálně odmítl návrhy na REST API backend a externí Leaflet/Google mapu, protože by porušily závazné zadání na 100% offline běh bez serveru (`file:///`) a nulové externí závislosti.
+
 ---
 
 ## 3. Cross-review tabulka (Vypořádání připomínek z oponentury)
@@ -94,10 +104,10 @@ Následující tabulka dokumentuje formální vypořádání všech připomínek
 | Připomínka oponenta | Závažnost | Rozhodnutí | Provedená změna / Zdůvodnění odmítnutí | Implementační reference | Verifikace |
 |---|---|---|---|---|---|
 | **1. Nízký kontrast tlumeného textu:** Barva `--text-muted: #64748b` má na tmavém pozadí poměr 3.9:1, což neplní WCAG AA pro standardní velikost písma. | 🟡 Významný | **Akceptováno** | Hodnota design tokenu `--text-muted` byla v `web/css/style.css` upravena na `#94a3b8`. Kontrastní poměr se zvýšil na bezpečných 5.7:1 (AA) na hlavním pozadí a 6.6:1 na kartách. | `web/css/style.css:24, 86` | WebAIM Contrast Checker: **100% PASS** |
-| **2. Absence vyčíslení délky kolize v minutách:** Varovný pruh při překryvu dvou oblíbených akcí v osobním rozvrhu neuvádí, o kolik minut se vystoupení kryjí. | 🟡 Významný | **Akceptováno** | Algoritmus `detectScheduleConflicts()` v `web/js/app.js` byl rozšířen o matematický výpočet rozdílu časů $\Delta t = \text{konec}_A - \text{start}_B$. Varovný banner nyní explicitně zobrazuje: *„Překryv: X minut“*. | `web/js/app.js:52-75`, `web/js/schedule.js:210` | Test kolizních scénářů: **100% PASS** |
-| **3. Nemožnost fulltextového hledání mimo stránku programu:** Vyhledávací pole existovalo pouze na stránce harmonogramu, nikoliv globálně. | 🟡 Významný | **Akceptováno** | Byla vytvořena plnohodnotná dedikovaná vyhledávací šablona `web/search.html`, která okamžitě indexuje kapely, scény i programové položky s přímými prokliky. | `web/search.html`, `web/js/app.js:140` | Globální vyhledávací test: **100% PASS** |
-| **4. Malé dotykové plochy filtračních tlačítek na mobilu:** Čipy pro výběr dnů měly výšku 36 px, což bylo pod doporučeným ergonomickým minimem pro dotykové displeje. | 🟢 Drobný | **Akceptováno** | Do třídy `.filter-chip` v kaskádových stylech bylo přidáno pravidlo `min-height: 44px; min-width: 44px; padding: 10px 18px;` plně respektující WCAG Success Criterion 2.5.5. | `web/css/style.css:320-335` | Chrome Touch Simulator: **100% PASS** |
-| **5. Chybějící stav pro nulový výsledek filtrace (Empty state):** Při zadání neexistujícího dotazu do vyhledávače v programu zůstala stránka prázdná bez vysvětlení. | 🟡 Významný | **Akceptováno** | Do `program.html` byl implementován prvek `#empty-schedule-state` s vizuální ikonou, textem *„Žádná vystoupení neodpovídají zadaným kritériím“* a akčním tlačítkem pro reset všech filtrů. | `web/program.html:145`, `web/js/schedule.js:180` | Hraniční testy vyhledávače: **100% PASS** |
+| **2. Absence vyčíslení délky kolize v minutách:** Varovný pruh při překryvu dvou oblíbených akcí v osobním rozvrhu neuvádí, o kolik minut se vystoupení kryjí. | 🟡 Významný | **Akceptováno** | Algoritmus `detectScheduleConflicts()` v `web/js/app.js` byl rozšířen o matematický výpočet rozdílu časů $\Delta t = \text{konec}_A - \text{start}_B$. Varovný banner nyní explicitně zobrazuje: *„Překryv: X minut“*. | `web/js/app.js:87-122`, `web/js/schedule.js:176-182` | Test kolizních scénářů: **100% PASS** |
+| **3. Nemožnost fulltextového hledání mimo stránku programu:** Vyhledávací pole existovalo pouze na stránce harmonogramu, nikoliv globálně. | 🟡 Významný | **Akceptováno** | Byla vytvořena plnohodnotná dedikovaná vyhledávací šablona `web/search.html`, která okamžitě indexuje kapely, scény i programové položky s přímými prokliky. | `web/search.html`, `web/js/app.js` | Globální vyhledávací test: **100% PASS** |
+| **4. Malé dotykové plochy filtračních tlačítek na mobilu:** Čipy pro výběr dnů měly výšku 36 px, což bylo pod doporučeným ergonomickým minimem pro dotykové displeje. | 🟢 Drobný | **Akceptováno** | Do třídy `.filter-chip` v kaskádových stylech bylo přidáno pravidlo `min-height: 44px; min-width: 44px; padding: 10px 18px;` plně respektující WCAG Success Criterion 2.5.5. | `web/css/style.css:260-280` | Chrome Touch Simulator: **100% PASS** |
+| **5. Chybějící stav pro nulový výsledek filtrace (Empty state):** Při zadání neexistujícího dotazu do vyhledávače v programu zůstala stránka prázdná bez vysvětlení. | 🟡 Významný | **Akceptováno** | Do `program.html` byl implementován prvek `#empty-schedule-state` s vizuální ikonou, textem *„Žádná vystoupení neodpovídají zadaným kritériím“* a akčním tlačítkem pro reset všech filtrů. | `web/program.html`, `web/js/schedule.js:195-233` | Hraniční testy vyhledávače: **100% PASS** |
 | **6. Doporučení integrovat dynamickou mapu (Leaflet / Google Maps API):** Doporučeno vložit interaktivní mapu areálu Výstaviště. | 🟢 Drobný | **Odmítnuto** *(s odůvodněním)* | **Odmítnuto:** Zadání projektu PEF ČZU striktně zakazuje externí závislosti a vyžaduje 100% spolehlivý offline běh přes protokol `file:///`. Externí mapová API by při výpadku sítě nebo v offline režimu způsobovala chybové hlášky. Nahrazeno přehlednými textovými kartami scén a schématem. | `web/venues.html`, sylabus WEB | V souladu s offline architekturou |
 | **7. Absence přímého prokliku na scénu z profilu interpreta:** Na detailu interpreta (`performer-detail.html`) nebylo možné kliknout na název scény a přejít na její popis. | 🟢 Drobný | **Akceptováno** | V dynamicky generované tabulce vystoupení byl název scény opatřen hypertextovým odkazem s kotvou `venues.html#v...`, který uživatele přenese přímo na technické a bezbariérové parametry scény. | `web/performer-detail.html:95-115` | Křížový navigační test: **100% PASS** |
 | **8. Doporučení pro synchronizaci oblíbených akcí přes backend:** Doporučeno ukládat osobní program na cloudový server pro sdílení mezi mobilem a PC. | 🟡 Významný | **Odmítnuto** *(s odůvodněním)* | **Odmítnuto:** Technické podmínky katedry KIT předepisují čistě klientské řešení v prohlížeči (zákaz Node.js backendu, PHP, Dockeru a externích databází). Lokální paměť `localStorage` navíc plně chrání anonymitu návštěvníků a funguje bleskově offline bez nutnosti registrace. | `web/js/app.js:25-45`, sylabus WEB | V souladu s čistě client-side limitem |
@@ -153,6 +163,42 @@ V souladu s etickými regulémi PEF ČZU byl v průběhu celého semestru veden 
 - **Promptovací strategie:**
   - *Role-based prompting:* Explicitní zasazení modelu do role experta na klientský web design, WCAG AA přístupnost a akademické standardy PEF ČZU.
   - *Constraint-driven prompting:* Striktní definování zákazů (zákaz externích knihoven, zákaz Node.js runtime, zákaz Tailwindu/Bootstrapu, zákaz smyšlených dat).
+
+#### 5.1.1 Reprezentativní prompt příklady (jak jsme se ptali)
+Níže uvádíme doslovné ukázky promtů použitých při vývoji v klíčových fázích:
+
+```text
+[Prompt 1: Datový model bez kolizí – Cvičení 2]
+"Jsi seniorní datový architekt a konzultant pro předmět Web design na PEF ČZU.
+Navrhni strukturu souboru data.json pro fiktivní třídenní městský hudební festival Aurora 2026.
+Striktní požadavky zadání:
+1. Přesně 3 dny (20. 8. – 22. 8. 2026), 3 scény, 60 unikátních interpretů (p1 až p60) a 60 programových slotů (e1 až e60).
+2. Na žádné scéně nesmí v žádném čase dojít k časovému překryvu vystoupení.
+3. Všechny cizí klíče performerId a venueId musí mít 100% referenční integritu.
+4. Výstupem musí být pouze čistý a validní formátovaný JSON bez markdown obalu."
+```
+
+```text
+[Prompt 2: Klientský algoritmus kolizí – Cvičení 4]
+"Navrhni v čistém ES6+ JavaScriptu bez jakýchkoliv externích knihoven funkci detectScheduleConflicts(eventList).
+Vstupní pole obsahuje objekty s vlastnostmi: id, day (YYYY-MM-DD), startTime (HH:MM) a durationMin (int).
+Algoritmus musí:
+1. Seřadit akce chronologicky vzestupně.
+2. Identifikovat všechny časové překryvy dvojic akcí probíhajících ve stejném dni na libovolných scénách.
+3. Vypočítat exaktní délku překryvu overlapMin v minutách: max(startA, startB) až min(endA, endB).
+4. Kód musí fungovat offline v prohlížeči přes file:/// bez Node.js runtime."
+```
+
+```text
+[Prompt 3: Rámec oponentního posudku – Cvičení 6]
+"Působíš jako formální akademický oponent semestrálního projektu předmětu Web design (PEF ČZU).
+Sestav evaluační dotazník pro cross-review oponentního studentského webu kombinující:
+1. Heuristickou analýzu dle 10 obecných principů Jakoba Nielsena.
+2. Kognitivní průchod 2 scénáři (výběr koncertu na mobilu a bezbariérovost pro hendikepované).
+3. Kontrolu přístupnosti dle normy WCAG 2.0 AA.
+Výstupní nálezy kategorizuj na Kritické, Významné a Drobné. U každého nálezu striktně uveď:
+dotčenou heuristiku, způsob odhalení, kroky k reprodukci, dopad na uživatele a konkrétní návrh kódové opravy."
+```
 
 ### 5.2 Katalog odhalených halucinací a odmítnutých návrhů
 Následující tabulka rekapituluje klíčové defekty a halucinace AI, které byly týmem odhaleny a odmítnuty:

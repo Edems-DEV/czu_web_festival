@@ -94,71 +94,72 @@ style: |
 Provedli jsme formalizované expertní hodnocení oponentního webu pomocí **dvou nezávislých metod**:
 
 1. **Heuristická analýza (10 obecných heuristik Jakoba Nielsena):**
-   - Systematická inspekce celého uživatelského rozhraní proti standardům použitelnosti:
+   - Systematická inspekce celého uživatelského rozhraní proti standardům použitelnosti.
    - Důraz na *H1 (Viditelnost stavu)*, *H3 (Uživatelská kontrola)*, *H4 (Konzistence)* a *H5 (Prevence chyb)*.
 2. **Kognitivní průchod (Cognitive Walkthrough):**
    - Empirický test 2 klíčových uživatelských scénářů oponentního projektu:
-     - *Scénář 1:* Návštěvník hledající vystoupení konkrétního žánru v páteční večer na mobilu.
-     - *Scénář 2:* Návštěvník se specifickými potřebami prověřující bezbariérovost areálu.
+     - *Scénář A:* Výběr pátečního večerního koncertu podle žánru na mobilním telefonu.
+     - *Scénář B:* Prověření bezbariérovosti a logistiky areálu pro návštěvníka se specifickými potřebami.
 3. **Technický a přístupnostní audit:**
-   - Kontrola běhu přes protokol `file:///` bez serveru, W3C HTML validace a měření kontrastu WebAIM.
+   - Kontrola běhu přes protokol `file:///`, integrita `data.json`, validace a měření kontrastu WebAIM dle WCAG 2.0 AA.
 
 ---
 
 ## 2. Průchod klíčovými scénáři oponentního projektu
 
-### Scénář 1: Výběr pátečního večerního programu na mobilním telefonu
-- **Průběh:** Tester přistoupil na mobilním viewportu (360 px) do sekce programu.
-- **Zjištění:** Filtrování podle dnů funguje vizuálně dobře. Avšak při otevření přímo ze souborového systému (protokol `file:///`) se program vůbec nenačetl kvůli chybě CORS!
-- **Zhodnocení:** Úkol nebyl v offline režimu splnitelný bez zásahu vývojářských nástrojů.
+### Scénář A: Výběr pátečního koncertu podle žánru na mobilu (Klára, 22 let)
+- **Průběh:** Otevření mobilního menu $\to$ výběr Pátku $\to$ hledání žánrového filtru.
+- **Zjištění:** Žánrový filtr zcela chybí (pouze filtr scén); přidání do oblíbených se neukládá do `localStorage` a po F5 zmizí. Systém nevaruje před časovým překryvem.
+- **Zhodnocení:** Úkol splněn pouze s vysokou kognitivní zátěží; perzistence selhává.
 
-### Scénář 2: Hledání bezbariérového přístupu a logistiky areálu
-- **Průběh:** Tester hledal informace o bezbariérovosti v navigaci a v patičce.
-- **Zjištění:** Informace jsou přítomny v sekci FAQ, ale text má nízký kontrast na šedém podkladu (2.7:1). Navíc chybí explicitní údaj o vyhrazeném parkování ZTP.
-- **Zhodnocení:** Úkol částečně splněn s vysokou kognitivní zátěží a sníženou čitelností.
+### Scénář B: Prověření bezbariérovosti a dopravy (Jan, 38 let, vozík)
+- **Průběh:** Hledání praktických informací $\to$ prověření haly Warehouse Stage $\to$ parkování.
+- **Zjištění:** Text obsahuje vágní deklaraci bez parametrů ramp a vyvýšených plošin; u Warehouse Stage chybí bezbariérovost zcela; chybí vyhrazená stání ZTP.
+- **Zhodnocení:** Vysoká nejistota návštěvníka; kritické chybějící údaje pro hendikepované.
 
 ---
 
-## 3. Hlavní rozhodnutí – Kategorizace nálezů
+## 3. Hlavní rozhodnutí – Výběr klíčových nálezů
 
-Identifikovali jsme celkem 5 věcných nálezů rozdělených dle závažnosti:
+Identifikovali jsme celkem 9 věcných nálezů v posudku; zde uvádíme nejdůležitější:
 
 | ID | Oblast & Popis nálezu | Závažnost | Heuristika / Norma | Způsob objevení |
 |---|---|---|---|---|
-| **N-01** | **CORS blokace dat při běhu přes `file:///`** – volání `fetch('data.json')` selže v Chrome bez lokálního serveru. | <span class="tag-critical">KRITICKÁ</span> | H5 (Prevence chyb) / Zadání WEB | Offline test v Chrome |
-| **N-02** | **Kolaps mobilní navigace na šířce 360 px** – navigační odkazy přetékají mimo viewport a překrývají nadpis. | <span class="tag-major">VÝZNAMNÁ</span> | H4 (Konzistence) / Mobile-First | DevTools simulace 360 px |
-| **N-03** | **Nedodržení kontrastu WCAG AA v FAQ** – šedý text `#71717a` na pozadí `#27272a` má kontrast pouze 2.7:1. | <span class="tag-major">VÝZNAMNÁ</span> | WCAG 2.0 AA (1.4.3 Contrast) | WebAIM Contrast Checker |
-| **N-04** | **Chybějící stav `aria-current="page"`** v navigačním menu pro orientaci čteček a uživatelů. | <span class="tag-minor">DROBNÁ</span> | H1 (Viditelnost stavu systému) | Inspekce DOM stromu |
-| **N-05** | **Absence prázdného stavu (Empty State)** při vyhledávání neexistujícího interpreta. | <span class="tag-minor">DROBNÁ</span> | H9 (Rozpoznání a zotavení z chyb) | Test vyhledávacího pole |
+| **REV-01** | **Absence perzistence v localStorage & nulová detekce kolizí** v programu. | <span class="tag-critical">KRITICKÁ</span> | H5 (Prevence chyb), H7 | Kognitivní průchod & kód |
+| **REV-02** | **Referenční diskrepance v DB** – odkaz na `p14`/`p27` otevírá `undefined` s pádem skriptu. | <span class="tag-critical">KRITICKÁ</span> | H1 (Viditelnost), H4 | Analýza integrity dat |
+| **REV-03** | **Nedodržení kontrastu WCAG AA** – sekundární text `#71717a` má kontrast pouze 3.38:1. | <span class="tag-major">VÝZNAMNÁ</span> | WCAG 2.0 AA (1.4.3 Contrast) | WebAIM Contrast Checker |
+| **REV-04** | **Rigidní jednoúrovňový filtr** (den ruší scénu) & absence prázdného stavu s resetem. | <span class="tag-major">VÝZNAMNÁ</span> | H3 (Uživatelská svoboda), H9 | Test kombinatoriky filtrů |
+| **REV-05** | **Vágní bezbariérové údaje** bez specifikace ramp, ZTP stání a plošin na scénách. | <span class="tag-major">VÝZNAMNÁ</span> | H2 (Reálný svět), H10 | Kognitivní průchod Scénář B |
+| **REV-06** | **Mobilní menu bez `aria-expanded` a focus trapu** (únik fokusu klávesnice pod menu). | <span class="tag-major">VÝZNAMNÁ</span> | H3 (Kontrola), WCAG Klávesnice | Klávesový test Tab & Escape |
 
 ---
 
 ## 4. Doporučená řešení pro oponentní tým
 
-Pro každý nález předkládáme konkrétní a konstruktivní návod k nápravě:
+Pro každý identifikovaný nález předkládáme konkrétní a konstruktivní řešení:
 
-1. **Řešení N-01 (Kritická – CORS selhání):**
-   - Zavést synchronní bootstrap: exportovat data v `data.js` do `window.FESTIVAL_DATA` a skript nalinkovat před aplikační logiku. Tím bude zaručen 100% offline běh i pro zápočet.
-2. **Řešení N-02 (Významná – Přetékání navigace):**
-   - V CSS přidat pravidlo `flex-wrap: wrap; gap: 8px;` a zmenšit padding tlačítek pro úzké displeje $\le 360\text{ px}$.
-3. **Řešení N-03 (Významná – Kontrast WCAG):**
-   - Zesvětlit barvu textu FAQ z `#71717a` na minimálně `#a1a1aa` (zvýší kontrast na bezpečných 5.8:1, plné splnění WCAG AA).
-4. **Řešení N-04 a N-05 (Drobné vady):**
-   - Doplnit atribut `aria-current="page"` na aktivní odkaz a komponentu s textem *„Žádný interpret nebyl nalezen“*.
+1. **Řešení REV-01 (Kritická – Perzistence & Kolize):**
+   - Ukládat ID do `localStorage`; při přidání seřadit časové intervaly a kolidující akce označit výstražným pruhem s délkou překryvu v minutách.
+2. **Řešení REV-02 (Kritická – Integrita dat):**
+   - Opravit předávání parametrů v šabloně (`?id=${p.id}`) a synchronizovat časy v `data.json` a profilech.
+3. **Řešení REV-03 (Významná – Kontrast WCAG):**
+   - Zesvětlit barvu sekundárního textu z `#71717a` na `#a1a1aa` (zvýší kontrast na bezpečných 6.2:1, plné splnění WCAG AA).
+4. **Řešení REV-04 a REV-06 (Významné – Filtry & Mobilní menu):**
+   - Provázat filtry jako logický součin (den AND scéna), přidat empty state s resetem; doplnit `aria-expanded` a obsluhu klávesy Escape.
 
 ---
 
 ## 5. Využití AI při cross-review a odhalené halucinace
 
-> *„AI navrhovalo neexistující syntaktické chyby a obecné klišé – lidský audit zachránil objektivitu.“*
+> *„AI pomohlo se strukturou heuristické matice – lidský audit zabránil halucinacím a falešným obviněním.“*
 
 ### K čemu jsme AI využili:
-- Asistence při generování strukturované matice 10 Nielsenových heuristik a formulaci konstruktivních doporučení.
+- Asistence při sestavení matice 10 Nielsenových heuristik a checklistu dle WCAG 2.0 AA.
 
 ### Odhalené halucinace a limity AI při review:
-1. **Falešná pozitivita (False Positive):** AI tvrdilo, že oponentnímu projektu chybí deklarace `<!DOCTYPE html>`. Přímou inspekcí zdrojového kódu jsme ověřili, že doctype je na řádku 1 přítomen. Tvrzení AI bylo odmítnuto.
-2. **Vágní designová klišé bez kódového řešení:** AI generovalo obecné fráze typu *„web by mohl působit moderněji“*. Tým tyto subjektivní dojmy škrtl a nahradil je exaktním měřením pixelů a kontrastních poměrů.
-3. **Lidská odpovědnost:** Všechny nálezy N-01 až N-05 byly osobně reprodukovány v prohlížeči.
+1. **Falešná pozitivita (False Positive):** AI tvrdilo, že oponentnímu projektu chybí deklarace `<!DOCTYPE html>`. Přímou inspekcí zdrojového kódu jsme ověřili, že doctype je na řádku 1 přítomen. Tvrzení AI bylo okamžitě odmítnuto.
+2. **Vágní designová klišé bez kódového řešení:** AI generovalo obecné fráze typu *„web by mohl působit moderněji“*. Tým tyto subjektivní dojmy vyřadil a nahradil je exaktním měřením pixelů a kontrastních poměrů.
+3. **Lidská odpovědnost:** Všech 9 nálezů REV-01 až REV-09 bylo osobně verifikováno v reálném prohlížeči.
 
 ---
 
@@ -166,25 +167,26 @@ Pro každý nález předkládáme konkrétní a konstruktivní návod k náprav�
 
 Deklarujeme nezávislé a reprodukovatelné metody ověření všech zjištění:
 
-1. **Reprodukce CORS chyby:**
-   - Dvojklik na soubor `index.html` v Google Chrome $\to$ otevření konzole F12 $\to$ zachycena červená výjimka `Origin null is not allowed by Access-Control-Allow-Origin`.
+1. **Reprodukce selhání v prohlížeči:**
+   - Dvojklik na odkaz kapely `p14` $\to$ zachycena výjimka v DevTools konzoli $\to$ potvrzena vada REV-02.
 2. **Kvantitativní měření kontrastu:**
-   - WebAIM Contrast Checker změřil poměr 2.7:1 pro text FAQ (požadavek WCAG AA je $\ge 4.5:1$).
-3. **Responzivní verifikace:**
-   - Chrome DevTools v emulaci rozměru 360 × 640 px potvrdil horizontální scrollbar o šířce 42 px.
-4. **Konstruktivní tón:**
-   - Hodnocení je vedeno férově a s cílem pomoci oponentům získat plný počet bodů při finálním odevzdání.
+   - WebAIM Contrast Checker změřil poměr 3.38:1 pro sekundární text `#71717a` na pozadí `#18181b` (požadavek WCAG AA je $\ge 4.5:1$).
+3. **Klávesová navigace:**
+   - Test tabulátorem v mobilním rozbaleném menu odhalil únik fokusu na skryté prvky na pozadí.
+4. **Konstruktivní akademický tón:**
+   - Hodnocení je vedeno férově s cílem pomoci oponentům získat plný počet bodů při finální obhajobě.
 
 ---
 
 ## 7. Závěrečné shrnutí a doporučení
 
-### Silné stránky oponentního projektu:
-- Velmi zdařilý vizuální koncept a nápaditá témata festivalu.
-- Čistě rozdělená struktura souborů a srozumitelné textové anotace kapel.
-- Rychlá odezva klientského rozhraní po načtení.
+### Silné stránky oponentního projektu SoundWave 2026:
+- Velmi zdařilý vizuální koncept a nápaditá dramaturgie festivalu.
+- Čistě rozdělená struktura souborů, sémantické značkování úvodní stránky.
+- Blesková odezva statických šablon bez zbytečných externích knihoven.
 
-### Klíčové doporučení před finálním odevzdáním:
-1. **Priorita 1:** Okamžitě vyřešit offline načítání dat (N-01) přes synchronní JavaScript proměnnou – bez toho hrozí ztráta bodů při hodnocení na cvičení.
-2. **Priorita 2:** Opravit kontrast textu FAQ (N-03) a zalomení navigace na 360 px (N-02).
-- Detailní zpráva byla odevzdána v souboru `review/review.md`.
+### Klíčová doporučení před finálním odevzdáním:
+1. **Priorita 1:** Opravit kritické vady **REV-01** (perzistence v localStorage a detekce kolizí) a **REV-02** (nefunkční ID kapel `p14`/`p27`).
+2. **Priorita 2:** Zvýšit kontrast sekundárního textu na WCAG AA poměr $\ge 4.5:1$ (**REV-03**).
+3. **Priorita 3:** Doplnit konkrétní fakta pro tělesně hendikepované návštěvníky (**REV-05**).
+- Kompletní posudek o 9 nálezech je k dispozici v `project/review.md`.

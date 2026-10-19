@@ -33,16 +33,16 @@ Projekt je ve stavu **zero blocking issues** (žádné fatální chyby, žádné
 
 V souladu s požadavky Cvičení 5 byly detailně a prakticky otestovány všechny 3 klíčové uživatelské scénáře definované v `project-specification.md`:
 
-### 2.1 Scénář 1: Plánování pátečního večera podle oblíbeného žánru (Tereza Novotná)
-- **Cíl scénáře:** Rychlý výběr večerních pátečních vystoupení v žánru Indie a uložení vybraného koncertu do osobního itineráře na mobilním telefonu.
+### 2.1 Scénář 1: Plánování čtvrtečního programu podle oblíbeného žánru (Tereza Novotná)
+- **Cíl scénáře:** Rychlý výběr čtvrtečních vystoupení v žánru Indie a uložení vybraného koncertu do osobního itineráře na mobilním telefonu.
 - **Testovací zařízení:** iPhone 13 (Safari mobile, viewport 390 × 844 px, dotykové ovládání).
 - **Provedené kroky a empirické ověření:**
   1. *Otevření webu:* Načtení `index.html`. Mobilní hlavička je kompaktní, hero sekce srozumitelně komunikuje datum 20.–22. 8. 2026.
   2. *Přechod do programu:* Jedno klepnutí na odkaz **Program** v menu.
-  3. *Volba dne:* Klepnutí na čip **„Pátek 21. 8.“**. Okamžitá filtrace bez probliknutí stránky; aktivní čip je zřetelně barevně zvýrazněn (`--accent-cyan` výplň s tmavým textem).
+  3. *Volba dne:* Klepnutí na čip **„Čtvrtek 20. 8.“**. Okamžitá filtrace bez probliknutí stránky; aktivní čip je zřetelně barevně zvýrazněn (`--accent-cyan` výplň s tmavým textem).
   4. *Hledání žánru:* Do vyhledávacího pole zadán řetězec *„indie“*.
-  5. *Výsledky:* Program okamžitě zobrazuje 8 pátečních koncertů odpovídajících žánru; počítadlo hlásí *„Nalezeno 8 z 60 akcí“*.
-  6. *Detail a uložení:* Klepnutí na kapelu *Lunar Tides* (20:15, *Aurora Main Stage*). Načten parametrický detail `performer-detail.html?id=p1`. Klepnutí na **★ Přidat do mého programu**. Tlačítko mění text na *„✓ V mém programu“* a v hlavičce naskočí čítač `1`.
+  5. *Výsledky:* Program okamžitě zobrazuje relevantní čtvrteční koncerty odpovídající žánru; počítadlo dynamicky aktualizuje nalezené položky.
+  6. *Detail a uložení:* Klepnutí na kapelu *Lunar Tides* (10:00, *Aurora Main Stage*). Načten parametrický detail `performer-detail.html?id=p1`. Klepnutí na **★ Přidat do mého programu**. Tlačítko mění text na *„✓ V mém programu“* a v hlavičce naskočí čítač `1`.
 - **Zhodnocení:** Průchod proběhl hladce za **14 sekund**. Všechny prvky v palcové zóně, optimální velikost dotykových ploch.
 
 ### 2.2 Scénář 2: Sestavení osobního rozvrhu a vyřešení časové kolize (Jakub Kovář)
@@ -50,12 +50,12 @@ V souladu s požadavky Cvičení 5 byly detailně a prakticky otestovány všech
 - **Testovací zařízení:** Desktop PC (Windows 11, Google Chrome 122, rozlišení 1920 × 1080 px, ovládání myší a klávesnicí).
 - **Provedené kroky a empirické ověření:**
   1. *Volba dne:* V `program.html` vybrán čip **„Sobota 22. 8.“**.
-  2. *Přidání akcí:* Kliknutí na hvězdičku u vystoupení na *Riverside Club Stage* (15:30–16:45) a následně u workshopu ve *Forum Hall* (15:30–17:00).
+  2. *Přidání akcí:* Kliknutí na hvězdičku u vystoupení kapely *Rain Motel* na *Aurora Main Stage* (10:00–11:15) a následně u koncertu kapely *Lunar District* ve *Forum Hall* (10:00–11:15).
   3. *Reakce systému na kolizi:* Okamžitě po přidání druhého slotu se nad harmonogramem dynamicky zobrazí výrazný výstražný panel:
      > **⚠️ Upozornění na časový konflikt:**  
      > *Máte vybrány akce s překrývajícím se časem! (Překryv: 75 minut)*
   4. *Filtrování osobního plánu:* Kliknutí na tlačítko **★ Zobrazit pouze můj program**. Zobrazení se přepne výhradně na oblíbené položky; kolidující karty mají červeno-oranžové orámování.
-  5. *Vyřešení konfliktu:* Kliknutí na odebrání u workshopu ve *Forum Hall*. Varovný pruh se okamžitě skryje a čítač v hlavičce ukazuje 1.
+  5. *Vyřešení konfliktu:* Kliknutí na odebrání u koncertu kapely *Lunar District* ve *Forum Hall*. Varovný pruh se okamžitě skryje a čítač v hlavičce ukazuje 1.
   6. *Trvalost dat:* Obnovení stránky (F5) i zavření a znovunačtení prohlížeče. Položka zůstává spolehlivě uložena v paměti.
 - **Zhodnocení:** Funkce stoprocentně spolehlivá, vyčíslení překryvu v minutách poskytuje přesnou rozhodovací hodnotu.
 

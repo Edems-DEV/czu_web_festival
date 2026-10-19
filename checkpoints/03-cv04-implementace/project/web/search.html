@@ -29,9 +29,12 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <img src="images/logo-aurora.svg" alt="Aurora Festival 2026" class="brand-logo-img" width="160" height="38">
           <span class="logo-badge">AURORA</span>
           <span class="brand-text">Festival 2026</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otevřít hlavní menu">☰</button>
 
         <nav class="main-nav" aria-label="Hlavní navigace webu">
           <ul>
@@ -40,6 +43,7 @@
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html" aria-current="page">Hledat 🔍</a></li>
             <li>
               <a href="program.html?view=my-schedule" class="btn-favorites-nav">
                 ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
@@ -64,17 +68,25 @@
         Okamžité prohledávání všech 60 vystoupení, interpretů i scén v reálném čase.
       </p>
 
-      <section class="search-form-section" aria-label="Vyhledávací pole" style="margin-bottom: 2rem;">
+      <!-- Tipy pro hledání / Aside -->
+      <aside class="info-sidebar" aria-label="Tipy pro efektivní vyhledávání">
+        <h3>🔍 Tipy pro vyhledávání v programu a účinkujících</h3>
+        <p>Můžete vyhledávat podle názvu interpreta (např. <em>Lunar Tides</em>), žánru (např. <em>indie</em>, <em>elektronika</em>), typu programu (<em>workshop</em>, <em>talk</em>, <em>koncert</em>) i konkrétní scény (<em>Main Stage</em>, <em>Forum Hall</em>). Vyhledávání probíhá okamžitě na straně vašeho prohlížeče.</p>
+      </aside>
+
+      <form class="search-form-section" role="search" aria-label="Globální vyhledávání" onsubmit="return false;" style="margin-bottom: 2rem;">
+        <label for="global-search-input" class="visually-hidden">Zadejte hledaný výraz v programu a interpretech</label>
         <input
           type="search"
           id="global-search-input"
           class="search-input"
-          placeholder="Zadejte hledaný výraz (např. 'Lunar Tides', 'workshop', 'Main Stage', 'jazz')..."
+          placeholder="Zadejte hledaný výraz (např. 'Lunar Tides', 'workshop', 'Main Stage', 'indie')..."
           autofocus
         />
-      </section>
+      </form>
 
       <section id="search-results-section" aria-label="Výsledky vyhledávání">
+        <h2 class="section-title" style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--accent-cyan); font-weight: 700;">Výsledky vyhledávání</h2>
         <div id="search-results-stats" style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;"></div>
 
         <div id="search-results-container">
@@ -100,18 +112,25 @@
           <h4>Rychlé odkazy</h4>
           <ul>
             <li><a href="index.html">Úvod</a></li>
-            <li><a href="program.html">Program</a></li>
-            <li><a href="performers.html">Účinkující</a></li>
-            <li><a href="venues.html">Scény</a></li>
+            <li><a href="program.html">Časový harmonogram</a></li>
+            <li><a href="performers.html">Seznam interpretů</a></li>
+            <li><a href="venues.html">Přehled scén a bezbariérovost</a></li>
+            <li><a href="practical-info.html">Doprava, parkování a FAQ</a></li>
+            <li><a href="search.html" aria-current="page">Vyhledávání 🔍</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Projekt ČZU WEB</h4>
-          <p>Vyhledávání s okamžitým fulltextovým párováním v datech.</p>
+          <h4>Akademický projekt</h4>
+          <p>
+            Semestrální projekt pro předmět <strong>Web design (WEB)</strong> na PEF České zemědělské univerzity v Praze.
+          </p>
+          <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+            WCAG 2.0 AA compliant • Mobile-first • Pure client-side (No-build)
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Hudební Festival Aurora</p>
+        <p>&copy; 2026 Hudební Festival Aurora. Všechna práva vyhrazena.</p>
       </div>
     </footer>
 

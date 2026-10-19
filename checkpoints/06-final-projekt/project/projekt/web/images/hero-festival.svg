@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" fill="none" role="img" aria-label="Noční festivalová scéna Aurora s polární září a publikem">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#070a13"/>
+      <stop offset="60%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#131c2e"/>
+    </linearGradient>
+    <linearGradient id="auroraRibbon1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#818cf8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="auroraRibbon2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#10b981" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="stageGlow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0b0f19" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Night Sky -->
+  <rect width="1200" height="500" fill="url(#skyGrad)"/>
+  <!-- Stars -->
+  <g fill="#f8fafc" opacity="0.4">
+    <circle cx="85" cy="45" r="1.5"/><circle cx="210" cy="80" r="1"/><circle cx="340" cy="35" r="2"/><circle cx="490" cy="90" r="1"/>
+    <circle cx="620" cy="50" r="1.5"/><circle cx="780" cy="70" r="2"/><circle cx="910" cy="40" r="1"/><circle cx="1060" cy="85" r="1.5"/>
+    <circle cx="150" cy="130" r="1"/><circle cx="420" cy="140" r="1.5"/><circle cx="710" cy="120" r="1"/><circle cx="990" cy="135" r="1"/>
+  </g>
+  <!-- Aurora Borealis ribbons in sky -->
+  <path d="M-50 160 C 200 60, 450 220, 750 90 C 950 20, 1150 140, 1250 80 L 1250 260 C 1100 220, 850 320, 600 210 C 350 120, 150 240, -50 260 Z" fill="url(#auroraRibbon1)"/>
+  <path d="M-50 120 C 180 30, 400 170, 680 80 C 920 10, 1100 110, 1250 50 L 1250 200 C 1050 160, 800 240, 550 150 C 300 80, 120 180, -50 190 Z" fill="url(#auroraRibbon2)"/>
+  <!-- Stage Laser Beams -->
+  <polygon points="600,320 100,0 160,0" fill="#38bdf8" opacity="0.12"/>
+  <polygon points="600,320 400,0 460,0" fill="#818cf8" opacity="0.15"/>
+  <polygon points="600,320 740,0 800,0" fill="#c084fc" opacity="0.15"/>
+  <polygon points="600,320 1040,0 1100,0" fill="#38bdf8" opacity="0.12"/>
+  <!-- Stage Architecture Silhouettes (Průmyslový palác / Výstaviště silhouette) -->
+  <path d="M420 360 L450 340 L450 310 L480 310 L480 290 L520 270 L580 250 L600 220 L620 250 L680 270 L720 290 L720 310 L750 310 L750 340 L780 360 Z" fill="#0b0f19" opacity="0.9"/>
+  <!-- Central Stage Light Cone -->
+  <ellipse cx="600" cy="370" rx="320" ry="80" fill="url(#stageGlow)"/>
+  <!-- Truss & Rigging -->
+  <line x1="380" y1="340" x2="820" y2="340" stroke="#38bdf8" stroke-width="2" opacity="0.4"/>
+  <line x1="420" y1="310" x2="780" y2="310" stroke="#818cf8" stroke-width="2" opacity="0.4"/>
+  <!-- Crowd Silhouettes -->
+  <path d="M0 500 L0 440 C 30 435, 60 445, 90 438 C 120 432, 150 445, 180 435 C 220 442, 260 430, 300 440 C 340 435, 380 445, 420 433 C 460 442, 500 425, 540 438 C 580 432, 620 428, 660 436 C 700 430, 740 442, 780 434 C 820 440, 860 430, 900 438 C 940 432, 980 442, 1020 436 C 1060 440, 1100 430, 1140 438 C 1170 435, 1190 442, 1200 440 L 1200 500 Z" fill="#070a13"/>
+  <path d="M0 500 L0 460 C 40 455, 80 465, 130 458 C 190 468, 250 454, 310 463 C 380 458, 440 466, 510 455 C 570 462, 630 450, 700 460 C 770 452, 840 464, 910 456 C 980 462, 1050 452, 1120 460 C 1160 456, 1190 462, 1200 460 L 1200 500 Z" fill="#04060a"/>
+  <!-- Raised Hands & Glow dots -->
+  <g fill="#38bdf8" opacity="0.7">
+    <circle cx="280" cy="425" r="3"/><circle cx="490" cy="415" r="3.5"/><circle cx="560" cy="410" r="3"/><circle cx="640" cy="412" r="3.5"/><circle cx="730" cy="420" r="3"/><circle cx="910" cy="422" r="2.5"/>
+  </g>
+</svg>

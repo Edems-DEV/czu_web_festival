@@ -93,18 +93,18 @@ Funkce byly navrženy na základě přímých požadavků 3 person definovaných
 
 Prototyp byl podroben formalizovanému testování průchodnosti obou povinných scénářů:
 
-### 5.1 Průchod Scénářem 1 (Tereza – Rychlý výběr večerního programu)
+### 5.1 Průchod Scénářem 1 (Tereza – Rychlý výběr programu na mobilu)
 - **Krok 1:** Uživatelka otevírá `index.html` na mobilním rozlišení (emulace iPhone 13 v DevTools, 390 × 844 px).
 - **Krok 2:** Klepe na navigační odkaz **Program**.
-- **Krok 3:** V liště čipů klepe na **„Pátek 21. 8.“**. Harmonogram okamžitě vyfiltruje páteční položky.
+- **Krok 3:** V liště čipů klepe na **„Čtvrtek 20. 8.“**. Harmonogram okamžitě vyfiltruje čtvrteční položky.
 - **Krok 4:** Do vyhledávacího inputu napíše *„indie“*.
-- **Krok 5:** Zobrazí se karty kapel (např. *Lunar Tides*, *Echoes of Silence*). Uživatelka rozklikne detail *Lunar Tides* (`performer-detail.html?id=p1`).
-- **Výsledek:** Úkol splněn za 14 sekund. Žádné zádrhely, informace o čase 20:15 na Main Stage nalezena okamžitě.
+- **Krok 5:** Zobrazí se karty kapel (např. *Lunar Tides*). Uživatelka rozklikne detail *Lunar Tides* (`performer-detail.html?id=p1`).
+- **Výsledek:** Úkol splněn za 14 sekund. Žádné zádrhely, informace o čase 10:00 na Aurora Main Stage nalezena okamžitě.
 
 ### 5.2 Průchod Scénářem 2 (Jakub – Osobní harmonogram a řešení kolize)
 - **Krok 1:** Uživatel přistupuje na desktopu (1920 × 1080 px) na `program.html`.
 - **Krok 2:** Zvolí sobotní den (**Sobota 22. 8.**).
-- **Krok 3:** Klikne na tlačítko **★ Přidat do mého programu** u koncertu na Riverside Club (15:30) i workshopu ve Forum Hall (15:30).
+- **Krok 3:** Klikne na tlačítko **★ Přidat do mého programu** u koncertu na Aurora Main Stage (10:00, kapela Rain Motel) i koncertu ve Forum Hall (10:00, kapela Lunar District).
 - **Krok 4:** Aplikace okamžitě vygeneruje výstražnou lištu nad programem: *„Upozornění na časový konflikt: Máte vybrány akce s překrývajícím se časem! Překryv: 75 minut.“*.
 - **Krok 5:** Přepne zobrazení na **„★ Zobrazit pouze můj program“**. Vidí obě položky vedle sebe se zvýrazněním.
 - **Krok 6:** Klikne na odebrání jedné z nich. Varovný box zmizí.

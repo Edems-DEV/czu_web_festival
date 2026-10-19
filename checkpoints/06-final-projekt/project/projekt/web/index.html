@@ -69,9 +69,12 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <img src="images/logo-aurora.svg" alt="Aurora Festival 2026" class="brand-logo-img" width="160" height="38">
           <span class="logo-badge">AURORA</span>
           <span class="brand-text">Festival 2026</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otevřít hlavní menu">☰</button>
 
         <nav class="main-nav" aria-label="Hlavní navigace webu">
           <ul>
@@ -80,6 +83,7 @@
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Hledat 🔍</a></li>
             <li>
               <a href="program.html?view=my-schedule" class="btn-favorites-nav">
                 ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
@@ -98,6 +102,12 @@
     </nav>
 
     <main id="main-content">
+      <!-- Důležité oznámení / Aside banner -->
+      <aside class="festival-alert-banner" aria-label="Důležité informace o termínu a vstupenkách">
+        <h3>📢 Vstupenky na ročník 2026 v předprodeji</h3>
+        <p>Festival probíhá od čtvrtka 20. 8. do soboty 22. 8. 2026 na Výstavišti v Praze 7. Všechny scény mají garantovaný bezbariérový přístup a areál funguje v plně bezhotovostním cashless režimu. Sestavte si svůj osobní program v našem rozvrhu!</p>
+      </aside>
+
       <!-- Hero sekce -->
       <section class="hero">
         <div class="hero-meta">
@@ -109,16 +119,20 @@
         </p>
         <div class="hero-actions">
           <a href="program.html" class="btn btn-primary">Prozkoumat program (60 akcí)</a>
-          <a href="practical-info.html#vstupenky" class="btn btn-secondary">Vstupenky & Ceny</a>
+          <a href="practical-info.html#vstupenky" class="btn btn-secondary">Vstupenky &amp; Ceny</a>
         </div>
         <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);" id="festival-countdown">
           Odpočet do zahájení se načítá...
         </p>
+
+        <div style="margin-top: 2rem; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <img src="images/hero-festival.svg" alt="Festivalová atmosféra pod noční oblohou a polární září na Výstavišti Praha" class="hero-image" width="1200" height="500" loading="eager" style="width: 100%; height: auto; display: block;">
+        </div>
       </section>
 
       <!-- Festival v číslech -->
       <section aria-labelledby="stats-heading">
-        <h2 id="stats-heading" class="visually-hidden" style="display: none;">Festival v číslech</h2>
+        <h2 id="stats-heading" class="visually-hidden">Festival v číslech</h2>
         <div class="stats-bar">
           <div class="stat-item">
             <div class="stat-num">3</div>
@@ -239,6 +253,7 @@
             <li><a href="performers.html">Seznam interpretů</a></li>
             <li><a href="venues.html">Přehled scén a bezbariérovost</a></li>
             <li><a href="practical-info.html">Doprava, parkování a FAQ</a></li>
+            <li><a href="search.html">Vyhledávání 🔍</a></li>
           </ul>
         </div>
 

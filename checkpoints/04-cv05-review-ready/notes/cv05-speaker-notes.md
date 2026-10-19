@@ -38,8 +38,8 @@ Doporučený čas řeči: **3:45 – 4:15 min** (ponechává bezpečnou rezervu 
 ### Slide 3: Výsledky empirického průchodu 3 scénáři (0:50 – 1:45)
 *(👉 Přejít na Slide 3)*
 > *„Aplikaci jsme podrobili důkladnému testování všech tří scénářů:*  
-> *V prvním scénáři **Tereza** na iPhonu 13 v emulaci 390 pixelů otevřela program, klepla na Pátek a zadala 'indie'. Během 0,1 sekundy se zobrazilo 8 relevantních koncertů. Tereza otevřela detail Lunar Tides a uložila koncert do programu. Celý úkol zvládla za **14 sekund** bez jediného zádrhelu.*  
-> *Ve druhém scénáři **Jakub** na desktopu v rozlišení Full HD sestavoval sobotní itinerář. Přidal dvě akce ve stejný čas v 15:30. Aplikace okamžitě vyvěsila varovný pruh s textem: 'Upozornění na konflikt: Překryv 75 minut!'. Po odebrání jedné akce varování zmizelo. Data spolehlivě přetrvávají v localStorage i po restartu prohlížeče.*  
+> *V prvním scénáři **Tereza** na iPhonu 13 v emulaci 390 pixelů otevřela program, klepla na Čtvrtek a zadala 'indie'. Výsledky se bleskově zúžily. Tereza otevřela detail kapely Lunar Tides (vystoupení v 10:00 na Main Stage) a uložila koncert do programu. Celý úkol zvládla za **14 sekund** bez jediného zádrhelu.*  
+> *Ve druhém scénáři **Jakub** na desktopu v rozlišení Full HD sestavoval sobotní itinerář. Přidal dvě vystoupení ve stejný čas v 10:00 (Rain Motel a Lunar District). Aplikace okamžitě vyvěsila varovný pruh s textem: 'Upozornění na konflikt: Překryv 75 minut!'. Po odebrání jedné akce varování zmizelo. Data spolehlivě přetrvávají v localStorage i po restartu prohlížeče.*  
 > *Ve třetím scénáři **Martin** na tabletu iPad prověřoval bezbariérovost sálu Forum Hall. Na kartě scény okamžitě našel potvrzení nájezdové rampy a bezbariérových toalet a v sekci praktických informací v interaktivním FAQ ověřil vyhrazené bezplatné parkoviště P1 a nízkopodlažní spoje MHD.*  
 > *Všechny tři scénáře skončily stoprocentním úspěchem.“*
 

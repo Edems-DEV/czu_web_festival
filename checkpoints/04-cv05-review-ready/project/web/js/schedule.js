@@ -53,8 +53,12 @@ function initSchedule(data) {
   // Event listenery pro dny
   dayFilters.forEach(chip => {
     chip.addEventListener('click', () => {
-      dayFilters.forEach(c => c.classList.remove('active'));
+      dayFilters.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-pressed', 'false');
+      });
       chip.classList.add('active');
+      chip.setAttribute('aria-pressed', 'true');
       state.selectedDay = chip.dataset.day;
       render();
     });
@@ -63,8 +67,12 @@ function initSchedule(data) {
   // Event listenery pro scény
   venueFilters.forEach(chip => {
     chip.addEventListener('click', () => {
-      venueFilters.forEach(c => c.classList.remove('active'));
+      venueFilters.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-pressed', 'false');
+      });
       chip.classList.add('active');
+      chip.setAttribute('aria-pressed', 'true');
       state.selectedVenue = chip.dataset.venue;
       render();
     });
@@ -73,8 +81,12 @@ function initSchedule(data) {
   // Event listenery pro typy akcí
   typeFilters.forEach(chip => {
     chip.addEventListener('click', () => {
-      typeFilters.forEach(c => c.classList.remove('active'));
+      typeFilters.forEach(c => {
+        c.classList.remove('active');
+        c.setAttribute('aria-pressed', 'false');
+      });
       chip.classList.add('active');
+      chip.setAttribute('aria-pressed', 'true');
       state.selectedType = chip.dataset.type;
       render();
     });
@@ -94,9 +106,11 @@ function initSchedule(data) {
       state.onlyFavorites = !state.onlyFavorites;
       if (state.onlyFavorites) {
         viewToggleBtn.classList.add('active');
+        viewToggleBtn.setAttribute('aria-pressed', 'true');
         viewToggleBtn.textContent = 'Zobrazit celý program';
       } else {
         viewToggleBtn.classList.remove('active');
+        viewToggleBtn.setAttribute('aria-pressed', 'false');
         viewToggleBtn.textContent = '★ Zobrazit pouze můj program';
       }
       render();
@@ -150,12 +164,17 @@ function initSchedule(data) {
     // Kontrola kolizí v oblíbených položkách
     const userFavoritesEvents = events.filter(e => favorites.includes(e.id));
     const conflicts = detectScheduleConflicts(userFavoritesEvents);
+    const conflictingEventIds = new Set();
+    conflicts.forEach(c => {
+      conflictingEventIds.add(c.eventA.id);
+      conflictingEventIds.add(c.eventB.id);
+    });
 
     if (conflictAlertBox) {
       if (conflicts.length > 0 && (state.onlyFavorites || userFavoritesEvents.length > 0)) {
         conflictAlertBox.style.display = 'block';
         conflictAlertBox.innerHTML = `
-          <strong>⚠️ Upozornění na časový překryv v Mém programu (${conflicts.length}):</strong><br>
+          <strong>⚠️ Upozornění na časový konflikt v Mém programu (${conflicts.length}):</strong><br>
           ${conflicts.map(c => `
             • <em>${c.eventA.title}</em> (${c.eventA.startTime}) a <em>${c.eventB.title}</em> (${c.eventB.startTime}) na scénách 
             ${venueMap.get(c.eventA.venueId)?.name} / ${venueMap.get(c.eventB.venueId)?.name} se překrývají o ${c.overlapMin} minut.
@@ -174,11 +193,42 @@ function initSchedule(data) {
 
     if (filtered.length === 0) {
       container.innerHTML = `
-        <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted); background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px dashed var(--border-subtle);">
+        <div id="empty-schedule-state" class="empty-state">
+          <span class="empty-icon" aria-hidden="true">🔍</span>
           <h3>Žádná vystoupení neodpovídají zadanému filtru</h3>
-          <p style="margin-top: 0.5rem;">Zkuste upravit vyhledávací dotaz nebo vybrat jiný den či scénu.</p>
+          <p>Zkuste upravit vyhledávací dotaz nebo vybrat jiný den či scénu.</p>
+          <button id="btn-reset-filters" class="btn btn-secondary" style="min-height: 44px; padding: 0.6rem 1.25rem;">
+            Resetovat všechny filtry
+          </button>
         </div>
       `;
+
+      const resetBtn = document.getElementById('btn-reset-filters');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          state.selectedDay = 'all';
+          state.selectedVenue = 'all';
+          state.selectedType = 'all';
+          state.searchQuery = '';
+          if (searchInput) searchInput.value = '';
+          dayFilters.forEach(c => {
+            const isAll = c.dataset.day === 'all';
+            c.classList.toggle('active', isAll);
+            c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+          });
+          venueFilters.forEach(c => {
+            const isAll = c.dataset.venue === 'all';
+            c.classList.toggle('active', isAll);
+            c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+          });
+          typeFilters.forEach(c => {
+            const isAll = c.dataset.type === 'all';
+            c.classList.toggle('active', isAll);
+            c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+          });
+          render();
+        });
+      }
       return;
     }
 
@@ -192,10 +242,16 @@ function initSchedule(data) {
     let html = '';
     let currentDayGroup = '';
 
+    // Zachování sémantické hierarchie nadpisů i při vyfiltrovaném jednom dni
+    if (state.selectedDay !== 'all') {
+      html += `<h3 style="margin: 1.5rem 0 1rem; color: var(--accent-cyan); font-size: 1.4rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">${daysMap[state.selectedDay] || state.selectedDay}</h3>`;
+    }
+
     filtered.forEach(item => {
       const perf = performerMap.get(item.performerId) || { name: 'Neznámý interpret', genre: 'Hudba' };
       const venue = venueMap.get(item.venueId) || { name: 'Neznámá scéna' };
       const isFav = favorites.includes(item.id);
+      const hasConflict = isFav && conflictingEventIds.has(item.id);
 
       if (item.day !== currentDayGroup && state.selectedDay === 'all') {
         currentDayGroup = item.day;
@@ -206,9 +262,9 @@ function initSchedule(data) {
       const typeLabel = item.type === 'concert' ? 'Koncert' : (item.type === 'talk' ? 'Talk' : 'Workshop');
 
       html += `
-        <article class="card" style="margin-bottom: 1rem; padding: 1.25rem; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <article class="card ${hasConflict ? 'card-conflict card-has-conflict' : ''}" style="margin-bottom: 1rem; padding: 1.25rem; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
           <div style="flex: 1; min-width: 260px;">
-            <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+            <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
               <time datetime="${item.day}T${item.startTime}" style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); background: var(--bg-surface-elevated); padding: 0.2rem 0.6rem; border-radius: var(--radius-sm);">
                 ${item.startTime}
               </time>
@@ -219,6 +275,7 @@ function initSchedule(data) {
               <a href="venues.html#${item.venueId}" style="font-size: 0.85rem; color: var(--text-secondary);">
                 📍 ${venue.name}
               </a>
+              ${hasConflict ? `<span class="conflict-badge">⚠️ Časová kolize v mém programu!</span>` : ''}
             </div>
 
             <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0.25rem;">
@@ -237,12 +294,13 @@ function initSchedule(data) {
             <button 
               class="btn btn-secondary btn-fav-toggle" 
               data-id="${item.id}"
+              aria-pressed="${isFav ? 'true' : 'false'}"
               aria-label="${isFav ? 'Odebrat z mého programu' : 'Přidat do mého programu'}"
-              style="padding: 0.5rem 0.9rem; font-size: 0.85rem; border-color: ${isFav ? 'var(--accent-amber)' : 'var(--border-subtle)'}; color: ${isFav ? 'var(--accent-amber)' : 'var(--text-secondary)'};"
+              style="padding: 0.5rem 0.9rem; font-size: 0.85rem; min-height: 44px; border-color: ${isFav ? 'var(--accent-amber)' : 'var(--border-subtle)'}; color: ${isFav ? 'var(--accent-amber)' : 'var(--text-secondary)'};"
             >
               ${isFav ? '★ V mém programu' : '☆ Přidat'}
             </button>
-            <a href="performer-detail.html?id=${item.performerId}" class="btn btn-secondary" style="padding: 0.5rem 0.9rem; font-size: 0.85rem;">
+            <a href="performer-detail.html?id=${item.performerId}" class="btn btn-secondary" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; min-height: 44px; display: inline-flex; align-items: center;">
               Detail →
             </a>
           </div>

@@ -52,7 +52,7 @@ Při průchodu klíčovými uživatelskými scénáři a heuristické evaluaci d
 - **Závažnost:** 🟢 Drobný
 - **Kategorie:** Uživatelský komfort
 - **Popis problému:** Na stránce scén chybí interaktivní posuvná mapa areálu Výstaviště.
-- **Doporučené řešení:** Integrovat externí mapový framework. *(Pozn.: Tým Aurora odmítl z důvodu striktního požadavku na 100% offline file:/// provoz).*
+- **Doporučené řešení:** Integrovat externí mapový framework (např. Leaflet.js nebo Google Maps Embed).
 
 ### Nález 7: Absence přímého navigačního odkazu na scénu z detailu interpreta
 - **Závažnost:** 🟢 Drobný
@@ -64,7 +64,7 @@ Při průchodu klíčovými uživatelskými scénáři a heuristické evaluaci d
 - **Závažnost:** 🟡 Významný
 - **Kategorie:** Pokročilé funkce
 - **Popis problému:** Ukládání oblíbených v `localStorage` neumožňuje synchronizaci mezi mobilem a počítačem.
-- **Doporučené řešení:** Vytvořit REST API backend. *(Pozn.: Tým Aurora odmítl z důvodu zákazu backendu a Node.js v zadání).*
+- **Doporučené řešení:** Vytvořit REST API backend pro synchronizaci mezi zařízeními.
 
 ### Nález 9: Chybějící deklarace pro uživatele se zapnutou předvolbou snížení pohybu
 - **Závažnost:** 🟢 Drobný

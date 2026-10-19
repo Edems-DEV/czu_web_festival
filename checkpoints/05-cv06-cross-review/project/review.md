@@ -57,6 +57,14 @@ Všechny identifikované problémy byly kategorizovány do tří normativních �
 | 🟡 **Významný (Major)** | Způsobuje vysokou frustraci, kognitivní přetížení, porušení WCAG 2.0 AA (např. nedostatečný kontrast, neovladatelnost z klávesnice), ale uživatel je schopen úkol dokončit složitou oklikou. | Velmi doporučeno opravit v zájmu obhajoby projektu. |
 | 🟢 **Drobný (Minor)** | Kosmetická, typografická nebo drobná rozvrhová nepřesnost, mírný rozptyl v odsazení prvků, neoptimální mikrointerakce, která nebrání plynulému použití. | Vhodné upravit v rámci finálního leštění UI. |
 
+### 2.4 Metodika využití AI a lidská verifikace nálezů
+V souladu se sylabem předmětu WEB byl proces oponentury podpořen asistencí generativní AI za striktního dodržení lidské odpovědnosti (Human-in-the-loop):
+1. **K čemu bylo AI použito:** K sestavení inspekčního dotazníku pro 10 heuristik Jakoba Nielsena, k formátování markdown matice a k návrhu checklistu pro testování normy WCAG 2.0 AA.
+2. **Jak byly výstupy AI ověřeny:** Každý nález byl osobně a manuálně otestován členy studentského týmu v reálném prohlížeči Google Chrome a Mozilla Firefox na souborovém protokolu `file:///`, na emulátoru mobilních zařízení (iPhone 13, Pixel 6) a ověřen exaktním kalkulátorem kontrastu WebAIM. Žádný výstup AI nebyl převzat bez přímého důkazu ve zdrojovém kódu či DOM stromu.
+3. **Co bylo přijato:** Strukturovaný formát popisu nálezů (Závažnost, Dotčená heuristika, Metoda odhalení, Popis, Reprodukce, Dopad, Doporučení) a systematické mapování na Nielsenovy principy.
+4. **Co bylo upraveno nebo odmítnuto:** AI halucinovalo absenci deklarace `<!DOCTYPE html>`, což byla nepravda (doctype byl na řádku 1). Dále AI navrhovalo vágní subjektivní soudy typu „zvolit modernější font“, což tým okamžitě vyřadil jako nepřípustný a neobjektivní komentář.
+5. **Zjištěné limity a chyby AI:** AI nedokáže spolehlivě simulovat reálné offline podmínky běhu protokolu `file:///` bez webového serveru a má tendenci generovat falešně pozitivní zprávy o syntaxi bez porozumění kontextu klientské aplikace.
+
 ---
 
 ## 3. Pozitivní nálezy a silné stránky hodnoceného projektu
@@ -208,8 +216,15 @@ Před uvedením nedostatků vyzdvihujeme kvalitní aspekty práce oponentního t
 #### Nález REV-07: Nekonzistentní formátování časových údajů napříč podstránkami
 - **Závažnost:** 🟢 **Drobný**
 - **Dotčená heuristika:** **H4 (Konzistence a standardy)**
+- **Metoda odhalení:** Vizuální křížová kontrola formátování v šablonách `program.html` a `performer-detail.html`
 - **Popis problému:**
   Na stránce `program.html` jsou časy uváděny v evropském 24hodinovém formátu (např. `14:30 – 15:45`), zatímco na stránce `performer-detail.html` jsou u vystoupení použity anglosaské formáty `2:30 PM`.
+- **Kroky k reprodukci:**
+  1. Otevřít `program.html` a zkontrolovat čas vystoupení kapely (např. 14:30).
+  2. Rozkliknout detail dané kapely na `performer-detail.html`.
+  3. V poli harmonogramu interpreta je uveden čas `2:30 PM`.
+- **Dopad na uživatele:**
+  Mírná kognitivní diskrepance a nejednotnost v lokalizaci českého festivalového rozhraní.
 - **Doporučené řešení:**
   Sjednotit veškeré časové údaje v české jazykové mutaci na jednotný standard `HH:MM` (24h formát).
 
@@ -218,8 +233,15 @@ Před uvedením nedostatků vyzdvihujeme kvalitní aspekty práce oponentního t
 #### Nález REV-08: Absence podpory snížení pohybu (`prefers-reduced-motion`) u animovaného hero podkresu
 - **Závažnost:** 🟢 **Drobný**
 - **Dotčená heuristika:** **H8 (Estetický design)**, **WCAG 2.0 – Kritérium 2.3.3**
+- **Metoda odhalení:** Audit přístupnosti v emulaci `@media (prefers-reduced-motion: reduce)` v Chrome DevTools Rendering
 - **Popis problému:**
   Na úvodní stránce běží plynulý CSS barevný gradient v pozadí hero sekce (`animation: gradientShift 8s infinite ease`). Kaskádový styl neobsahuje media query `@media (prefers-reduced-motion: reduce)`, které by tuto animaci zastavilo pro uživatele s vestibulárními poruchami.
+- **Kroky k reprodukci:**
+  1. V Chrome DevTools otevřít panel Rendering a zapnout volbu *Emulate CSS media feature prefers-reduced-motion: reduce*.
+  2. Otevřít `index.html`.
+  3. Hero podkres stále kontinuálně animuje gradient.
+- **Dopad na uživatele:**
+  U citlivých osob s vestibulárním syndromem či kinetózou může nekonečný pohyb na pozadí vyvolávat nevolnost či závratě.
 - **Doporučené řešení:**
   Přidat do souboru stylů standardní pravidlo potlačující CSS animace a přechody při aktivní volbě redukce pohybu v operačním systému.
 
@@ -228,8 +250,15 @@ Před uvedením nedostatků vyzdvihujeme kvalitní aspekty práce oponentního t
 #### Nález REV-09: Chybějící drobečková navigace (breadcrumbs) na detailních podstránkách
 - **Závažnost:** 🟢 **Drobný**
 - **Dotčená heuristika:** **H6 (Rozpoznání namísto vzpomínání)**
+- **Metoda odhalení:** Inspekce informační architektury a orientačních prvků v DOMu detailních stránek
 - **Popis problému:**
   Při příchodu na profil interpreta `performer-detail.html` chybí drobečková lišta indikující cestu *Úvod > Účinkující > Název kapely*. Uživatel se musí orientovat pouze pomocí obecné globální hlavičky.
+- **Kroky k reprodukci:**
+  1. Z vyhledávání nebo programu přejít přímo na URL `performer-detail.html?id=p1`.
+  2. Podívat se na záhlaví stránky pod primární navigací.
+  3. Chybí drobečková cesta usnadňující návrat o úroveň výše bez použití tlačítka Zpět v prohlížeči.
+- **Dopad na uživatele:**
+  Horší prostorová orientace v hierarchii webu při přímém příchodu z externího odkazu nebo výsledků vyhledávání.
 - **Doporučené řešení:**
   Doplnit sémantický prvek `<nav class="breadcrumb" aria-label="Drobečková navigace">` pod globální hlavičku na všech podstránkách.
 

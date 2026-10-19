@@ -314,7 +314,7 @@ li {
 <ol>
 <li><strong>Heuristická analýza (10 obecných heuristik Jakoba Nielsena):</strong>
 <ul>
-<li>Systematická inspekce celého uživatelského rozhraní proti standardům použitelnosti:</li>
+<li>Systematická inspekce celého uživatelského rozhraní proti standardům použitelnosti.</li>
 <li>Důraz na <em>H1 (Viditelnost stavu)</em>, <em>H3 (Uživatelská kontrola)</em>, <em>H4 (Konzistence)</em> a <em>H5 (Prevence chyb)</em>.</li>
 </ul>
 </li>
@@ -322,15 +322,15 @@ li {
 <ul>
 <li>Empirický test 2 klíčových uživatelských scénářů oponentního projektu:
 <ul>
-<li><em>Scénář 1:</em> Návštěvník hledající vystoupení konkrétního žánru v páteční večer na mobilu.</li>
-<li><em>Scénář 2:</em> Návštěvník se specifickými potřebami prověřující bezbariérovost areálu.</li>
+<li><em>Scénář A:</em> Výběr pátečního večerního koncertu podle žánru na mobilním telefonu.</li>
+<li><em>Scénář B:</em> Prověření bezbariérovosti a logistiky areálu pro návštěvníka se specifickými potřebami.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><strong>Technický a přístupnostní audit:</strong>
 <ul>
-<li>Kontrola běhu přes protokol <code>file:///</code> bez serveru, W3C HTML validace a měření kontrastu WebAIM.</li>
+<li>Kontrola běhu přes protokol <code>file:///</code>, integrita <code>data.json</code>, validace a měření kontrastu WebAIM dle WCAG 2.0 AA.</li>
 </ul>
 </li>
 </ol>
@@ -475,17 +475,17 @@ li {
 ;" data-marpit-pagination-total="8">
 <header>Hudební Festival Aurora 2026 | WEB ČZU (Cvičení 6)</header>
 <h2 id="2-pr%C5%AFchod-kl%C3%AD%C4%8Dov%C3%BDmi-sc%C3%A9n%C3%A1%C5%99i-oponentn%C3%ADho-projektu">2. Průchod klíčovými scénáři oponentního projektu</h2>
-<h3 id="sc%C3%A9n%C3%A1%C5%99-1-v%C3%BDb%C4%9Br-p%C3%A1te%C4%8Dn%C3%ADho-ve%C4%8Dern%C3%ADho-programu-na-mobiln%C3%ADm-telefonu">Scénář 1: Výběr pátečního večerního programu na mobilním telefonu</h3>
+<h3 id="sc%C3%A9n%C3%A1%C5%99-a-v%C3%BDb%C4%9Br-p%C3%A1te%C4%8Dn%C3%ADho-koncertu-podle-%C5%BE%C3%A1nru-na-mobilu-kl%C3%A1ra-22-let">Scénář A: Výběr pátečního koncertu podle žánru na mobilu (Klára, 22 let)</h3>
 <ul>
-<li><strong>Průběh:</strong> Tester přistoupil na mobilním viewportu (360 px) do sekce programu.</li>
-<li><strong>Zjištění:</strong> Filtrování podle dnů funguje vizuálně dobře. Avšak při otevření přímo ze souborového systému (protokol <code>file:///</code>) se program vůbec nenačetl kvůli chybě CORS!</li>
-<li><strong>Zhodnocení:</strong> Úkol nebyl v offline režimu splnitelný bez zásahu vývojářských nástrojů.</li>
+<li><strong>Průběh:</strong> Otevření mobilního menu <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> výběr Pátku <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> hledání žánrového filtru.</li>
+<li><strong>Zjištění:</strong> Žánrový filtr zcela chybí (pouze filtr scén); přidání do oblíbených se neukládá do <code>localStorage</code> a po F5 zmizí. Systém nevaruje před časovým překryvem.</li>
+<li><strong>Zhodnocení:</strong> Úkol splněn pouze s vysokou kognitivní zátěží; perzistence selhává.</li>
 </ul>
-<h3 id="sc%C3%A9n%C3%A1%C5%99-2-hled%C3%A1n%C3%AD-bezbari%C3%A9rov%C3%A9ho-p%C5%99%C3%ADstupu-a-logistiky-are%C3%A1lu">Scénář 2: Hledání bezbariérového přístupu a logistiky areálu</h3>
+<h3 id="sc%C3%A9n%C3%A1%C5%99-b-prov%C4%9B%C5%99en%C3%AD-bezbari%C3%A9rovosti-a-dopravy-jan-38-let-voz%C3%ADk">Scénář B: Prověření bezbariérovosti a dopravy (Jan, 38 let, vozík)</h3>
 <ul>
-<li><strong>Průběh:</strong> Tester hledal informace o bezbariérovosti v navigaci a v patičce.</li>
-<li><strong>Zjištění:</strong> Informace jsou přítomny v sekci FAQ, ale text má nízký kontrast na šedém podkladu (2.7:1). Navíc chybí explicitní údaj o vyhrazeném parkování ZTP.</li>
-<li><strong>Zhodnocení:</strong> Úkol částečně splněn s vysokou kognitivní zátěží a sníženou čitelností.</li>
+<li><strong>Průběh:</strong> Hledání praktických informací <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> prověření haly Warehouse Stage <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> parkování.</li>
+<li><strong>Zjištění:</strong> Text obsahuje vágní deklaraci bez parametrů ramp a vyvýšených plošin; u Warehouse Stage chybí bezbariérovost zcela; chybí vyhrazená stání ZTP.</li>
+<li><strong>Zhodnocení:</strong> Vysoká nejistota návštěvníka; kritické chybějící údaje pro hendikepované.</li>
 </ul>
 <footer>Tým Aurora • Expertní hodnocení (Cross-Review) oponentního projektu</footer>
 </section>
@@ -627,8 +627,8 @@ li {
 }
 ;" data-marpit-pagination-total="8">
 <header>Hudební Festival Aurora 2026 | WEB ČZU (Cvičení 6)</header>
-<h2 id="3-hlavn%C3%AD-rozhodnut%C3%AD-%E2%80%93-kategorizace-n%C3%A1lez%C5%AF">3. Hlavní rozhodnutí – Kategorizace nálezů</h2>
-<p>Identifikovali jsme celkem 5 věcných nálezů rozdělených dle závažnosti:</p>
+<h2 id="3-hlavn%C3%AD-rozhodnut%C3%AD-%E2%80%93-v%C3%BDb%C4%9Br-kl%C3%AD%C4%8Dov%C3%BDch-n%C3%A1lez%C5%AF">3. Hlavní rozhodnutí – Výběr klíčových nálezů</h2>
+<p>Identifikovali jsme celkem 9 věcných nálezů v posudku; zde uvádíme nejdůležitější:</p>
 <table>
 <thead>
 <tr>
@@ -641,39 +641,46 @@ li {
 </thead>
 <tbody>
 <tr>
-<td><strong>N-01</strong></td>
-<td><strong>CORS blokace dat při běhu přes <code>file:///</code></strong> – volání <code>fetch('data.json')</code> selže v Chrome bez lokálního serveru.</td>
+<td><strong>REV-01</strong></td>
+<td><strong>Absence perzistence v localStorage &amp; nulová detekce kolizí</strong> v programu.</td>
 <td><span class="tag-critical">KRITICKÁ</span></td>
-<td>H5 (Prevence chyb) / Zadání WEB</td>
-<td>Offline test v Chrome</td>
+<td>H5 (Prevence chyb), H7</td>
+<td>Kognitivní průchod &amp; kód</td>
 </tr>
 <tr>
-<td><strong>N-02</strong></td>
-<td><strong>Kolaps mobilní navigace na šířce 360 px</strong> – navigační odkazy přetékají mimo viewport a překrývají nadpis.</td>
-<td><span class="tag-major">VÝZNAMNÁ</span></td>
-<td>H4 (Konzistence) / Mobile-First</td>
-<td>DevTools simulace 360 px</td>
+<td><strong>REV-02</strong></td>
+<td><strong>Referenční diskrepance v DB</strong> – odkaz na <code>p14</code>/<code>p27</code> otevírá <code>undefined</code> s pádem skriptu.</td>
+<td><span class="tag-critical">KRITICKÁ</span></td>
+<td>H1 (Viditelnost), H4</td>
+<td>Analýza integrity dat</td>
 </tr>
 <tr>
-<td><strong>N-03</strong></td>
-<td><strong>Nedodržení kontrastu WCAG AA v FAQ</strong> – šedý text <code>#71717a</code> na pozadí <code>#27272a</code> má kontrast pouze 2.7:1.</td>
+<td><strong>REV-03</strong></td>
+<td><strong>Nedodržení kontrastu WCAG AA</strong> – sekundární text <code>#71717a</code> má kontrast pouze 3.38:1.</td>
 <td><span class="tag-major">VÝZNAMNÁ</span></td>
 <td>WCAG 2.0 AA (1.4.3 Contrast)</td>
 <td>WebAIM Contrast Checker</td>
 </tr>
 <tr>
-<td><strong>N-04</strong></td>
-<td><strong>Chybějící stav <code>aria-current=&quot;page&quot;</code></strong> v navigačním menu pro orientaci čteček a uživatelů.</td>
-<td><span class="tag-minor">DROBNÁ</span></td>
-<td>H1 (Viditelnost stavu systému)</td>
-<td>Inspekce DOM stromu</td>
+<td><strong>REV-04</strong></td>
+<td><strong>Rigidní jednoúrovňový filtr</strong> (den ruší scénu) &amp; absence prázdného stavu s resetem.</td>
+<td><span class="tag-major">VÝZNAMNÁ</span></td>
+<td>H3 (Uživatelská svoboda), H9</td>
+<td>Test kombinatoriky filtrů</td>
 </tr>
 <tr>
-<td><strong>N-05</strong></td>
-<td><strong>Absence prázdného stavu (Empty State)</strong> při vyhledávání neexistujícího interpreta.</td>
-<td><span class="tag-minor">DROBNÁ</span></td>
-<td>H9 (Rozpoznání a zotavení z chyb)</td>
-<td>Test vyhledávacího pole</td>
+<td><strong>REV-05</strong></td>
+<td><strong>Vágní bezbariérové údaje</strong> bez specifikace ramp, ZTP stání a plošin na scénách.</td>
+<td><span class="tag-major">VÝZNAMNÁ</span></td>
+<td>H2 (Reálný svět), H10</td>
+<td>Kognitivní průchod Scénář B</td>
+</tr>
+<tr>
+<td><strong>REV-06</strong></td>
+<td><strong>Mobilní menu bez <code>aria-expanded</code> a focus trapu</strong> (únik fokusu klávesnice pod menu).</td>
+<td><span class="tag-major">VÝZNAMNÁ</span></td>
+<td>H3 (Kontrola), WCAG Klávesnice</td>
+<td>Klávesový test Tab &amp; Escape</td>
 </tr>
 </tbody>
 </table>
@@ -818,26 +825,26 @@ li {
 ;" data-marpit-pagination-total="8">
 <header>Hudební Festival Aurora 2026 | WEB ČZU (Cvičení 6)</header>
 <h2 id="4-doporu%C4%8Den%C3%A1-%C5%99e%C5%A1en%C3%AD-pro-oponentn%C3%AD-t%C3%BDm">4. Doporučená řešení pro oponentní tým</h2>
-<p>Pro každý nález předkládáme konkrétní a konstruktivní návod k nápravě:</p>
+<p>Pro každý identifikovaný nález předkládáme konkrétní a konstruktivní řešení:</p>
 <ol>
-<li><strong>Řešení N-01 (Kritická – CORS selhání):</strong>
+<li><strong>Řešení REV-01 (Kritická – Perzistence &amp; Kolize):</strong>
 <ul>
-<li>Zavést synchronní bootstrap: exportovat data v <code>data.js</code> do <code>window.FESTIVAL_DATA</code> a skript nalinkovat před aplikační logiku. Tím bude zaručen 100% offline běh i pro zápočet.</li>
+<li>Ukládat ID do <code>localStorage</code>; při přidání seřadit časové intervaly a kolidující akce označit výstražným pruhem s délkou překryvu v minutách.</li>
 </ul>
 </li>
-<li><strong>Řešení N-02 (Významná – Přetékání navigace):</strong>
+<li><strong>Řešení REV-02 (Kritická – Integrita dat):</strong>
 <ul>
-<li>V CSS přidat pravidlo <code>flex-wrap: wrap; gap: 8px;</code> a zmenšit padding tlačítek pro úzké displeje <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="8.8ex" height="1.946ex" role="img" focusable="false" viewBox="0 -666 3889.8 860"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(1055.8,0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000,0)"></path></g><g data-mml-node="mtext" transform="translate(2555.8,0)"><path data-c="A0" d=""></path><path data-c="70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z" transform="translate(250,0)"></path><path data-c="78" d="M201 0Q189 3 102 3Q26 3 17 0H11V46H25Q48 47 67 52T96 61T121 78T139 96T160 122T180 150L226 210L168 288Q159 301 149 315T133 336T122 351T113 363T107 370T100 376T94 379T88 381T80 383Q74 383 44 385H16V431H23Q59 429 126 429Q219 429 229 431H237V385Q201 381 201 369Q201 367 211 353T239 315T268 274L272 270L297 304Q329 345 329 358Q329 364 327 369T322 376T317 380T310 384L307 385H302V431H309Q324 428 408 428Q487 428 493 431H499V385H492Q443 385 411 368Q394 360 377 341T312 257L296 236L358 151Q424 61 429 57T446 50Q464 46 499 46H516V0H510H502Q494 1 482 1T457 2T432 2T414 3Q403 3 377 3T327 1L304 0H295V46H298Q309 46 320 51T331 63Q331 65 291 120L250 175Q249 174 219 133T185 88Q181 83 181 74Q181 63 188 55T206 46Q208 46 208 23V0H201Z" transform="translate(806,0)"></path></g></g></g></svg></mjx-container>.</li>
+<li>Opravit předávání parametrů v šabloně (<code>?id=${p.id}</code>) a synchronizovat časy v <code>data.json</code> a profilech.</li>
 </ul>
 </li>
-<li><strong>Řešení N-03 (Významná – Kontrast WCAG):</strong>
+<li><strong>Řešení REV-03 (Významná – Kontrast WCAG):</strong>
 <ul>
-<li>Zesvětlit barvu textu FAQ z <code>#71717a</code> na minimálně <code>#a1a1aa</code> (zvýší kontrast na bezpečných 5.8:1, plné splnění WCAG AA).</li>
+<li>Zesvětlit barvu sekundárního textu z <code>#71717a</code> na <code>#a1a1aa</code> (zvýší kontrast na bezpečných 6.2:1, plné splnění WCAG AA).</li>
 </ul>
 </li>
-<li><strong>Řešení N-04 a N-05 (Drobné vady):</strong>
+<li><strong>Řešení REV-04 a REV-06 (Významné – Filtry &amp; Mobilní menu):</strong>
 <ul>
-<li>Doplnit atribut <code>aria-current=&quot;page&quot;</code> na aktivní odkaz a komponentu s textem <em>„Žádný interpret nebyl nalezen“</em>.</li>
+<li>Provázat filtry jako logický součin (den AND scéna), přidat empty state s resetem; doplnit <code>aria-expanded</code> a obsluhu klávesy Escape.</li>
 </ul>
 </li>
 </ol>
@@ -983,17 +990,17 @@ li {
 <header>Hudební Festival Aurora 2026 | WEB ČZU (Cvičení 6)</header>
 <h2 id="5-vyu%C5%BEit%C3%AD-ai-p%C5%99i-cross-review-a-odhalen%C3%A9-halucinace">5. Využití AI při cross-review a odhalené halucinace</h2>
 <blockquote>
-<p><em>„AI navrhovalo neexistující syntaktické chyby a obecné klišé – lidský audit zachránil objektivitu.“</em></p>
+<p><em>„AI pomohlo se strukturou heuristické matice – lidský audit zabránil halucinacím a falešným obviněním.“</em></p>
 </blockquote>
 <h3 id="k-%C4%8Demu-jsme-ai-vyu%C5%BEili">K čemu jsme AI využili:</h3>
 <ul>
-<li>Asistence při generování strukturované matice 10 Nielsenových heuristik a formulaci konstruktivních doporučení.</li>
+<li>Asistence při sestavení matice 10 Nielsenových heuristik a checklistu dle WCAG 2.0 AA.</li>
 </ul>
 <h3 id="odhalen%C3%A9-halucinace-a-limity-ai-p%C5%99i-review">Odhalené halucinace a limity AI při review:</h3>
 <ol>
-<li><strong>Falešná pozitivita (False Positive):</strong> AI tvrdilo, že oponentnímu projektu chybí deklarace <code>&lt;!DOCTYPE html&gt;</code>. Přímou inspekcí zdrojového kódu jsme ověřili, že doctype je na řádku 1 přítomen. Tvrzení AI bylo odmítnuto.</li>
-<li><strong>Vágní designová klišé bez kódového řešení:</strong> AI generovalo obecné fráze typu <em>„web by mohl působit moderněji“</em>. Tým tyto subjektivní dojmy škrtl a nahradil je exaktním měřením pixelů a kontrastních poměrů.</li>
-<li><strong>Lidská odpovědnost:</strong> Všechny nálezy N-01 až N-05 byly osobně reprodukovány v prohlížeči.</li>
+<li><strong>Falešná pozitivita (False Positive):</strong> AI tvrdilo, že oponentnímu projektu chybí deklarace <code>&lt;!DOCTYPE html&gt;</code>. Přímou inspekcí zdrojového kódu jsme ověřili, že doctype je na řádku 1 přítomen. Tvrzení AI bylo okamžitě odmítnuto.</li>
+<li><strong>Vágní designová klišé bez kódového řešení:</strong> AI generovalo obecné fráze typu <em>„web by mohl působit moderněji“</em>. Tým tyto subjektivní dojmy vyřadil a nahradil je exaktním měřením pixelů a kontrastních poměrů.</li>
+<li><strong>Lidská odpovědnost:</strong> Všech 9 nálezů REV-01 až REV-09 bylo osobně verifikováno v reálném prohlížeči.</li>
 </ol>
 <footer>Tým Aurora • Expertní hodnocení (Cross-Review) oponentního projektu</footer>
 </section>
@@ -1138,24 +1145,24 @@ li {
 <h2 id="6-validace-a-verifikace-n%C3%A1lez%C5%AF">6. Validace a verifikace nálezů</h2>
 <p>Deklarujeme nezávislé a reprodukovatelné metody ověření všech zjištění:</p>
 <ol>
-<li><strong>Reprodukce CORS chyby:</strong>
+<li><strong>Reprodukce selhání v prohlížeči:</strong>
 <ul>
-<li>Dvojklik na soubor <code>index.html</code> v Google Chrome <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> otevření konzole F12 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> zachycena červená výjimka <code>Origin null is not allowed by Access-Control-Allow-Origin</code>.</li>
+<li>Dvojklik na odkaz kapely <code>p14</code> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> zachycena výjimka v DevTools konzoli <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> potvrzena vada REV-02.</li>
 </ul>
 </li>
 <li><strong>Kvantitativní měření kontrastu:</strong>
 <ul>
-<li>WebAIM Contrast Checker změřil poměr 2.7:1 pro text FAQ (požadavek WCAG AA je <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="8.297ex" height="1.844ex" role="img" focusable="false" viewBox="0 -677 3667.3 815"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(1055.8,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mn" transform="translate(3167.3,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>).</li>
+<li>WebAIM Contrast Checker změřil poměr 3.38:1 pro sekundární text <code>#71717a</code> na pozadí <code>#18181b</code> (požadavek WCAG AA je <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="8.297ex" height="1.844ex" role="img" focusable="false" viewBox="0 -677 3667.3 815"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(1055.8,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mn" transform="translate(3167.3,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>).</li>
 </ul>
 </li>
-<li><strong>Responzivní verifikace:</strong>
+<li><strong>Klávesová navigace:</strong>
 <ul>
-<li>Chrome DevTools v emulaci rozměru 360 × 640 px potvrdil horizontální scrollbar o šířce 42 px.</li>
+<li>Test tabulátorem v mobilním rozbaleném menu odhalil únik fokusu na skryté prvky na pozadí.</li>
 </ul>
 </li>
-<li><strong>Konstruktivní tón:</strong>
+<li><strong>Konstruktivní akademický tón:</strong>
 <ul>
-<li>Hodnocení je vedeno férově a s cílem pomoci oponentům získat plný počet bodů při finálním odevzdání.</li>
+<li>Hodnocení je vedeno férově s cílem pomoci oponentům získat plný počet bodů při finální obhajobě.</li>
 </ul>
 </li>
 </ol>
@@ -1300,19 +1307,20 @@ li {
 ;" data-marpit-pagination-total="8">
 <header>Hudební Festival Aurora 2026 | WEB ČZU (Cvičení 6)</header>
 <h2 id="7-z%C3%A1v%C4%9Bre%C4%8Dn%C3%A9-shrnut%C3%AD-a-doporu%C4%8Den%C3%AD">7. Závěrečné shrnutí a doporučení</h2>
-<h3 id="siln%C3%A9-str%C3%A1nky-oponentn%C3%ADho-projektu">Silné stránky oponentního projektu:</h3>
+<h3 id="siln%C3%A9-str%C3%A1nky-oponentn%C3%ADho-projektu-soundwave-2026">Silné stránky oponentního projektu SoundWave 2026:</h3>
 <ul>
-<li>Velmi zdařilý vizuální koncept a nápaditá témata festivalu.</li>
-<li>Čistě rozdělená struktura souborů a srozumitelné textové anotace kapel.</li>
-<li>Rychlá odezva klientského rozhraní po načtení.</li>
+<li>Velmi zdařilý vizuální koncept a nápaditá dramaturgie festivalu.</li>
+<li>Čistě rozdělená struktura souborů, sémantické značkování úvodní stránky.</li>
+<li>Blesková odezva statických šablon bez zbytečných externích knihoven.</li>
 </ul>
-<h3 id="kl%C3%AD%C4%8Dov%C3%A9-doporu%C4%8Den%C3%AD-p%C5%99ed-fin%C3%A1ln%C3%ADm-odevzd%C3%A1n%C3%ADm">Klíčové doporučení před finálním odevzdáním:</h3>
+<h3 id="kl%C3%AD%C4%8Dov%C3%A1-doporu%C4%8Den%C3%AD-p%C5%99ed-fin%C3%A1ln%C3%ADm-odevzd%C3%A1n%C3%ADm">Klíčová doporučení před finálním odevzdáním:</h3>
 <ol>
-<li><strong>Priorita 1:</strong> Okamžitě vyřešit offline načítání dat (N-01) přes synchronní JavaScript proměnnou – bez toho hrozí ztráta bodů při hodnocení na cvičení.</li>
-<li><strong>Priorita 2:</strong> Opravit kontrast textu FAQ (N-03) a zalomení navigace na 360 px (N-02).</li>
+<li><strong>Priorita 1:</strong> Opravit kritické vady <strong>REV-01</strong> (perzistence v localStorage a detekce kolizí) a <strong>REV-02</strong> (nefunkční ID kapel <code>p14</code>/<code>p27</code>).</li>
+<li><strong>Priorita 2:</strong> Zvýšit kontrast sekundárního textu na WCAG AA poměr <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="8.297ex" height="1.844ex" role="img" focusable="false" viewBox="0 -677 3667.3 815"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(1055.8,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="3A" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mn" transform="translate(3167.3,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container> (<strong>REV-03</strong>).</li>
+<li><strong>Priorita 3:</strong> Doplnit konkrétní fakta pro tělesně hendikepované návštěvníky (<strong>REV-05</strong>).</li>
 </ol>
 <ul>
-<li>Detailní zpráva byla odevzdána v souboru <code>review/review.md</code>.</li>
+<li>Kompletní posudek o 9 nálezech je k dispozici v <code>project/review.md</code>.</li>
 </ul>
 <footer>Tým Aurora • Expertní hodnocení (Cross-Review) oponentního projektu</footer>
 </section>

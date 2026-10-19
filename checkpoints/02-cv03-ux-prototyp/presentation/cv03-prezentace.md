@@ -102,14 +102,14 @@ style: |
 
 ## 3. Průchod klíčovými scénáři v prototypu
 
-### Scénář 1: Tereza (24 let) – Rychlý večerní výběr na mobilu
-1. Otevření programu na smartphonu (390 px) $\to$ klepnutí na čip **„Pátek 21. 8.“**.
-2. Zadání *„indie“* do live vyhledávače $\to$ seznam se zúží na 8 koncertů během 0,1 s.
-3. Proklik na detail *Lunar Tides* (`performer-detail.html?id=p1`) a uložení do programu.
+### Scénář 1: Tereza (24 let) – Rychlý výběr programu na mobilu
+1. Otevření programu na smartphonu (390 px) $\to$ klepnutí na čip **„Čtvrtek 20. 8.“**.
+2. Zadání *„indie“* do live vyhledávače $\to$ seznam se okamžitě zúží na relevantní vystoupení.
+3. Proklik na detail *Lunar Tides* (`performer-detail.html?id=p1`) a uložení do programu (10:00).
 4. **Čas průchodu:** **14 sekund**, nulové horizontální přetékání, všechny prvky v dosahu palce.
 
 ### Scénář 2: Jakub (29 let) – Sestavení harmonogramu a řešení kolize
-1. V `program.html` vybrána sobota $\to$ přidán klubový set i workshop ve shodný čas (15:30).
+1. V `program.html` vybrána sobota $\to$ přidán koncert kapely *Rain Motel* (10:00) i *Lunar District* (10:00).
 2. Aplikace okamžitě vyvěsí varovný banner: *„Upozornění na konflikt: Překryv 75 minut!“*.
 3. Přepnutí na *„Pouze můj program“*, odebrání jedné akce $\to$ varování okamžitě mizí.
 4. Data zůstávají bezpečně uložena v prohlížeči i po restartu zařízení.

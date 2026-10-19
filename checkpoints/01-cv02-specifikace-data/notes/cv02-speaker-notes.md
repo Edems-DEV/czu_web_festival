@@ -41,8 +41,8 @@ Doporučený čas řeči: **3:45 – 4:15 min** (ponechává bezpečnou rezervu 
 > *„Web je navržen jako sémantická vícestránková aplikace složená ze sedmi hlavních sekcí: Úvod, Program, Účinkující, Scény, Praktické informace a vyhrazené Vyhledávání.*  
 > *Klíčové je pro nás vzájemné provázání entit – z programu se návštěvník jedním klikem dostane na detail kapely s její biografií a z detailu kapely zase vidí všechny její časy vystoupení.*  
 > *Pro ověřování v dalším cvičení jsme definovali 3 klíčové scénáře:*  
-> *1. Tereza (24 let), která potřebuje v tramvaji za 15 sekund vyfiltrovat páteční indie kapely na Main Stage.*  
-> *2. Jakub (29 let), který si skládá osobní rozvrh a náš systém ho automaticky varuje, že se mu v 15:30 časově překrývají dvě vybrané akce.*  
+> *1. Tereza (24 let), která potřebuje v tramvaji za 15 sekund vyfiltrovat čtvrteční indie kapely na Main Stage.*  
+> *2. Jakub (29 let), který si skládá osobní rozvrh a náš systém ho automaticky varuje, že se mu v sobotu v 10:00 časově překrývají dvě vybrané akce.*  
 > *3. Martin (35 let) na invalidním vozíku, který před příchodem prověřuje bezbariérovost a zázemí sálu Forum Hall.“*
 
 ---

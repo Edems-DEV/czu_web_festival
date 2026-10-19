@@ -1292,9 +1292,12 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <img src="images/logo-aurora.svg" alt="Aurora Festival 2026" class="brand-logo-img" width="160" height="38">
           <span class="logo-badge">AURORA</span>
           <span class="brand-text">Festival 2026</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otevřít hlavní menu">☰</button>
 
         <nav class="main-nav" aria-label="Hlavní navigace webu">
           <ul>
@@ -1303,6 +1306,7 @@
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Hledat 🔍</a></li>
             <li>
               <a href="program.html?view=my-schedule" class="btn-favorites-nav">
                 ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
@@ -1331,7 +1335,7 @@
         </div>
 
         <div>
-          <button id="toggle-my-schedule" class="btn btn-secondary" style="border-color: var(--accent-amber); color: var(--accent-amber);">
+          <button id="toggle-my-schedule" class="btn btn-secondary" aria-pressed="false" style="border-color: var(--accent-amber); color: var(--accent-amber); min-height: 44px;">
             ★ Zobrazit pouze můj program
           </button>
         </div>
@@ -1340,43 +1344,49 @@
       <!-- Varování před časovou kolizí v mém programu -->
       <div id="conflict-alert-box" class="alert-conflict" style="display: none;" role="alert"></div>
 
-      <!-- Filtrovací panel -->
-      <section class="filter-bar" aria-label="Filtrování programu">
+      <!-- Sémantický rádce k programu -->
+      <aside class="schedule-guide-aside" aria-label="Nápověda pro sestavení osobního programu">
+        <h3>💡 Jak funguje „Můj program“ a detekce kolizí</h3>
+        <p>U libovolného vystoupení klikněte na tlačítko <strong>☆ Přidat</strong>. Událost se okamžitě uloží do paměti vašeho zařízení (bez nutnosti registrace). Pokud si vyberete dvě akce probíhající ve stejný čas na různých scénách, systém automaticky vyčíslí délku překryvu v minutách a kolidující karty vizuálně označí varovným rámečkem.</p>
+      </aside>
+
+      <!-- Filtrovací formulář -->
+      <form class="filter-bar" role="search" aria-label="Filtrování festivalového programu" onsubmit="return false;">
         <div>
+          <label for="schedule-search" class="visually-hidden">Vyhledat v programu festivalu</label>
           <input
             type="search"
             id="schedule-search"
             class="search-input"
             placeholder="Hledat v programu (název interpreta, skladby, talku, scény)..."
-            aria-label="Vyhledat v programu"
           />
         </div>
 
         <div class="filter-group">
           <span class="filter-label">Den:</span>
-          <button class="filter-chip day-filter-chip active" data-day="all">Všechny dny</button>
-          <button class="filter-chip day-filter-chip" data-day="2026-08-20">Čtvrtek 20. 8.</button>
-          <button class="filter-chip day-filter-chip" data-day="2026-08-21">Pátek 21. 8.</button>
-          <button class="filter-chip day-filter-chip" data-day="2026-08-22">Sobota 22. 8.</button>
+          <button type="button" class="filter-chip day-filter-chip active" data-day="all" aria-pressed="true">Všechny dny</button>
+          <button type="button" class="filter-chip day-filter-chip" data-day="2026-08-20" aria-pressed="false">Čtvrtek 20. 8.</button>
+          <button type="button" class="filter-chip day-filter-chip" data-day="2026-08-21" aria-pressed="false">Pátek 21. 8.</button>
+          <button type="button" class="filter-chip day-filter-chip" data-day="2026-08-22" aria-pressed="false">Sobota 22. 8.</button>
         </div>
 
         <div class="filter-group">
           <span class="filter-label">Scéna:</span>
-          <button class="filter-chip venue-filter-chip active" data-venue="all">Všechny scény</button>
-          <button class="filter-chip venue-filter-chip" data-venue="v1">Main Stage (open-air)</button>
-          <button class="filter-chip venue-filter-chip" data-venue="v2">Riverside Club (klub)</button>
-          <button class="filter-chip venue-filter-chip" data-venue="v3">Forum Hall (sál & workshopy)</button>
+          <button type="button" class="filter-chip venue-filter-chip active" data-venue="all" aria-pressed="true">Všechny scény</button>
+          <button type="button" class="filter-chip venue-filter-chip" data-venue="v1" aria-pressed="false">Main Stage (open-air)</button>
+          <button type="button" class="filter-chip venue-filter-chip" data-venue="v2" aria-pressed="false">Riverside Club (klub)</button>
+          <button type="button" class="filter-chip venue-filter-chip" data-venue="v3" aria-pressed="false">Forum Hall (sál &amp; workshopy)</button>
         </div>
 
         <div class="filter-group">
           <span class="filter-label">Formát:</span>
-          <button class="filter-chip type-filter-chip active" data-type="all">Všechny formáty</button>
-          <button class="filter-chip type-filter-chip" data-type="concert">Koncerty</button>
-          <button class="filter-chip type-filter-chip" data-type="talk">Talky & Diskuse</button>
-          <button class="filter-chip type-filter-chip" data-type="workshop">Workshopy</button>
+          <button type="button" class="filter-chip type-filter-chip active" data-type="all" aria-pressed="true">Všechny formáty</button>
+          <button type="button" class="filter-chip type-filter-chip" data-type="concert" aria-pressed="false">Koncerty</button>
+          <button type="button" class="filter-chip type-filter-chip" data-type="talk" aria-pressed="false">Talky &amp; Diskuse</button>
+          <button type="button" class="filter-chip type-filter-chip" data-type="workshop" aria-pressed="false">Workshopy</button>
           <span style="margin-left: auto; font-size: 0.85rem; color: var(--text-muted);" id="filtered-count">Načítání...</span>
         </div>
-      </section>
+      </form>
 
       <!-- Seznam událostí (renderován dynamicky z data.js) -->
       <section id="schedule-list" aria-label="Seznam programových položek">
@@ -1404,6 +1414,7 @@
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="venues.html">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Vyhledávání 🔍</a></li>
           </ul>
         </div>
         <div class="footer-col">

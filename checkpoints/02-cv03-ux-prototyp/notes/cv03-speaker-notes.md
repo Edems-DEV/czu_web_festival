@@ -50,8 +50,8 @@ Doporučený čas řeči: **3:45 – 4:15 min** (ideální tempo, bezpečnostní
 ### Slide 4: Průchod klíčovými scénáři (1:40 – 2:25)
 *(👉 Přejít na Slide 4)*
 > *„Funkčnost prototypu jsme prakticky ověřili na scénářích z projektové specifikace:*  
-> *V prvním scénáři vystupuje **Tereza**, která na mobilním telefonu v tramvaji klepne na Pátek a napíše 'indie'. Výsledky se zúží na 8 koncertů za 0,1 sekundy a Tereza si během **14 sekund** vybere kapelu Lunar Tides a přidá si ji do programu. Žádné horizontální skrolování, všechny prvky jsou v dosahu palce.*  
-> *Ve druhém scénáři **Jakub** na desktopu skládá sobotní harmonogram. Přidá si klubový set i workshop ve shodný čas 15:30. Aplikace okamžitě vyvolá varovný banner upozorňující na kolizi v délce **75 minut**. Jakub přepne na pohled 'Pouze můj program', odebere workshop a rozvrh má vyřešený. Data zůstávají v paměti i po obnovení stránky klávesou F5.“*
+> *V prvním scénáři vystupuje **Tereza**, která na mobilním telefonu v tramvaji klepne na Čtvrtek a napíše 'indie'. Výsledky se bleskově zúží a Tereza si během **14 sekund** vybere kapelu Lunar Tides (v 10:00 na Main Stage) a přidá si ji do programu. Žádné horizontální skrolování, všechny prvky jsou v dosahu palce.*  
+> *Ve druhém scénáři **Jakub** na desktopu skládá sobotní harmonogram. Přidá si vystoupení kapely Rain Motel i Lunar District ve shodný čas 10:00. Aplikace okamžitě vyvolá varovný banner upozorňující na kolizi v délce **75 minut**. Jakub přepne na pohled 'Pouze můj program', odebere jedno z vystoupení a rozvrh má vyřešený. Data zůstávají v paměti i po obnovení stránky klávesou F5.“*
 
 ---
 

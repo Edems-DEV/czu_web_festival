@@ -72,9 +72,12 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <img src="images/logo-aurora.svg" alt="Aurora Festival 2026" class="brand-logo-img" width="160" height="38">
           <span class="logo-badge">AURORA</span>
           <span class="brand-text">Festival 2026</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otevřít hlavní menu">☰</button>
 
         <nav class="main-nav" aria-label="Hlavní navigace webu">
           <ul>
@@ -83,6 +86,7 @@
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="venues.html" aria-current="page">Scény</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Hledat 🔍</a></li>
             <li>
               <a href="program.html?view=my-schedule" class="btn-favorites-nav">
                 ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
@@ -106,6 +110,59 @@
       <p class="section-subtitle">
         Tři pódia s odlišnou atmosférou, kapacitou i technickým zázemím v areálu Výstaviště Praha 7.
       </p>
+
+      <!-- Orientační plánek areálu -->
+      <div style="margin-bottom: 2rem; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-subtle);">
+        <img src="images/map-areal.svg" alt="Orientační plánek areálu Výstaviště Praha se scénami Aurora Main Stage, Riverside Club a Forum Hall" width="900" height="550" loading="lazy" style="width: 100%; height: auto; display: block;">
+      </div>
+
+      <!-- Sémantické srovnání scén v tabulce -->
+      <section aria-labelledby="venues-table-heading" style="margin-bottom: 2.5rem;">
+        <h2 id="venues-table-heading" style="font-size: 1.4rem; color: var(--accent-cyan); margin-bottom: 1rem; font-weight: 700;">Přehledové porovnání festivalových scén</h2>
+        <div class="table-container">
+          <table class="table-custom">
+            <caption>Technické parametry, kapacita a přístupnost scén festivalu Aurora 2026</caption>
+            <thead>
+              <tr>
+                <th scope="col">Scéna</th>
+                <th scope="col">Typ scény</th>
+                <th scope="col">Kapacita</th>
+                <th scope="col">Bezbariérovost</th>
+                <th scope="col">Zvuková aparatura</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Aurora Main Stage (v1)</strong></td>
+                <td>Venkovní amfiteátr (Open-Air)</td>
+                <td class="price-cell">7 000</td>
+                <td>♿ Vyvýšená rampa pro vozíčkáře, bezbariérové toalety</td>
+                <td>L-Acoustics K2 Line-Array</td>
+              </tr>
+              <tr>
+                <td><strong>Riverside Club Stage (v2)</strong></td>
+                <td>Zastřešený klubový prostor</td>
+                <td class="price-cell">2 200</td>
+                <td>♿ Zpevněný bezbariérový přístup, vyhrazená místa</td>
+                <td>d&amp;b audiotechnik J-Series</td>
+              </tr>
+              <tr>
+                <td><strong>Forum Hall (v3)</strong></td>
+                <td>Akustický kongresový sál</td>
+                <td class="price-cell">1 300</td>
+                <td>♿ Plně bezbariérový sál s výtahem a indukční smyčkou</td>
+                <td>Meyer Sound LINA + prostorové audio</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Sémantický blok pravidel areálu / Aside -->
+      <aside class="venue-rules-aside" aria-label="Bezbariérová asistence a návštěvní řád">
+        <h3>♿ Bezbariérová asistence a návštěvní řád areálu</h3>
+        <p>Všechny festivalové scény mají garantován zpevněný bezbariérový přístup. Držitelé průkazů ZTP a ZTP/P mají vyhrazený bezplatný vjezd na parkoviště P1 u jižní brány Výstaviště. U hlavního vstupu je po celou dobu akce k dispozici asistenční tým ČČK. V celém areálu platí zákaz vnášení skla, pyrotechniky a zbraní.</p>
+      </aside>
 
       <!-- Scéna 1: Aurora Main Stage -->
       <section id="v1" class="card" style="margin-bottom: 2.5rem; padding: 2rem;">
@@ -226,6 +283,7 @@
             <li><a href="program.html">Program</a></li>
             <li><a href="performers.html">Účinkující</a></li>
             <li><a href="practical-info.html">Praktické info</a></li>
+            <li><a href="search.html">Vyhledávání 🔍</a></li>
           </ul>
         </div>
         <div class="footer-col">

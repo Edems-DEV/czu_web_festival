@@ -90,10 +90,10 @@ style: |
 | Uživatel & Zařízení | Cíl scénáře | Reálný průběh a změřené výsledky | Výsledek |
 |---|---|---|---|
 | **Tereza (24 let)**  
-*iPhone 13, 390 px* | Zjištění večerního line-upu indie kapel na pátek a uložení do programu. | Klepnutí na *Program* $\to$ filtr *Pátek* $\to$ text *„indie“*. Okamžité zúžení na 8 koncertů. Detail *Lunar Tides* a klik na uložení. **Čas úkolu: 14 sekund.** | **100% PASS**  
+*iPhone 13, 390 px* | Zjištění dopoledního line-upu indie kapel na čtvrtek a uložení do programu. | Klepnutí na *Program* $\to$ filtr *Čtvrtek* $\to$ text *„indie“*. Okamžité zúžení na relevantní vystoupení. Detail *Lunar Tides* (10:00) a klik na uložení. **Čas úkolu: 14 sekund.** | **100% PASS**  
 Ergonomie v palcové zóně |
 | **Jakub (29 let)**  
-*Desktop PC, 1080p* | Sestavení sobotního rozvrhu a reakce na časový překryv akcí. | Přidání koncertu a workshopu v 15:30. Aplikace okamžitě vyvěsí varování: *„Překryv: 75 minut“*. Odebrání akce $\to$ varování zmizí. Perzistentní v `localStorage`. | **100% PASS**  
+*Desktop PC, 1080p* | Sestavení sobotního rozvrhu a reakce na časový překryv akcí. | Přidání koncertu kapely Rain Motel a Lunar District v 10:00. Aplikace okamžitě vyvěsí varování: *„Překryv: 75 minut“*. Odebrání akce $\to$ varování zmizí. Perzistentní v `localStorage`. | **100% PASS**  
 Matematicky přesná detekce |
 | **Martin (35 let)**  
 *iPad Air, 820 px* | Ověření bezbariérovosti sálu Forum Hall a parkování pro ZTP. | Sekce *Scény* $\to$ Forum Hall: potvrzena nájezdová rampa a bezbariérové WC. V sekci *Praktické info* otevřen akordeon FAQ: potvrzeno bezplatné parkoviště P1. | **100% PASS**  
