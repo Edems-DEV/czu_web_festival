@@ -15,3 +15,6 @@ package-lock.json
 
 # Internal agent traces
 .agents/
+
+# Generated zip archives (reproducible via npm run package)
+checkpoints/archives/*.zip

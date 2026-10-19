@@ -44,49 +44,84 @@ Aplikace zahrnuje **3 plnohodnotné interaktivní funkce** předepsané sylabem 
 
 ---
 
-## 📁 Kompletní adresářová struktura
+## 📁 Kompletní adresářová struktura a architektura checkpointů
+
+Projekt využívá centrální architekturu **Master Core** se synchronizovanými **akademickými checkpointy** pro jednotlivá cvičení:
 
 ```text
 czu_web_festival/
-├── PROJECT.md                      # Hlavní plán projektu, inventář funkcí a rozhraní
-├── README.md                       # Tento průvodce projektem a instrukce pro spuštění
-├── project-specification.md        # Projektová specifikace (Cv 2: identita, 3 persony, 3 scénáře, IA)
-├── data.json                       # Datová základna (3 dny, 3 scény, 60 interpretů, 60 akcí)
-├── ai-log.md                       # Transparentní audit využití AI, promptů a lidské validace
-├── documentation.md                # Závěrečná semestrální zpráva (Cv 6: matice oponentury, tooling, AI reflexe)
-├── web/                            # 100% čistě klientská webová aplikace (HTML5/CSS3/Vanilla JS)
-│   ├── index.html                  # Úvodní stránka s odpočtem, headlinery a rozcestníkem
-│   ├── program.html                # Harmonogram s vícekriteriálním filtrem a detekcí kolizí
-│   ├── performers.html             # Responzivní katalog 60 interpretů s žánrovým filtrem
-│   ├── performer-detail.html       # Parametrický profil interpreta (?id=p1..p60)
-│   ├── venues.html                 # Přehled 3 scén, technické parametry a bezbariérovost
-│   ├── practical-info.html         # Doprava, vstupenky, areálový řád a interaktivní FAQ
-│   ├── search.html                 # Dedikovaná globální vyhledávací stránka napříč entitami
-│   ├── css/
-│   │   └── style.css               # Design systém, CSS Custom Properties, WCAG tokeny, grid
+├── web/                               # MASTER CORE: 100% klientská webová aplikace (HTML5/CSS3/JS)
+│   ├── index.html                     # Úvodní stránka s odpočtem, headlinery a rozcestníkem
+│   ├── program.html                   # Harmonogram s vícekriteriálním filtrem a detekcí kolizí
+│   ├── performers.html                # Responzivní katalog 60 interpretů s žánrovým filtrem
+│   ├── performer-detail.html          # Parametrický profil interpreta (?id=p1..p60)
+│   ├── venues.html                    # Přehled 3 scén, technické parametry a bezbariérovost
+│   ├── practical-info.html            # Doprava, vstupenky, areálový řád a interaktivní FAQ
+│   ├── search.html                    # Dedikovaná globální vyhledávací stránka napříč entitami
+│   ├── css/style.css                  # Design systém, CSS Custom Properties, WCAG tokeny, grid
 │   └── js/
-│       ├── data.js                 # In-memory synchronní bootstrap (window.FESTIVAL_DATA) pro file:///
-│       ├── app.js                  # Globální navigace, localStorage, detekce časových kolizí
-│       └── schedule.js             # Vykreslování programu, stavové filtry a live search
-├── docs/                           # Průběžné zprávy ze cvičení
-│   ├── progress-02.md              # Průběžná zpráva pro Cvičení 3 (UX prototyp, 3 funkce, persony)
-│   ├── progress-03.md              # Průběžná zpráva pro Cvičení 4 (Implementace, UX trendy, testování)
-│   └── progress-04.md              # Průběžná zpráva pro Cvičení 5 (Review-ready verze, známé nedostatky)
-├── presentations/                  # Prezentace pro obhajoby na cvičeních (limit < 50 MB)
-│   ├── cv02-prezentace.md/.html/.pptx, cv02-speaker-notes.md  # Podklady pro Cvičení 2
-│   ├── cv03-prezentace.md/.html/.pptx, cv03-speaker-notes.md  # Podklady pro Cvičení 3
-│   ├── cv04-prezentace.md/.html/.pptx, cv04-speaker-notes.md  # Podklady pro Cvičení 4
-│   ├── cv05-prezentace.md/.html/.pptx, cv05-speaker-notes.md  # Podklady pro Cvičení 5
-│   └── cv06-prezentace.md/.html/.pptx, cv06-speaker-notes.md  # Podklady pro Cvičení 6
-├── review/                         # Expertní křížové hodnocení (Cross-review)
-│   └── review.md                   # Formální oponentura peer projektu (Nielsen + Kognitivní průchod)
-└── tests/                          # Automatizovaná testovací sada (E2E a verifikace integrity)
-    ├── run_all_tests.py            # Master test runner
-    ├── tier1_core_features.py      # Tier 1: Datová integrita a základní komponenty
-    ├── tier2_boundaries.py         # Tier 2: Hraniční stavy, kolizní matematika, empty states
-    ├── tier3_interactions.py       # Tier 3: Křížové interakce filtrů a vyhledávání
-    └── tier4_scenarios.py          # Tier 4: Automatizovaný průchod personami 1 až 3
+│       ├── data.js                    # In-memory synchronní bootstrap (window.FESTIVAL_DATA) pro file:///
+│       ├── app.js                     # Globální navigace, localStorage, detekce časových kolizí
+│       └── schedule.js                # Vykreslování programu, stavové filtry a live search
+├── data.json                          # MASTER CORE: Datová základna (3 dny, 3 scény, 60 interpretů, 60 akcí)
+├── project-specification.md           # MASTER CORE: Projektová specifikace (identita, 3 persony, 3 scénáře, IA)
+├── documentation.md                   # MASTER CORE: Závěrečná semestrální zpráva (matice oponentury, AI reflexe)
+├── ai-log.md                          # MASTER CORE: Transparentní audit promptů a lidské validace AI
+├── package.json                       # Skripty pro testování a synchronizaci
+├── PROJECT.md                         # Architektonický plán projektu a matice požadavků
+├── README.md                          # Tento průvodce projektem a instrukce pro spuštění
+│
+├── checkpoints/                       # ODEVZDÁVACÍ BALÍČKY ZE SEMESTRU (presentation | project | notes)
+│   ├── 01-cv02-specifikace-data/      # Cvičení 2: Specifikace a datová základna
+│   │   ├── presentation/              # Marp deck (.md), HTML a PPTX (< 50 MB)
+│   │   ├── project/                   # project-specification.md, data.json
+│   │   └── notes/                     # cv02-speaker-notes.md (3-5 min + obhajoba)
+│   ├── 02-cv03-ux-prototyp/           # Cvičení 3: UX návrh, funkční prototyp, 3 funkce
+│   │   ├── presentation/              # cv03-prezentace (.md/.html/.pptx)
+│   │   ├── project/                   # prototype/ (100% offline file:///), data.json
+│   │   └── notes/                     # progress-02.md, cv03-speaker-notes.md
+│   ├── 03-cv04-implementace/          # Cvičení 4: Průchod scénáři a implementace best practices
+│   │   ├── presentation/              # cv04-prezentace (.md/.html/.pptx)
+│   │   ├── project/                   # web/, data.json
+│   │   └── notes/                     # progress-03.md, cv04-speaker-notes.md
+│   ├── 04-cv05-review-ready/          # Cvičení 5: Review-ready verze pro oponenturu
+│   │   ├── presentation/              # cv05-prezentace (.md/.html/.pptx)
+│   │   ├── project/                   # web/, project-specification.md, data.json
+│   │   └── notes/                     # progress-04.md, cv05-speaker-notes.md
+│   ├── 05-cv06-cross-review/          # Cvičení 6: Prezentace expertní oponentury
+│   │   ├── presentation/              # cv06-prezentace (.md/.html/.pptx)
+│   │   ├── project/                   # review.md (posudek SoundWave Festival dle Nielsena)
+│   │   └── notes/                     # cv06-speaker-notes.md
+│   ├── 06-final-projekt/              # Finální odevzdání dle povinné struktury sylabu
+│   │   ├── presentation/              # final-prezentace (.md/.html/.pptx)
+│   │   ├── project/                   # projekt/ (specifikace, prototype, web, data, review/)
+│   │   └── notes/                     # documentation.md, ai-log.md, final-defense-notes.md
+│   └── archives/                      # Vygenerované samostatné .zip balíčky pro Moodle (< 2.2 MB)
+│
+├── scripts/                           # Nástroje pro synchronizaci a balíčkování
+│   ├── sync-checkpoints.js            # Node.js synchronizační motor (sync, watch, zip, check)
+│   └── sync-checkpoints.ps1           # PowerShell wrapper
+└── tests/                             # Automatizovaná testovací sada (98/98 testů PASS)
+    ├── run_all.js                     # Master test runner (Tiers 1-5)
+    ├── challenger_verifier.js         # Nezávislý verifikátor formátů a barevných kontrastů
+    └── adversarial_audit.py           # Hloubková verifikace OpenXML PPTX a slotové integrity
 ```
+
+---
+
+## 🔄 Synchronizační engine (Udržování Master Core a Checkpointů v syncu)
+
+Zdrojovým jádrem projektu je kořenový kód aplikace (`web/`, `data.json`, `project-specification.md`, `documentation.md`, `ai-log.md`). Pokud v hlavním projektu cokoliv upravíte, synchronizační engine okamžitě promítne změny do příslušných checkpointů:
+
+| Příkaz | Popis akce |
+|---|---|
+| `npm run sync` | Okamžitá jednosměrná synchronizace z Master Core do všech 6 checkpointů. |
+| `npm run package` | Provede sync a automaticky vytvoří `.zip` archivy v `checkpoints/archives/`. |
+| `npm run watch` | Sleduje změny v `web/` a dokumentaci a automaticky je v reálném čase replikuje. |
+| `npm run check:sync` | Ověří, zda jsou všechny checkpointy stoprocentně synchronní (nulový drift). |
+| `npm test` | Spustí kompletní sadu 98 automatizovaných testů (Tiers 1 až 5). |
+
+*(Pro uživatele PowerShellu jsou k dispozici ekvivalenty: `.\scripts\sync-checkpoints.ps1`, `.\scripts\sync-checkpoints.ps1 -Zip`, `.\scripts\sync-checkpoints.ps1 -Watch`).*
 
 ---
 

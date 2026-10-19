@@ -1,0 +1,2 @@
+# This directory contains generated checkpoint zip archives.
+# Generate archives using: npm run package

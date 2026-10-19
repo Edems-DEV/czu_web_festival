@@ -222,18 +222,21 @@ for (const bg of bgTokens) {
 // -------------------------------------------------------------
 console.log('\n--- TASK 4: PPTX & HTML PRESENTATION FORMAT & SIZE CHECKS ---');
 
-const presDir = 'presentations';
-const files = fs.readdirSync(presDir);
-
 const MAX_BYTES = 50 * 1024 * 1024; // 50 MB = 52,428,800 bytes
 
-const expectedExercises = ['cv02', 'cv03', 'cv04', 'cv05', 'cv06'];
+const expectedExercises = [
+  { cv: 'cv02', dir: 'checkpoints/01-cv02-specifikace-data' },
+  { cv: 'cv03', dir: 'checkpoints/02-cv03-ux-prototyp' },
+  { cv: 'cv04', dir: 'checkpoints/03-cv04-implementace' },
+  { cv: 'cv05', dir: 'checkpoints/04-cv05-review-ready' },
+  { cv: 'cv06', dir: 'checkpoints/05-cv06-cross-review' }
+];
 
-for (const cv of expectedExercises) {
-  const htmlFile = path.join(presDir, `${cv}-prezentace.html`);
-  const pptxFile = path.join(presDir, `${cv}-prezentace.pptx`);
-  const mdFile = path.join(presDir, `${cv}-prezentace.md`);
-  const notesFile = path.join(presDir, `${cv}-speaker-notes.md`);
+for (const item of expectedExercises) {
+  const htmlFile = path.join(item.dir, 'presentation', `${item.cv}-prezentace.html`);
+  const pptxFile = path.join(item.dir, 'presentation', `${item.cv}-prezentace.pptx`);
+  const mdFile = path.join(item.dir, 'presentation', `${item.cv}-prezentace.md`);
+  const notesFile = path.join(item.dir, 'notes', `${item.cv}-speaker-notes.md`);
 
   assert(fs.existsSync(htmlFile), `${htmlFile} exists`);
   assert(fs.existsSync(pptxFile), `${pptxFile} exists`);
@@ -244,8 +247,8 @@ for (const cv of expectedExercises) {
   const htmlStat = fs.statSync(htmlFile);
   const pptxStat = fs.statSync(pptxFile);
 
-  console.log(`${cv} HTML size: ${(htmlStat.size / 1024).toFixed(1)} KB`);
-  console.log(`${cv} PPTX size: ${(pptxStat.size / (1024 * 1024)).toFixed(2)} MB`);
+  console.log(`${item.cv} HTML size: ${(htmlStat.size / 1024).toFixed(1)} KB`);
+  console.log(`${item.cv} PPTX size: ${(pptxStat.size / (1024 * 1024)).toFixed(2)} MB`);
 
   assert(htmlStat.size < MAX_BYTES, `${htmlFile} size (${htmlStat.size} B) is < 50 MB`);
   assert(pptxStat.size < MAX_BYTES, `${pptxFile} size (${pptxStat.size} B) is < 50 MB`);

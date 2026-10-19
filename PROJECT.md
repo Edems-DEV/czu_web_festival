@@ -92,24 +92,13 @@
 ```
 czu_web_festival/
 ├── PROJECT.md                    # Project blueprint, feature inventory, contracts
-├── ORIGINAL_REQUEST.md           # Authoritative user requirements
-├── TEST_INFRA.md                 # Test architecture & methodology
-├── TEST_READY.md                 # Test readiness declaration
-├── project-specification.md      # Specification (Cv 2 deliverable)
-├── data.json                     # Canonical database (3 days, 3 stages, 60 artists, 60 events)
-├── ai-log.md                     # Comprehensive AI interaction and validation log
-├── documentation.md              # Final semester project report & synthesis
 ├── README.md                     # Repository entry point and guide
-├── .agents/teamwork/             # Agent metadata, briefs, progress logs
-├── tests/                        # Automated test suite (98 tests across Tiers 1-5)
-│   ├── run_all.js                # Master test runner
-│   ├── test_helpers.js           # Isolated sandbox & test utilities
-│   ├── tier1_features.test.js    # Feature coverage (36 tests)
-│   ├── tier2_boundaries.test.js  # Boundary & corner cases (24 tests)
-│   ├── tier3_interactions.test.js# Cross-feature interactions (16 tests)
-│   ├── tier4_scenarios.test.js   # Real-world persona journeys (4 tests)
-│   └── tier5_adversarial_challenger.test.js # Adversarial stress tests (18 tests)
-├── web/                          # Pure client-side web application
+├── package.json                  # Developer scripts (test, sync, package, watch, check:sync)
+├── project-specification.md      # MASTER CORE: Specification (Cv 2 deliverable)
+├── data.json                     # MASTER CORE: Canonical database (3 days, 3 stages, 60 artists, 60 events)
+├── ai-log.md                     # MASTER CORE: Comprehensive AI interaction and validation log
+├── documentation.md              # MASTER CORE: Final semester project report & synthesis
+├── web/                          # MASTER CORE: Pure client-side web application
 │   ├── index.html                # Homepage
 │   ├── program.html              # Filterable timetable
 │   ├── performers.html           # Lineup overview
@@ -123,16 +112,44 @@ czu_web_festival/
 │       ├── data.js               # Synchronous offline data loader
 │       ├── app.js                # Core UI utilities & localStorage favorites
 │       └── schedule.js           # Timetable rendering & clash detection
-├── docs/                         # Semester progress reports
-│   ├── progress-02.md            # Cv 3 prototype report
-│   ├── progress-03.md            # Cv 4 implementation report
-│   └── progress-04.md            # Cv 5 review-ready report
-├── presentations/                # Marp slide decks, exports, speaker notes
-│   ├── cv02-prezentace.md/.html/.pptx, cv02-speaker-notes.md
-│   ├── cv03-prezentace.md/.html/.pptx, cv03-speaker-notes.md
-│   ├── cv04-prezentace.md/.html/.pptx, cv04-speaker-notes.md
-│   ├── cv05-prezentace.md/.html/.pptx, cv05-speaker-notes.md
-│   └── cv06-prezentace.md/.html/.pptx, cv06-speaker-notes.md
-└── review/                       # Peer cross-review
-    └── review.md                 # Formal evaluation (>=2 methods, severity tiers)
+├── checkpoints/                  # ACADEMIC CHECKPOINT PACKAGES (presentation | project | notes)
+│   ├── 01-cv02-specifikace-data/ # Cv 2: Specification and dataset
+│   │   ├── presentation/         # cv02 Marp deck (.md), HTML & PPTX (< 50MB)
+│   │   ├── project/              # project-specification.md, data.json
+│   │   └── notes/                # cv02-speaker-notes.md (3-5 min) & README.md
+│   ├── 02-cv03-ux-prototyp/      # Cv 3: UX wireframe prototype & 3 interactive features
+│   │   ├── presentation/         # cv03 Marp deck (.md), HTML & PPTX
+│   │   ├── project/              # prototype/ (100% offline file:///), data.json
+│   │   └── notes/                # progress-02.md, cv03-speaker-notes.md & README.md
+│   ├── 03-cv04-implementace/     # Cv 4: Implementation & design trends
+│   │   ├── presentation/         # cv04 Marp deck (.md), HTML & PPTX
+│   │   ├── project/              # web/, data.json
+│   │   └── notes/                # progress-03.md, cv04-speaker-notes.md & README.md
+│   ├── 04-cv05-review-ready/     # Cv 5: Review-ready version
+│   │   ├── presentation/         # cv05 Marp deck (.md), HTML & PPTX
+│   │   ├── project/              # web/, project-specification.md, data.json
+│   │   └── notes/                # progress-04.md, cv05-speaker-notes.md & README.md
+│   ├── 05-cv06-cross-review/     # Cv 6: Peer cross-review presentation
+│   │   ├── presentation/         # cv06 Marp deck (.md), HTML & PPTX
+│   │   ├── project/              # review.md (formal evaluation of SoundWave Festival)
+│   │   └── notes/                # cv06-speaker-notes.md & README.md
+│   ├── 06-final-projekt/         # Final submission according to syllabus
+│   │   ├── presentation/         # final-prezentace (.md/.html/.pptx)
+│   │   ├── project/              # projekt/ (spec, prototype/, web/, data.json, review/)
+│   │   └── notes/                # documentation.md, ai-log.md, final-defense-notes.md
+│   └── archives/                 # Pre-generated standalone .zip archives for Moodle
+├── scripts/                      # Checkpoint sync & packaging tools
+│   ├── sync-checkpoints.js       # Node.js sync, packaging, watcher, and verification engine
+│   └── sync-checkpoints.ps1      # PowerShell wrapper
+├── tests/                        # Automated test suite (98 tests across Tiers 1-5)
+│   ├── run_all.js                # Master test runner
+│   ├── test_helpers.js           # Isolated sandbox & test utilities
+│   ├── tier1_features.test.js    # Feature coverage (36 tests)
+│   ├── tier2_boundaries.test.js  # Boundary & corner cases (24 tests)
+│   ├── tier3_interactions.test.js# Cross-feature interactions (16 tests)
+│   ├── tier4_scenarios.test.js   # Real-world persona journeys (4 tests)
+│   ├── tier5_adversarial_challenger.test.js # Adversarial stress tests (18 tests)
+│   ├── challenger_verifier.js    # Format & contrast verifier
+│   └── adversarial_audit.py      # OpenXML & slot integrity audit
+└── .agents/teamwork/             # Agent metadata & audit logs
 ```

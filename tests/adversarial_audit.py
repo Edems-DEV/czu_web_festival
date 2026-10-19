@@ -13,7 +13,14 @@ print("=" * 70)
 
 # 1. PPTX Deep OpenXML / ZIP validation
 print("\n--- 1. DEEP PPTX ZIP & OPENXML AUDIT ---")
-pptx_files = [f"presentations/cv0{i}-prezentace.pptx" for i in range(2, 7)]
+exercise_dirs = {
+    2: "checkpoints/01-cv02-specifikace-data",
+    3: "checkpoints/02-cv03-ux-prototyp",
+    4: "checkpoints/03-cv04-implementace",
+    5: "checkpoints/04-cv05-review-ready",
+    6: "checkpoints/05-cv06-cross-review"
+}
+pptx_files = [f"{exercise_dirs[i]}/presentation/cv0{i}-prezentace.pptx" for i in range(2, 7)]
 for p in pptx_files:
     assert os.path.exists(p), f"Missing {p}"
     with zipfile.ZipFile(p, "r") as zf:
@@ -34,7 +41,7 @@ print("All PPTX files are fully intact OpenXML packages without CRC errors.")
 # 2. Presentation Deck 4-Point Structure Audit
 print("\n--- 2. MARP DECK 4-POINT STRUCTURE AUDIT ---")
 for i in range(2, 7):
-    md_file = f"presentations/cv0{i}-prezentace.md"
+    md_file = f"{exercise_dirs[i]}/presentation/cv0{i}-prezentace.md"
     with open(md_file, encoding="utf-8") as f:
         content = f.read()
     
@@ -55,7 +62,7 @@ for i in range(2, 7):
 # 3. Speaker Notes Timing & Defense Audit
 print("\n--- 3. SPEAKER NOTES TIMING & DEFENSE AUDIT ---")
 for i in range(2, 7):
-    notes_file = f"presentations/cv0{i}-speaker-notes.md"
+    notes_file = f"{exercise_dirs[i]}/notes/cv0{i}-speaker-notes.md"
     with open(notes_file, encoding="utf-8") as f:
         content = f.read()
     

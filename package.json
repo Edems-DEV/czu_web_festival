@@ -1,0 +1,23 @@
+{
+  "name": "czu_web_festival_aurora2026",
+  "version": "1.0.0",
+  "description": "Hudební Festival Aurora 2026 - Semestrální projekt Web design (WEB) PEF ČZU",
+  "main": "web/js/app.js",
+  "scripts": {
+    "test": "node tests/run_all.js",
+    "sync": "node scripts/sync-checkpoints.js",
+    "package": "node scripts/sync-checkpoints.js --zip",
+    "check:sync": "node scripts/sync-checkpoints.js --check",
+    "watch": "node scripts/sync-checkpoints.js --watch"
+  },
+  "keywords": [
+    "czu",
+    "web-design",
+    "aurora-2026",
+    "checkpoints",
+    "wcag-aa",
+    "schema-org"
+  ],
+  "author": "Student Team PEF ČZU",
+  "license": "MIT"
+}

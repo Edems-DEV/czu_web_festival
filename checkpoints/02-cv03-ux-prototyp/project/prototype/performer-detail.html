@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail účinkujícího | Hudební Festival Aurora 2026</title>
+    <meta
+      name="description"
+      content="Profil interpreta a rozpis vystoupení na festivalu Aurora 2026."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Schema.org strukturovaná data -->
+    <script type="application/ld+json" id="performer-jsonld">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Lunar Tides",
+  "genre": "Indie",
+  "description": "Lunar Tides patří mezi výrazná jména současné klubové a koncertní scény.",
+  "event": {
+    "@type": "MusicEvent",
+    "name": "Lunar Tides Live",
+    "startDate": "2026-08-20T10:00:00+02:00",
+    "endDate": "2026-08-20T11:15:00+02:00",
+    "location": {
+      "@type": "MusicVenue",
+      "name": "Aurora Main Stage",
+      "address": "Výstaviště 67, Praha 7"
+    }
+  }
+}
+    </script>
+  </head>
+  <body>
+    <!-- Globální navigace -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="site-brand" aria-label="Hlavní stránka festivalu Aurora">
+          <span class="logo-badge">AURORA</span>
+          <span class="brand-text">Festival 2026</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Hlavní navigace webu">
+          <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="performers.html" aria-current="page">Účinkující</a></li>
+            <li><a href="venues.html">Scény</a></li>
+            <li><a href="practical-info.html">Praktické info</a></li>
+            <li>
+              <a href="program.html?view=my-schedule" class="btn-favorites-nav">
+                ★ Můj program <span class="badge-counter favorites-count-badge" style="display:none">0</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Drobečková navigace -->
+    <nav class="breadcrumbs" aria-label="Drobečková navigace">
+      <ol>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="performers.html">Účinkující</a></li>
+        <li aria-current="page" id="breadcrumb-performer-name">Detail</li>
+      </ol>
+    </nav>
+
+    <main id="main-content">
+      <div id="performer-detail-container">
+        <div style="text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+          Načítám profil interpreta...
+        </div>
+      </div>
+    </main>
+
+    <!-- Patička -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>Hudební Festival Aurora 2026</h4>
+          <p>Výstaviště Praha 7 • <time datetime="2026-08-20">20. 8.</time> – <time datetime="2026-08-22">22. 8. 2026</time></p>
+          <address style="margin-top: 0.5rem; font-style: normal; color: var(--text-secondary);">
+            Výstaviště 67, 170 00 Praha 7 – Holešovice<br />
+            Email: <a href="mailto:info@aurorafest.example">info@aurorafest.example</a>
+          </address>
+        </div>
+        <div class="footer-col">
+          <h4>Rychlé odkazy</h4>
+          <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="program.html">Harmonogram</a></li>
+            <li><a href="performers.html">Všichni účinkující</a></li>
+            <li><a href="venues.html">Scény</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projekt ČZU WEB</h4>
+          <p>Parametrický detail interpreta napojený na datovou základnu.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Hudební Festival Aurora</p>
+      </div>
+    </footer>
+
+    <!-- Skripty -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const data = await getFestivalData();
+        if (!data) return;
+
+        const container = document.getElementById('performer-detail-container');
+        const breadcrumbName = document.getElementById('breadcrumb-performer-name');
+        const urlParams = new URLSearchParams(window.location.search);
+        const performerId = urlParams.get('id') || 'p1';
+
+        const performer = data.performers.find(p => p.id === performerId);
+        if (!performer) {
+          container.innerHTML = `
+            <div style="text-align: center; padding: 3rem 1rem; background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px dashed var(--border-subtle);">
+              <h2>Interpret nenalezen</h2>
+              <p style="margin-top: 0.5rem; color: var(--text-secondary);">Zadaný identifikátor interpreta v databázi neexistuje.</p>
+              <a href="performers.html" class="btn btn-primary" style="margin-top: 1.5rem;">Zpět na přehled účinkujících</a>
+            </div>
+          `;
+          return;
+        }
+
+        // Aktualizovat titulky
+        document.title = `${performer.name} | Hudební Festival Aurora 2026`;
+        if (breadcrumbName) breadcrumbName.textContent = performer.name;
+
+        // Najít vystoupení tohoto interpreta
+        const performerEvents = data.events.filter(e => e.performerId === performer.id);
+        const venueMap = new Map(data.venues.map(v => [v.id, v]));
+
+        const daysMap = {
+          '2026-08-20': 'Čtvrtek 20. 8. 2026',
+          '2026-08-21': 'Pátek 21. 8. 2026',
+          '2026-08-22': 'Sobota 22. 8. 2026'
+        };
+
+        const favorites = getFavorites();
+
+        let eventsHtml = '';
+        if (performerEvents.length === 0) {
+          eventsHtml = '<p style="color: var(--text-muted);">Pro tohoto interpreta zatím nejsou vypsána žádná konkrétní vystoupení.</p>';
+        } else {
+          eventsHtml = performerEvents.map(evt => {
+            const venue = venueMap.get(evt.venueId) || { name: 'Neznámá scéna' };
+            const isFav = favorites.includes(evt.id);
+            const typeLabel = evt.type === 'concert' ? 'Koncert' : (evt.type === 'talk' ? 'Talk' : 'Workshop');
+
+            return `
+              <article class="card" style="margin-bottom: 1rem; padding: 1.25rem; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <div>
+                  <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.35rem;">
+                    <span style="font-weight: 700; color: var(--accent-cyan);">${daysMap[evt.day] || evt.day}</span>
+                    <span style="color: var(--text-muted);">•</span>
+                    <time datetime="${evt.day}T${evt.startTime}" style="font-weight: 800; color: var(--text-primary); background: var(--bg-surface-elevated); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm);">
+                      ${evt.startTime}
+                    </time>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">(${evt.durationMin} min)</span>
+                  </div>
+                  <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">${evt.title}</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                    Scéna: <a href="venues.html#${evt.venueId}">📍 ${venue.name}</a> • Formát: <strong>${typeLabel}</strong>
+                  </p>
+                </div>
+
+                <div>
+                  <button 
+                    class="btn btn-secondary btn-fav-toggle" 
+                    data-id="${evt.id}"
+                    style="padding: 0.5rem 0.9rem; font-size: 0.85rem; border-color: ${isFav ? 'var(--accent-amber)' : 'var(--border-subtle)'}; color: ${isFav ? 'var(--accent-amber)' : 'var(--text-secondary)'};"
+                  >
+                    ${isFav ? '★ V mém programu' : '☆ Přidat do programu'}
+                  </button>
+                </div>
+              </article>
+            `;
+          }).join('');
+        }
+
+        container.innerHTML = `
+          <div class="hero" style="text-align: left; padding: 2.5rem 2rem; margin-bottom: 2rem;">
+            <div class="hero-meta">
+              ${performer.genre} • Původ: ${performer.country}
+            </div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">${performer.name}</h1>
+            <p class="lead" style="margin: 0 0 1.5rem 0; max-width: 800px;">
+              ${performer.bio}
+            </p>
+            <div>
+              <a href="performers.html" class="btn btn-secondary">← Zpět na seznam účinkujících</a>
+            </div>
+          </div>
+
+          <section>
+            <h2 class="section-title">Vystoupení na festivalu Aurora 2026</h2>
+            <p class="section-subtitle">Přehled naplánovaných časů a scén tohoto interpreta.</p>
+            ${eventsHtml}
+          </section>
+        `;
+
+        container.querySelectorAll('.btn-fav-toggle').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = e.currentTarget.dataset.id;
+            const isAdded = toggleFavorite(id);
+            btn.textContent = isAdded ? '★ V mém programu' : '☆ Přidat do programu';
+            btn.style.color = isAdded ? 'var(--accent-amber)' : 'var(--text-secondary)';
+            btn.style.borderColor = isAdded ? 'var(--accent-amber)' : 'var(--border-subtle)';
+          });
+        });
+
+        // Dynamická aktualizace Schema.org JSON-LD pro aktuálního interpreta
+        const jsonLdEl = document.getElementById('performer-jsonld');
+        if (jsonLdEl && performer) {
+          const primaryEvt = performerEvents[0];
+          const primaryVenue = primaryEvt ? venueMap.get(primaryEvt.venueId) : null;
+          const dynSchema = {
+            "@context": "https://schema.org",
+            "@type": "MusicGroup",
+            "name": performer.name,
+            "genre": performer.genre,
+            "description": performer.bio
+          };
+          if (primaryEvt && primaryVenue) {
+            dynSchema.event = {
+              "@type": "MusicEvent",
+              "name": primaryEvt.title,
+              "startDate": `${primaryEvt.day}T${primaryEvt.startTime}:00+02:00`,
+              "location": {
+                "@type": "MusicVenue",
+                "name": primaryVenue.name,
+                "address": primaryVenue.address
+              }
+            };
+          }
+          jsonLdEl.textContent = JSON.stringify(dynSchema, null, 2);
+        }
+      });
+    </script>
+  </body>
+</html>
