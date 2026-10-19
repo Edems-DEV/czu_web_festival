@@ -6,7 +6,7 @@
     "city": "Praha",
     "startDate": "2026-08-20",
     "endDate": "2026-08-22",
-    "description": "Třídenní hudební festival propojující koncerty, talks a workshopy na více scénách.",
+    "description": "Aurora 2026 je třídenní fiktivní hudební festival v Praze, který propojuje indie, elektroniku, rock, jazz, hip-hop a world music. Vedle koncertů nabízí rozhovory s účinkujícími a praktické workshopy zaměřené na vznik a podobu hudby.",
     "tickets": [
       {
         "type": "day",
@@ -58,420 +58,420 @@
       "name": "Lunar Tides",
       "country": "CZ",
       "genre": "Indie",
-      "bio": "Lunar Tides patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Lunar Tides staví svůj zvuk na kytarových motivech, jemných vrstvách syntezátorů a textech, které nechávají prostor pro vlastní interpretaci. Jejich skladby přecházejí od tichých slok k širokým, zpěvným refrénům."
     },
     {
       "id": "p2",
       "name": "Neon Harbor",
       "country": "SK",
       "genre": "Elektronika",
-      "bio": "Neon Harbor patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Neon Harbor staví vystoupení na pulzujících beatech, hlubokých basech a syntezátorových linkách, které se postupně skládají do propracované zvukové krajiny. Set počítá s pozorným poslechem i tancem."
     },
     {
       "id": "p3",
       "name": "The Velvet Signals",
       "country": "PL",
       "genre": "Rock",
-      "bio": "The Velvet Signals patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "The Velvet Signals sází na výrazné kytarové riffy, živou rytmiku a refrény, které se rychle dostanou pod kůži. V jejich skladbách se střídá přímočará energie s pomalejšími pasážemi, kde vyniká melodie."
     },
     {
       "id": "p4",
       "name": "Echo Meridian",
       "country": "DE",
       "genre": "Jazz",
-      "bio": "Echo Meridian patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Echo Meridian nechává skladby přirozeně dýchat a dává prostor improvizaci. Rytmická sekce drží pevný základ, zatímco melodické nástroje rozvíjejí motivy pokaždé trochu jiným směrem."
     },
     {
       "id": "p5",
       "name": "Solar Drift",
       "country": "AT",
       "genre": "Hip-Hop",
-      "bio": "Solar Drift patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Solar Drift propojuje výrazný flow s beaty, které nechávají vyniknout slovům i rytmickým pauzám. Texty střídají osobní postřehy s obrazem městského života a koncert má jasný tah od začátku do konce."
     },
     {
       "id": "p6",
       "name": "Midnight Cartel",
       "country": "HU",
       "genre": "World",
-      "bio": "Midnight Cartel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Midnight Cartel propojuje různé rytmické tradice s vlastními melodickými motivy a současným aranžmá. Akustické nástroje se setkávají s basou a bicími, takže hudba působí přirozeně i tanečně."
     },
     {
       "id": "p7",
       "name": "Aurora Bloom",
       "country": "FR",
       "genre": "Indie",
-      "bio": "Aurora Bloom patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V tvorbě Aurora Bloom se potkává nezávislý pop s lehce syrovým kytarovým zvukem. Důležitou roli hrají melodie, civilní vyprávění a aranže, které působí nenuceně, ale jsou promyšlené do detailu."
     },
     {
       "id": "p8",
       "name": "Static Avenue",
       "country": "SE",
       "genre": "Elektronika",
-      "bio": "Static Avenue patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V hudbě Static Avenue se klubový rytmus potkává s filmově laděnými plochami. Dlouhé přechody, jemně rozostřené vokální samply a výrazné basové motivy vytvářejí napětí, které se uvolňuje až v hlavních dropových pasážích."
     },
     {
       "id": "p9",
       "name": "Riverline Collective",
       "country": "NO",
       "genre": "Rock",
-      "bio": "Riverline Collective patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Tvorba Riverline Collective vychází z rockové kapelní souhry: pevná basa, důrazné bicí a kytary, které se střídají mezi ostrým zvukem a melodickými linkami. Na pódiu dostávají skladby syrovější podobu."
     },
     {
       "id": "p10",
       "name": "Atlas Bloom",
       "country": "NL",
       "genre": "Jazz",
-      "bio": "Atlas Bloom patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Hudba Atlas Bloom se pohybuje mezi moderním jazzem a komornějšími aranžemi. Zásadní je dialog mezi nástroji, proměnlivá dynamika a schopnost přejít od nenápadného motivu k výraznému sólu."
     },
     {
       "id": "p11",
       "name": "Velvet Circuit",
       "country": "IT",
       "genre": "Hip-Hop",
-      "bio": "Velvet Circuit patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Základem tvorby Velvet Circuit jsou úderné bicí, hluboké basy a práce s rytmem řeči. Refrény jsou přístupné, sloky mají vlastní tempo a drobné změny beatu udržují pozornost i mezi hlavními motivy."
     },
     {
       "id": "p12",
       "name": "Nova Parade",
       "country": "ES",
       "genre": "World",
-      "bio": "Nova Parade patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Tvorba Nova Parade staví na vrstevnatých rytmech, zpěvných motivech a střídání akustických a elektrických zvuků. Skladby vytvářejí pestrý hudební prostor, který vybízí k poslechu i pohybu."
     },
     {
       "id": "p13",
       "name": "Paper Lanterns",
       "country": "GB",
       "genre": "Indie",
-      "bio": "Paper Lanterns patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Paper Lanterns pracuje s kontrastem mezi křehkým zpěvem a výraznou rytmikou. Písně často začínají úsporně a postupně nabírají další vrstvy, až se promění v energické společné refrény."
     },
     {
       "id": "p14",
       "name": "Northbound Echo",
       "country": "US",
       "genre": "Elektronika",
-      "bio": "Northbound Echo patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Northbound Echo experimentuje s analogově znějícími syntezátory a nepravidelnými rytmickými detaily. Jejich elektronika není jen o rychlosti; důležitá je práce s tichem, gradací a prostorem mezi jednotlivými zvuky."
     },
     {
       "id": "p15",
       "name": "Crystal District",
       "country": "CA",
       "genre": "Rock",
-      "bio": "Crystal District patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Crystal District propojuje alternativní rock s texty o tlaku, změně a hledání vlastního směru. Instrumentální části nechávají prostor kytarám, ale skladby vždy drží pohromadě silná vokální linka."
     },
     {
       "id": "p16",
       "name": "Urban Comets",
       "country": "DK",
       "genre": "Jazz",
-      "bio": "Urban Comets patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Urban Comets staví repertoár na souhře, která je přesná, ale nepůsobí strnule. Krátké melodické fráze se v průběhu skladeb rozvětvují a dávají prostor spontánním reakcím jednotlivých hráčů."
     },
     {
       "id": "p17",
       "name": "Polar Gardens",
       "country": "CZ",
       "genre": "Hip-Hop",
-      "bio": "Polar Gardens patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Polar Gardens klade důraz na slovní obraty, přesné frázování a střídání hustých slok s úspornými refrény. Produkce nechává dost místa hlasu, takže význam textu nezaniká pod instrumentálním doprovodem."
     },
     {
       "id": "p18",
       "name": "Skyline Ritual",
       "country": "SK",
       "genre": "World",
-      "bio": "Skyline Ritual patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Skyline Ritual hledá společný jazyk mezi různými hudebními vlivy. Perkuse udávají směr, melodické nástroje rozvíjejí hlavní témata a aranže dávají jednotlivým barvám dost prostoru."
     },
     {
       "id": "p19",
       "name": "Motel Magnolia",
       "country": "PL",
       "genre": "Indie",
-      "bio": "Motel Magnolia patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Pro Motel Magnolia je typická atmosféra pozdního večera: lehce zastřené kytary, měkké klávesy a texty o změnách, cestách a drobných okamžicích každodenního života."
     },
     {
       "id": "p20",
       "name": "Brass Horizon",
       "country": "DE",
       "genre": "Elektronika",
-      "bio": "Brass Horizon patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Základem tvorby Brass Horizon jsou vrstvené beaty a přesně vystavěné přechody. V setu se střídají minimalistické pasáže s hutnými tanečními momenty, takže hudba postupně mění energii bez prudkých zlomů."
     },
     {
       "id": "p21",
       "name": "Dusty Satellites",
       "country": "AT",
       "genre": "Rock",
-      "bio": "Dusty Satellites patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Pro Dusty Satellites je důležitý dynamický oblouk písní. Klidnější začátky se postupně mění v hutné kytarové pasáže, které využívají plný zvuk kapely a dávají vyniknout společnému rytmu."
     },
     {
       "id": "p22",
       "name": "Ivory Transit",
       "country": "HU",
       "genre": "Jazz",
-      "bio": "Ivory Transit patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V kompozicích Ivory Transit se potkávají jazzové harmonie s rytmy, které občas vykročí mimo očekávaný takt. Výsledkem je hudba pro soustředěný poslech, ale také pro publikum, které rádo sleduje hudební dialog."
     },
     {
       "id": "p23",
       "name": "Stereo Orchard",
       "country": "FR",
       "genre": "Hip-Hop",
-      "bio": "Stereo Orchard patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V repertoáru Stereo Orchard se potkávají klasické hip-hopové beaty s modernějšími elektronickými zvuky. Výsledkem je set, který se opírá o rytmus, ale stejně důležitou roli mají příběhy a osobitý projev."
     },
     {
       "id": "p24",
       "name": "Dune Society",
       "country": "SE",
       "genre": "World",
-      "bio": "Dune Society patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V repertoáru Dune Society hrají důležitou roli opakující se rytmické vzorce a melodie, které se postupně rozšiřují o nové nástroje. Výsledkem je zvuk plný detailů, který si zachovává přirozený tah."
     },
     {
       "id": "p25",
       "name": "Baltic Frequency",
       "country": "NO",
       "genre": "Indie",
-      "bio": "Baltic Frequency patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Baltic Frequency propojuje indie rock s popovou přístupností. Namísto okázalých efektů sází na zapamatovatelné melodie, vícehlasé vokály a dynamiku, která se mění podle nálady jednotlivých skladeb."
     },
     {
       "id": "p26",
       "name": "Canyon Motel",
       "country": "NL",
       "genre": "Elektronika",
-      "bio": "Canyon Motel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Canyon Motel propojuje elektronickou produkci s organickými nahrávkami a drobnými zvukovými náhodami. Výsledkem je živý, proměnlivý zvuk, v němž vedle rytmu vynikají i detaily ukryté v pozadí."
     },
     {
       "id": "p27",
       "name": "Silent Arcade",
       "country": "IT",
       "genre": "Rock",
-      "bio": "Silent Arcade patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Silent Arcade pracuje s kontrastem mezi ostrým zkreslením a čistými kytarovými motivy. Jejich repertoár tak osciluje mezi naléhavými skladbami a melodičtějšími momenty, které dávají koncertu prostor k nadechnutí."
     },
     {
       "id": "p28",
       "name": "Mosaic Avenue",
       "country": "ES",
       "genre": "Jazz",
-      "bio": "Mosaic Avenue patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Mosaic Avenue dává přednost čistému zvuku a pečlivě vystavěným harmoniím. Vedle propracovaných aranží jsou pro jejich vystoupení typické otevřené pasáže, v nichž se původní téma může proměnit v nečekaný směr."
     },
     {
       "id": "p29",
       "name": "Amber Transit",
       "country": "GB",
       "genre": "Hip-Hop",
-      "bio": "Amber Transit patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Amber Transit přistupuje k rapu jako k rytmickému vyprávění. Texty využívají konkrétní obrazy a slovní hříčky, zatímco střídmá produkce nechává vyniknout změny hlasové dynamiky i nečekané pauzy."
     },
     {
       "id": "p30",
       "name": "City of Pines",
       "country": "US",
       "genre": "World",
-      "bio": "City of Pines patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "City of Pines kombinuje akustické textury s moderní produkcí. Výrazné perkuse a vícehlasé motivy vytvářejí živý základ, nad kterým se střídají klidnější pasáže s energickými refrény."
     },
     {
       "id": "p31",
       "name": "Westend Choir",
       "country": "CA",
       "genre": "Indie",
-      "bio": "Westend Choir patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Ve skladbách Westend Choir se objevují neobvyklé kytarové barvy, krátké instrumentální mezihry a texty plné konkrétních obrazů. Výsledkem je zvuk, který působí osobně a zároveň vybízí k pohybu."
     },
     {
       "id": "p32",
       "name": "Broken Compass",
       "country": "DK",
       "genre": "Elektronika",
-      "bio": "Broken Compass patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Projekt Broken Compass má rád kontrast mezi chladnou syntetickou barvou a hřejivou basovou linkou. Skladby se rozvíjejí v několika vrstvách a jejich struktura dává prostor jak tanečnímu publiku, tak soustředěnému poslechu."
     },
     {
       "id": "p33",
       "name": "Ocean Motel",
       "country": "CZ",
       "genre": "Rock",
-      "bio": "Ocean Motel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Hudba Ocean Motel má přímočarý tah, ale nepostrádá cit pro detail: krátké basové obraty, nečekané pauzy a přesné přechody bicích mění známou rockovou sestavu v pestrý celek."
     },
     {
       "id": "p34",
       "name": "Lowlight Theory",
       "country": "SK",
       "genre": "Jazz",
-      "bio": "Lowlight Theory patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Projekt Lowlight Theory propojuje akustické barvy s moderním jazzovým přístupem. Basa a bicí vytvářejí pružný rytmický základ, na němž se melodie rozvíjejí s lehkostí a bez zbytečné okázalosti."
     },
     {
       "id": "p35",
       "name": "Honey Current",
       "country": "PL",
       "genre": "Hip-Hop",
-      "bio": "Honey Current patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Hudba Honey Current kombinuje hutné basové linky s úspornými melodickými motivy. Jejich vystoupení stojí na kontaktu s publikem, přesném načasování a refrénech, které snadno přejdou do společného skandování."
     },
     {
       "id": "p36",
       "name": "Velvet Monsoon",
       "country": "DE",
       "genre": "World",
-      "bio": "Velvet Monsoon patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Hudba Velvet Monsoon se pohybuje mezi komorními melodiemi a pulzujícími rytmy. Důraz na společnou hru a proměnlivou instrumentaci dává skladbám barevnost, aniž by ztratily srozumitelnou strukturu."
     },
     {
       "id": "p37",
       "name": "Morning Static",
       "country": "AT",
       "genre": "Indie",
-      "bio": "Morning Static patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Morning Static má blízko k lo-fi estetice, ale neobětuje jí čitelnost písní. Jemný šum, vrstvené vokály a střídmé bicí doplňují melodie, které se posluchači vracejí do hlavy ještě po doznění koncertu."
     },
     {
       "id": "p38",
       "name": "Asphalt Bloom",
       "country": "HU",
       "genre": "Elektronika",
-      "bio": "Asphalt Bloom patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Asphalt Bloom se soustředí na rytmickou přesnost a zvukovou texturu. Krátké sekvence, modulované tóny a proměnlivé tempo propojují do setu, který působí jako jeden dlouhý, plynule se měnící track."
     },
     {
       "id": "p39",
       "name": "Golden Vacancy",
       "country": "FR",
       "genre": "Rock",
-      "bio": "Golden Vacancy patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Golden Vacancy staví koncertní zvuk na poctivé souhře a výrazném vokálu. Kytarové motivy se opakují v různých obměnách a postupně nabírají intenzitu, dokud se celý prostor nepřidá k refrénu."
     },
     {
       "id": "p40",
       "name": "Nightshift Flora",
       "country": "SE",
       "genre": "Jazz",
-      "bio": "Nightshift Flora patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Nightshift Flora pracuje s náladou stejně důsledně jako s rytmem. Jejich skladby mají prostor pro tiché, téměř komorní momenty i pro intenzivnější improvizace, které přirozeně vyrůstají z hlavního motivu."
     },
     {
       "id": "p41",
       "name": "Rain Motel",
       "country": "NO",
       "genre": "Hip-Hop",
-      "bio": "Rain Motel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Rain Motel experimentuje s tempem a různými podobami beatů, od minimalistických smyček po vrstevnatější produkci. Každá skladba má vlastní rytmickou identitu a texty propojuje důraz na pozorování okolního světa."
     },
     {
       "id": "p42",
       "name": "Parallel Kids",
       "country": "NL",
       "genre": "World",
-      "bio": "Parallel Kids patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Parallel Kids staví na propojení melodie, rytmu a zvukových barev. V aranžích se střídají jednoduché motivy s bohatšími pasážemi, v nichž se jednotlivé nástroje postupně dostávají do popředí."
     },
     {
       "id": "p43",
       "name": "Ribbon Atlas",
       "country": "IT",
       "genre": "Indie",
-      "bio": "Ribbon Atlas patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Hudba Ribbon Atlas stojí na souhře několika hlasů a kytar, které se během skladby postupně rozvíjejí. Jejich repertoár střídá zasněné pasáže s refrény, v nichž se přirozeně propojuje celé publikum."
     },
     {
       "id": "p44",
       "name": "Neon Caravan",
       "country": "ES",
       "genre": "Elektronika",
-      "bio": "Neon Caravan patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V repertoáru Neon Caravan se potkávají ambientní úvody s výraznými klubovými beaty. Postupné vrstvení motivů dává každé skladbě vlastní oblouk a publiku umožňuje sledovat, jak se jednoduchý zvuk mění v plnohodnotnou kompozici."
     },
     {
       "id": "p45",
       "name": "Silver District",
       "country": "GB",
       "genre": "Rock",
-      "bio": "Silver District patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V písních Silver District se objevuje vliv garážového rocku i současnější alternativy. Záměrně neuhlazený zvuk doplňují melodické sloky a rytmické zvraty, které udržují vystoupení v pohybu."
     },
     {
       "id": "p46",
       "name": "Northern Lantern",
       "country": "US",
       "genre": "Jazz",
-      "bio": "Northern Lantern patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "V hudbě Northern Lantern je slyšet zájem o harmonické detaily a nečekané změny akcentů. Jednotlivé nástroje se nepředhánějí, ale navzájem si odpovídají a společně budují proměnlivou zvukovou scénu."
     },
     {
       "id": "p47",
       "name": "Harbor Choir",
       "country": "CA",
       "genre": "Hip-Hop",
-      "bio": "Harbor Choir patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Pro Harbor Choir je důležitá autenticita projevu a práce s detailem. V beatech se objevují drobné samply a proměnlivé rytmy, které doplňují přímočaré sloky i melodické refrény."
     },
     {
       "id": "p48",
       "name": "Skyline Mosaic",
       "country": "DK",
       "genre": "World",
-      "bio": "Skyline Mosaic patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Projekt Skyline Mosaic pracuje s rytmickou energií a melodickými tématy, která se snadno vracejí do paměti. Vedle tanečních částí nabízí i pomalejší chvíle, kde vynikne barva nástrojů a souhra hlasů."
     },
     {
       "id": "p49",
       "name": "Sunroom Cartel",
       "country": "CZ",
       "genre": "Indie",
-      "bio": "Sunroom Cartel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Sunroom Cartel hledá inspiraci v městských zákoutích i osobních příbězích. Do indie základu přidává rytmické experimenty a nečekané změny aranží, aniž by ztrácel cit pro silnou melodii."
     },
     {
       "id": "p50",
       "name": "Harborline Echo",
       "country": "SK",
       "genre": "Elektronika",
-      "bio": "Harborline Echo patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Harborline Echo používá elektroniku jako nástroj pro vyprávění: motivy se vracejí v pozměněné podobě, rytmus občas ustoupí do pozadí a pak se znovu vynoří v plné síle. Set tak má jasný vývoj i překvapivé okamžiky."
     },
     {
       "id": "p51",
       "name": "Lunar District",
       "country": "PL",
       "genre": "Rock",
-      "bio": "Lunar District patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Lunar District střídá rychlé, úderné skladby s pomalejšími kompozicemi, v nichž se naplno rozehrávají kytarové plochy. Tato proměnlivost dává jejich koncertu energii, ale také několik výrazných klidových bodů."
     },
     {
       "id": "p52",
       "name": "Echo Harbor",
       "country": "DE",
       "genre": "Jazz",
-      "bio": "Echo Harbor patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Echo Harbor kombinuje přístupnou melodiku s otevřenou strukturou skladeb. Posluchač pozná hlavní téma, ale může sledovat, jak se při každém návratu mění díky novým rytmickým a harmonickým nápadům."
     },
     {
       "id": "p53",
       "name": "Magnet Fields",
       "country": "AT",
       "genre": "Hip-Hop",
-      "bio": "Magnet Fields patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Magnet Fields přináší rap, v němž se vedle energie uplatňuje i nadhled. Výrazné frázování, úsporné beaty a chytlavé motivy dávají skladbám snadno rozpoznatelný charakter bez zbytečné přeplněnosti."
     },
     {
       "id": "p54",
       "name": "Pine Motel",
       "country": "HU",
       "genre": "World",
-      "bio": "Pine Motel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Pine Motel propojuje tradičně znějící nástroje s moderním pódiovým zvukem. Práce s opakováním a postupným vrstvením vytváří plynulý hudební tok, který se během vystoupení přirozeně proměňuje."
     },
     {
       "id": "p55",
       "name": "Atlas Avenue",
       "country": "FR",
       "genre": "Indie",
-      "bio": "Atlas Avenue patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Na projektu Atlas Avenue zaujme vyváženost mezi intimním písničkářstvím a zvukem kapely. Každá skladba dostává vlastní náladu díky proměnlivému tempu, vrstevnatým kytarám a střídmému, přesnému zpěvu."
     },
     {
       "id": "p56",
       "name": "River Motel",
       "country": "SE",
       "genre": "Elektronika",
-      "bio": "River Motel patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Zvuk River Motel kombinuje hutné basy s jiskřivými vysokými frekvencemi a krátkými samplovanými fragmenty. Pečlivě vystavěná gradace udržuje taneční energii, aniž by všechny skladby zněly stejně."
     },
     {
       "id": "p57",
       "name": "Metro Aurora",
       "country": "NO",
       "genre": "Rock",
-      "bio": "Metro Aurora patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Základním poznávacím znakem Metro Aurora jsou pevné bicí, výrazná basová linka a kytary, které se nebojí hlasitosti. Za energickým zvukem ale stojí důraz na melodii a pečlivě vystavěné aranže."
     },
     {
       "id": "p58",
       "name": "Velvet Atlantic",
       "country": "NL",
       "genre": "Jazz",
-      "bio": "Velvet Atlantic patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Pro Velvet Atlantic je improvizace způsob společného vyprávění. Motivy se předávají mezi nástroji, tempo pružně reaguje na náladu a celek si zachovává přehlednou stavbu i ve chvílích, kdy se hudba vydá nečekanou cestou."
     },
     {
       "id": "p59",
       "name": "Coastal Transit",
       "country": "IT",
       "genre": "Hip-Hop",
-      "bio": "Coastal Transit patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Tvorba Coastal Transit stojí na spojení osobních textů a výrazné rytmické stavby. Přechody mezi mluveným a melodickým projevem mění atmosféru skladeb a vytvářejí pestrý koncertní oblouk."
     },
     {
       "id": "p60",
       "name": "Prairie Signals",
       "country": "ES",
       "genre": "World",
-      "bio": "Prairie Signals patří mezi výrazná jména současné klubové a koncertní scény."
+      "bio": "Na hudbě Prairie Signals zaujme pestrost rytmů i způsob, jakým se melodické motivy předávají mezi nástroji. Koncert tak nabízí řadu drobných objevů a zároveň drží pohromadě díky výrazné společné pulzaci."
     }
   ],
   "events": [
@@ -484,7 +484,7 @@
       "startTime": "10:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Lunar Tides s průřezem aktuální tvorbou."
+      "description": "Lunar Tides otevře set kytarovým motivem, který postupně doplní vrstvené vokály a lehce zasněná atmosféra. Závěr patří melodii, která ještě chvíli doznívá po posledním akordu."
     },
     {
       "id": "e2",
@@ -495,7 +495,7 @@
       "startTime": "11:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Neon Harbor s průřezem aktuální tvorbou."
+      "description": "Neon Harbor vystaví set na pulzu basů a pohyblivých syntezátorových linkách. Jednotlivé motivy se vracejí v nových podobách a postupně promění plochu v tanečnější finále."
     },
     {
       "id": "e3",
@@ -506,7 +506,7 @@
       "startTime": "10:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta The Velvet Signals s průřezem aktuální tvorbou."
+      "description": "The Velvet Signals nastoupí s výraznými riffy a pevnou rytmikou, ale vedle hlasitých refrénů nechá prostor i melodickým pasážím. Set nabídne energický průřez tvorbou kapely."
     },
     {
       "id": "e4",
@@ -517,7 +517,7 @@
       "startTime": "13:30",
       "durationMin": 45,
       "type": "talk",
-      "description": "Echo Meridian sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Echo Meridian rozebere, jak se nápad mění v hotovou skladbu: od prvního motivu přes aranžmá až po rozhodnutí, která utvářejí výsledný zvuk. Součástí bude prostor pro otázky publika."
     },
     {
       "id": "e5",
@@ -528,7 +528,7 @@
       "startTime": "14:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Solar Drift s průřezem aktuální tvorbou."
+      "description": "Solar Drift rozjede set postavený na výrazném flow, hutných beatech a refrénech, do nichž se může zapojit celé publikum. Texty a rytmus budou po celou dobu v centru pozornosti."
     },
     {
       "id": "e6",
@@ -539,7 +539,7 @@
       "startTime": "16:00",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Midnight Cartel zaměřený na tvorbu tracku."
+      "description": "S Midnight Cartel budou účastníci zkoumat, jak propojit odlišné rytmické motivy do společné skladby. Důraz bude na vrstvení perkusí, melodickou odpověď a spolupráci mezi jednotlivými nástroji."
     },
     {
       "id": "e7",
@@ -550,7 +550,7 @@
       "startTime": "16:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Aurora Bloom s průřezem aktuální tvorbou."
+      "description": "Na programu Aurora Bloom jsou písně s výraznými refrény i komornějšími slokami. Proměnlivá dynamika nechá vyniknout detailům aranží a nakonec přirozeně vygraduje do společného finále."
     },
     {
       "id": "e8",
@@ -561,7 +561,7 @@
       "startTime": "17:30",
       "durationMin": 45,
       "type": "talk",
-      "description": "Static Avenue sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "V tomto rozhovoru Static Avenue otevře téma hledání vlastního zvuku a práce s inspirací. Řeč přijde na tvůrčí rutinu, spolupráci i chvíle, kdy je potřeba původní nápad úplně přehodnotit."
     },
     {
       "id": "e9",
@@ -572,7 +572,7 @@
       "startTime": "18:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Riverline Collective s průřezem aktuální tvorbou."
+      "description": "Vystoupení Riverline Collective stojí na kytaře, base a bicích, které se opírají do každého přechodu. Písně střídají přímočarý tah s klidnějšími momenty, v nichž vynikne melodie."
     },
     {
       "id": "e10",
@@ -583,7 +583,7 @@
       "startTime": "19:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Atlas Bloom s průřezem aktuální tvorbou."
+      "description": "V programu Atlas Bloom se potkají promyšlené harmonie, pružná rytmika a sóla, která přirozeně vyrůstají z hlavního tématu. Vystoupení ocení posluchači, kteří rádi sledují hudební souhru."
     },
     {
       "id": "e11",
@@ -594,7 +594,7 @@
       "startTime": "10:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Velvet Circuit s průřezem aktuální tvorbou."
+      "description": "Vystoupení Velvet Circuit kombinuje osobní vyprávění, slovní hříčky a přesně načasované změny beatu. Úsporná produkce nechá vyniknout hlas a dodá skladbám přímočarou energii."
     },
     {
       "id": "e12",
@@ -605,7 +605,7 @@
       "startTime": "12:15",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Nova Parade zaměřený na tvorbu tracku."
+      "description": "Nova Parade představí tvorbu aranže, která kombinuje akustické nástroje s moderní produkcí. Účastníci si vyzkouší, jak vyvážit různé zvukové barvy a vytvořit jasný hudební celek."
     },
     {
       "id": "e13",
@@ -616,7 +616,7 @@
       "startTime": "11:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Paper Lanterns s průřezem aktuální tvorbou."
+      "description": "Koncert Paper Lanterns střídá průzračné kytary s plnějším zvukem celé sestavy. Mezi skladbami se mění nálada, ale pojítkem zůstávají melodie a texty s osobním nádechem."
     },
     {
       "id": "e14",
@@ -627,7 +627,7 @@
       "startTime": "13:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Northbound Echo s průřezem aktuální tvorbou."
+      "description": "Northbound Echo propojí klubovou energii s atmosférickými plochami. Set začíná pozvolna, přidává další rytmické vrstvy a vrcholí hutným zvukem, který nechává vyniknout i drobným detailům."
     },
     {
       "id": "e15",
@@ -638,7 +638,7 @@
       "startTime": "14:15",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Crystal District s průřezem aktuální tvorbou."
+      "description": "Crystal District předvede alternativní rock s hutnými kytarami a výrazným vokálem. Několik skladeb postupně vystaví napětí a uvolní ho v refrénech určených pro celé publikum."
     },
     {
       "id": "e16",
@@ -649,7 +649,7 @@
       "startTime": "14:45",
       "durationMin": 45,
       "type": "talk",
-      "description": "Urban Comets sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Urban Comets přiblíží, jak vzniká koncertní podoba jejich hudby. Zaměří se na přípravu setlistu, komunikaci mezi členy projektu a rozdíly mezi studiovou nahrávkou a živým vystoupením."
     },
     {
       "id": "e17",
@@ -660,7 +660,7 @@
       "startTime": "16:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Polar Gardens s průřezem aktuální tvorbou."
+      "description": "Polar Gardens propojí klasicky laděné hip-hopové rytmy se současnějšími zvukovými vrstvami. Sloky mají prostor pro detail a refrény přidají setu chytlavý, společný moment."
     },
     {
       "id": "e18",
@@ -671,7 +671,7 @@
       "startTime": "19:45",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Skyline Ritual zaměřený na tvorbu tracku."
+      "description": "S Skyline Ritual budou účastníci zkoumat, jak propojit odlišné rytmické motivy do společné skladby. Důraz bude na vrstvení perkusí, melodickou odpověď a spolupráci mezi jednotlivými nástroji."
     },
     {
       "id": "e19",
@@ -682,7 +682,7 @@
       "startTime": "17:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Motel Magnolia s průřezem aktuální tvorbou."
+      "description": "Motel Magnolia představí indie set, v němž se nenápadné začátky rozvíjejí v široké refrény. Zpěv, kytary a rytmická sekce se postupně vrství do zvuku, který je zároveň intimní i energický."
     },
     {
       "id": "e20",
@@ -693,7 +693,7 @@
       "startTime": "19:30",
       "durationMin": 45,
       "type": "talk",
-      "description": "Brass Horizon sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Talk se zaměří na práci se zvukem v různých prostředích. Brass Horizon ukáže, jak se mění aranžmá podle prostoru, technického vybavení a energie publika, a vysvětlí, které detaily často zůstávají skryté."
     },
     {
       "id": "e21",
@@ -704,7 +704,7 @@
       "startTime": "10:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Dusty Satellites s průřezem aktuální tvorbou."
+      "description": "Čeká vás koncert plný kytarových motivů, přesných bicích a změn dynamiky. Dusty Satellites kombinuje syrovější zvuk s propracovanými aranžemi, takže set nabídne víc než jen nepřetržitou hlasitost."
     },
     {
       "id": "e22",
@@ -715,7 +715,7 @@
       "startTime": "11:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Ivory Transit s průřezem aktuální tvorbou."
+      "description": "Koncert Ivory Transit bude stát na jemných rytmických posunech a proměnlivé dynamice. Známé motivy poslouží jako výchozí bod pro nové hudební nápady a spontánní reakce mezi hráči."
     },
     {
       "id": "e23",
@@ -726,7 +726,7 @@
       "startTime": "12:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Stereo Orchard s průřezem aktuální tvorbou."
+      "description": "Čeká vás rapový koncert, v němž se střídají husté sloky s melodickými refrény. Stereo Orchard pracuje s rytmem řeči i pauzami, takže každá skladba má vlastní tempo a náladu."
     },
     {
       "id": "e24",
@@ -737,7 +737,7 @@
       "startTime": "13:00",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Dune Society zaměřený na tvorbu tracku."
+      "description": "Dune Society představí tvorbu aranže, která kombinuje akustické nástroje s moderní produkcí. Účastníci si vyzkouší, jak vyvážit různé zvukové barvy a vytvořit jasný hudební celek."
     },
     {
       "id": "e25",
@@ -748,7 +748,7 @@
       "startTime": "14:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Baltic Frequency s průřezem aktuální tvorbou."
+      "description": "Těšit se můžete na melodické písně, jemné zvukové detaily a několik rytmických překvapení. Baltic Frequency pracuje s kontrastem tichých pasáží a plnějšího kapelního zvuku."
     },
     {
       "id": "e26",
@@ -759,7 +759,7 @@
       "startTime": "15:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Canyon Motel s průřezem aktuální tvorbou."
+      "description": "Canyon Motel nabídne průřez elektronickou produkcí od pomalejších, náladových pasáží až po výrazné taneční rytmy. Důležitou roli sehrají gradace a nečekané proměny známých motivů."
     },
     {
       "id": "e27",
@@ -770,7 +770,7 @@
       "startTime": "14:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Silent Arcade s průřezem aktuální tvorbou."
+      "description": "Silent Arcade přinese rockový set s ostrými nástupy, chytlavými refrény a instrumentálními pasážemi, které dají vyniknout souhře kapely. Energetický závěr uzavře vystoupení ve velkém stylu."
     },
     {
       "id": "e28",
@@ -781,7 +781,7 @@
       "startTime": "17:30",
       "durationMin": 45,
       "type": "talk",
-      "description": "Mosaic Avenue sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Mosaic Avenue bude mluvit o spolupráci při tvorbě: jak si předávat nápady, řešit tvůrčí neshody a poznat, kdy je skladba hotová. Setkání nabídne pohled do procesu, který běžně zůstává mimo pódium."
     },
     {
       "id": "e29",
@@ -792,7 +792,7 @@
       "startTime": "19:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Amber Transit s průřezem aktuální tvorbou."
+      "description": "Amber Transit staví živé vystoupení na kontaktu s publikem, pevných basech a výrazném frázování. Vedle energických tracků zazní i osobnější skladby s větším prostorem pro text."
     },
     {
       "id": "e30",
@@ -803,7 +803,7 @@
       "startTime": "19:30",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem City of Pines zaměřený na tvorbu tracku."
+      "description": "S City of Pines budou účastníci zkoumat, jak propojit odlišné rytmické motivy do společné skladby. Důraz bude na vrstvení perkusí, melodickou odpověď a spolupráci mezi jednotlivými nástroji."
     },
     {
       "id": "e31",
@@ -814,7 +814,7 @@
       "startTime": "10:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Westend Choir s průřezem aktuální tvorbou."
+      "description": "Vystoupení Westend Choir nabídne směs kytarového indie a atmosférických mezihier. Známé motivy se vracejí v pozměněných aranžích, takže set působí jako jeden souvislý příběh."
     },
     {
       "id": "e32",
@@ -825,7 +825,7 @@
       "startTime": "10:45",
       "durationMin": 45,
       "type": "talk",
-      "description": "Broken Compass sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Jak se připravuje hudebník na živé vystoupení? Broken Compass popíše zkoušky, práci s technikou i hledání rovnováhy mezi přesně připravenou strukturou a spontánními momenty na pódiu."
     },
     {
       "id": "e33",
@@ -836,7 +836,7 @@
       "startTime": "11:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Ocean Motel s průřezem aktuální tvorbou."
+      "description": "Na scéně Ocean Motel střídá zkreslené kytary s čistšími mezihry a promyšlenými rytmickými změnami. Výsledkem je koncert, který si udrží tah a zároveň nabídne několik oddechových momentů."
     },
     {
       "id": "e34",
@@ -847,7 +847,7 @@
       "startTime": "13:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Lowlight Theory s průřezem aktuální tvorbou."
+      "description": "Set Lowlight Theory nabídne pestrou práci s rytmem, střídání sólových hlasů a klidnější chvíle, v nichž vynikne barva jednotlivých nástrojů. Důležitá bude souhra a cit pro detail."
     },
     {
       "id": "e35",
@@ -858,7 +858,7 @@
       "startTime": "13:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Honey Current s průřezem aktuální tvorbou."
+      "description": "Set Honey Current přinese beaty s výrazným groove, proměnlivé flow a texty, které pozorují každodenní situace z nečekaného úhlu. Přechody mezi skladbami udrží vystoupení v pohybu."
     },
     {
       "id": "e36",
@@ -869,7 +869,7 @@
       "startTime": "16:15",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Velvet Monsoon zaměřený na tvorbu tracku."
+      "description": "Velvet Monsoon představí tvorbu aranže, která kombinuje akustické nástroje s moderní produkcí. Účastníci si vyzkouší, jak vyvážit různé zvukové barvy a vytvořit jasný hudební celek."
     },
     {
       "id": "e37",
@@ -880,7 +880,7 @@
       "startTime": "16:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Morning Static s průřezem aktuální tvorbou."
+      "description": "Morning Static se zaměří na skladby, v nichž hraje hlavní roli souhra hlasů a kytar. Vedle chytlavých refrénů zazní i klidnější momenty pro soustředěný poslech."
     },
     {
       "id": "e38",
@@ -891,7 +891,7 @@
       "startTime": "17:15",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Asphalt Bloom s průřezem aktuální tvorbou."
+      "description": "Na pódiu Asphalt Bloom rozehraje rytmické smyčky, modulované tóny a postupně gradující beaty. Každá část setu posune atmosféru jinam, od soustředěného poslechu k volnějšímu pohybu."
     },
     {
       "id": "e39",
@@ -902,7 +902,7 @@
       "startTime": "18:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Golden Vacancy s průřezem aktuální tvorbou."
+      "description": "Golden Vacancy soustředí vystoupení na písně s výraznou melodií a pevnou rockovou rytmikou. Kytarové linky se postupně rozvíjejí a dávají známým motivům pokaždé trochu jiný odstín."
     },
     {
       "id": "e40",
@@ -913,7 +913,7 @@
       "startTime": "19:30",
       "durationMin": 45,
       "type": "talk",
-      "description": "Nightshift Flora sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "V centru setkání s Nightshift Flora bude vztah mezi textem, rytmem a náladou skladby. Účinkující přiblíží vlastní tvůrčí postupy a ukáže, jak drobné změny mohou ovlivnit vyznění celé kompozice."
     },
     {
       "id": "e41",
@@ -924,7 +924,7 @@
       "startTime": "10:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Rain Motel s průřezem aktuální tvorbou."
+      "description": "Rain Motel ukáže, jak lze spojit minimalistický beat s bohatým slovním projevem. Rytmické obraty a změny hlasové dynamiky dodají setu pestrost i bez přeplněné produkce."
     },
     {
       "id": "e42",
@@ -935,7 +935,7 @@
       "startTime": "11:30",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Parallel Kids zaměřený na tvorbu tracku."
+      "description": "S Parallel Kids budou účastníci zkoumat, jak propojit odlišné rytmické motivy do společné skladby. Důraz bude na vrstvení perkusí, melodickou odpověď a spolupráci mezi jednotlivými nástroji."
     },
     {
       "id": "e43",
@@ -946,7 +946,7 @@
       "startTime": "12:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Ribbon Atlas s průřezem aktuální tvorbou."
+      "description": "Během setu Ribbon Atlas se jemné melodie postupně promění v rytmicky výraznější písně. Právě práce s gradací dává koncertu přirozený spád a odlišuje jednotlivé skladby."
     },
     {
       "id": "e44",
@@ -957,7 +957,7 @@
       "startTime": "13:30",
       "durationMin": 45,
       "type": "talk",
-      "description": "Neon Caravan sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Neon Caravan se podělí o zkušenosti s budováním hudebního projektu od prvních nahrávek po koncertní produkci. Tématem bude také rozdělení rolí, rozhodování o aranžích a udržení společné vize."
     },
     {
       "id": "e45",
@@ -968,7 +968,7 @@
       "startTime": "13:15",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Silver District s průřezem aktuální tvorbou."
+      "description": "Set Silver District nabídne syrovější zvuk, úderné bicí a refrény, které vyniknou naživo. Vedle rychlejších skladeb zazní i pomalejší kompozice s delší instrumentální gradací."
     },
     {
       "id": "e46",
@@ -979,7 +979,7 @@
       "startTime": "15:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Northern Lantern s průřezem aktuální tvorbou."
+      "description": "V hudbě Northern Lantern mají své místo jak drobné harmonické obraty, tak výrazné rytmické akcenty. Koncert nabídne několik různých nálad, které spojuje přirozená komunikace mezi muzikanty."
     },
     {
       "id": "e47",
@@ -990,7 +990,7 @@
       "startTime": "16:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Harbor Choir s průřezem aktuální tvorbou."
+      "description": "Na pódiu Harbor Choir se potkají úderné bicí, hluboké basy a výrazné refrény. Skladby střídají nadhled s vážnějšími tématy a dávají vyniknout osobitému projevu interpreta."
     },
     {
       "id": "e48",
@@ -1001,7 +1001,7 @@
       "startTime": "18:00",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Skyline Mosaic zaměřený na tvorbu tracku."
+      "description": "Skyline Mosaic představí tvorbu aranže, která kombinuje akustické nástroje s moderní produkcí. Účastníci si vyzkouší, jak vyvážit různé zvukové barvy a vytvořit jasný hudební celek."
     },
     {
       "id": "e49",
@@ -1012,7 +1012,7 @@
       "startTime": "19:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Sunroom Cartel s průřezem aktuální tvorbou."
+      "description": "Sunroom Cartel přiveze koncert postavený na nezávislém popu, vrstevnatých kytarách a civilním vokálním projevu. Výsledkem bude pestrý průřez náladami od zasnění po radostnou energii."
     },
     {
       "id": "e50",
@@ -1023,7 +1023,7 @@
       "startTime": "19:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Harborline Echo s průřezem aktuální tvorbou."
+      "description": "Během vystoupení Harborline Echo se melodické syntezátory potkají s přesnou klubovou rytmikou. Proměnlivé tempo a vrstvené motivy vytvoří zvukovou cestu s několika překvapivými zvraty."
     },
     {
       "id": "e51",
@@ -1034,7 +1034,7 @@
       "startTime": "10:00",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Lunar District s průřezem aktuální tvorbou."
+      "description": "Lunar District pracuje s napětím mezi sevřenými slokami a širokým zvukem refrénů. Koncert tak střídá soustředěné momenty s prudkými energetickými nástupy."
     },
     {
       "id": "e52",
@@ -1045,7 +1045,7 @@
       "startTime": "10:45",
       "durationMin": 45,
       "type": "talk",
-      "description": "Echo Harbor sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "Během debaty Echo Harbor vysvětlí, jak hledá nové zvukové možnosti a kdy se vyplatí vystoupit ze zavedených postupů. Publikum získá konkrétní pohled na experimentování, výběr nástrojů a práci s detailem."
     },
     {
       "id": "e53",
@@ -1056,7 +1056,7 @@
       "startTime": "11:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Magnet Fields s průřezem aktuální tvorbou."
+      "description": "Magnet Fields připraví koncert, který se opírá o přesný timing a promyšlenou práci s hlasem. Beaty se pohybují od střídmých smyček k plnějším aranžím a mění energii jednotlivých částí setu."
     },
     {
       "id": "e54",
@@ -1067,7 +1067,7 @@
       "startTime": "14:45",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Pine Motel zaměřený na tvorbu tracku."
+      "description": "S Pine Motel budou účastníci zkoumat, jak propojit odlišné rytmické motivy do společné skladby. Důraz bude na vrstvení perkusí, melodickou odpověď a spolupráci mezi jednotlivými nástroji."
     },
     {
       "id": "e55",
@@ -1078,7 +1078,7 @@
       "startTime": "13:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Atlas Avenue s průřezem aktuální tvorbou."
+      "description": "Set Atlas Avenue spojuje vzdušné aranže s refrény, které zůstávají v hlavě. Hudebníci nechávají skladbám prostor a energii zvyšují postupně, bez zbytečně ostrých přechodů."
     },
     {
       "id": "e56",
@@ -1089,7 +1089,7 @@
       "startTime": "14:45",
       "durationMin": 45,
       "type": "talk",
-      "description": "River Motel sdílí zkušenosti z turné, produkce a práce se zvukem."
+      "description": "River Motel uzavře sérii talků úvahou o tom, jak se mění hudební nápad při zkoušení před publikem. Součástí budou ukázky tvůrčích rozhodnutí a diskuse o tom, co dělá živý zážitek jedinečným."
     },
     {
       "id": "e57",
@@ -1100,7 +1100,7 @@
       "startTime": "16:30",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Metro Aurora s průřezem aktuální tvorbou."
+      "description": "Rockové vystoupení Metro Aurora propojí kytarovou přímočarost s důrazem na detail. Přesné přechody rytmické sekce a vícevrstvé kytary dodají každé skladbě vlastní charakter."
     },
     {
       "id": "e58",
@@ -1111,7 +1111,7 @@
       "startTime": "17:15",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Velvet Atlantic s průřezem aktuální tvorbou."
+      "description": "Během setu Velvet Atlantic se střídají přesně vystavěné melodie s momenty spontánní improvizace. Celek tak zůstává přístupný, ale zároveň pokaždé nabízí něco, co nelze zapsat do not předem."
     },
     {
       "id": "e59",
@@ -1122,7 +1122,7 @@
       "startTime": "17:45",
       "durationMin": 75,
       "type": "concert",
-      "description": "Koncertní set interpreta Coastal Transit s průřezem aktuální tvorbou."
+      "description": "Vystoupení Coastal Transit propojí městské příběhy s rytmicky propracovanou produkcí. Plynulé přechody, nečekané pauzy a chytlavé motivy vytvoří set, který neztrácí tah."
     },
     {
       "id": "e60",
@@ -1133,7 +1133,7 @@
       "startTime": "19:45",
       "durationMin": 90,
       "type": "workshop",
-      "description": "Praktický workshop vedený interpretem Prairie Signals zaměřený na tvorbu tracku."
+      "description": "Prairie Signals představí tvorbu aranže, která kombinuje akustické nástroje s moderní produkcí. Účastníci si vyzkouší, jak vyvážit různé zvukové barvy a vytvořit jasný hudební celek."
     }
   ]
 }
