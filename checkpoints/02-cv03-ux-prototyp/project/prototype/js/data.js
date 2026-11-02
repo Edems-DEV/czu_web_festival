@@ -1,4 +1,4 @@
-// Generated from ../data.json; regenerate with tools/sync-data.cjs.
+// Festival data bundled for offline use.
 window.FESTIVAL_DATA = {
   "festival": {
     "id": "fest2026",

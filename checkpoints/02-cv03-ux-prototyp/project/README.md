@@ -1,7 +1,7 @@
-# Cvičení 3: prototyp festivalového webu
+# Aurora 2026
 
-Prototyp otevřete v prohlížeči ze souboru [project/prototype/index.html](project/prototype/index.html). Instalace není potřeba.
+Web otevřete v prohlížeči ze souboru [prototype/index.html](prototype/index.html). Instalace ani build nejsou potřeba. Při přenášení zachovejte celou složku `prototype/`.
 
-Průběžná zpráva je v [project/progress-02.md](project/progress-02.md). Popisuje funkce, dva scénáře a použití AI. Před odevzdáním je potřeba scénáře projít v prohlížeči a doplnit skutečné výsledky ověření.
+[Průběžná zpráva](progress-02.md) popisuje funkce, jejich vazbu na potřeby návštěvníků, ověření dvou scénářů a použití AI.
 
-Data jsou v `/prototype/js/data.js`
+Data webu jsou v [prototype/js/data.js](prototype/js/data.js). Náhledy mobilního a desktopového rozložení jsou ve složce `prototype/preview/`.
