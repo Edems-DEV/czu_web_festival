@@ -1,14 +1,5 @@
 # Projektová specifikace – Hudební Festival Aurora 2026
 
-Předmět: **Web design (WEB)** | PEF ČZU v Praze  
-Výstup pro: **Cvičení 2 – Projektová specifikace a datová základna**  
-Formát: Client-side webová prezentace festivalu  
-Tým: Skupina 4 studentů (prezenční studium PEF ČZU)  
-Datum aktualizace: 2026-10-12  
-Status: Schválená a validovaná projektová specifikace  
-
----
-
 ## 1. Identita festivalu
 
 | Parametr | Hodnota / Popis |
@@ -50,10 +41,10 @@ Web festivalu Aurora 2026 plní roli primárního digitálního kontaktního bod
 Pro návrh informační architektury a interaktivních funkcí byly definovány 3 detailní uživatelské persony reprezentující klíčové návštěvnické segmenty:
 
 ### 3.1 Persona 1: Tereza Novotná – Student Indie Fan (Primární persona)
-- **Věk:** 24 let  
-- **Role:** Studentka VŠ (ČZU PEF), brigádnice v digitální agentuře  
-- **Vztah k technologiím:** Velmi vysoký (Digital native, smartphone stále v ruce)  
-- **Primární zařízení:** Apple iPhone 13 (Safari mobile, 390×844 px), mobilní LTE/5G  
+- **Věk:** 24 let
+- **Role:** Studentka VŠ, brigádnice v digitální agentuře
+- **Vztah k technologiím:** Velmi vysoký (Digital native, smartphone stále v ruce)
+- **Primární zařízení:** Apple iPhone 13 (Safari mobile, 390×844 px), mobilní LTE/5G
 - **Profil a chování:**
   - Pravidelně navštěvuje kluby a letní open-air festivaly.
   - Na festivalu je v neustálém pohybu s přáteli, web používá přímo na cestě v tramvaji a v areálu mezi stánky.
@@ -67,10 +58,10 @@ Pro návrh informační architektury a interaktivních funkcí byly definovány 
   - Složité vícenásobné formuláře a nepřehledné PDF harmonogramy, které nelze na mobilu číst.
 
 ### 3.2 Persona 2: Jakub Kovář – Electronic Music Enthusiast & Professional (Sekundární persona)
-- **Věk:** 29 let  
-- **Role:** IT systémový analytik a amatérský producent elektronické hudby  
-- **Vztah k technologiím:** Profesionální (desktop power user, dbá na efektivitu a přesnost)  
-- **Primární zařízení:** Dell XPS 15 (Chrome desktop, 1920×1080 px) při plánování doma; Nothing Phone (Chrome mobile) v areálu  
+- **Věk:** 29 let
+- **Role:** IT systémový analytik a amatérský producent elektronické hudby
+- **Vztah k technologiím:** Profesionální (desktop power user, dbá na efektivitu a přesnost)
+- **Primární zařízení:** Dell XPS 15 (Chrome desktop, 1920×1080 px) při plánování doma; Nothing Phone (Chrome mobile) v areálu
 - **Profil a chování:**
   - Plánuje festivalový harmonogram s předstihem týdnů.
   - Má vytipované konkrétní producenty elektronické hudby a sound design workshopy ve *Forum Hall*.
@@ -85,11 +76,11 @@ Pro návrh informační architektury a interaktivních funkcí byly definovány 
   - Přehlédnutí časových překryvů vedoucí ke zmeškání headlinera.
 
 ### 3.3 Persona 3: Martin Dvořák – Family Visitor & Wheelchair Accessibility Guest (Terciární persona)
-- **Věk:** 35 let  
-- **Role:** Projektový manažer, festival navštěvuje s manželkou a pětiletou dcerou  
-- **Specifické potřeby:** Pohybuje se na elektrickém invalidním vozíku; rodina s dětským kočárkem  
-- **Vztah k technologiím:** Průměrný až pokročilý, využívá asistivní technologie a klávesovou navigaci  
-- **Primární zařízení:** Apple iPad Air (Safari tablet, 820×1180 px) a Samsung Galaxy S22  
+- **Věk:** 35 let
+- **Role:** Projektový manažer, festival navštěvuje s manželkou a pětiletou dcerou
+- **Specifické potřeby:** Pohybuje se na elektrickém invalidním vozíku; rodina s dětským kočárkem
+- **Vztah k technologiím:** Průměrný až pokročilý, využívá asistivní technologie a klávesovou navigaci
+- **Primární zařízení:** Apple iPad Air (Safari tablet, 820×1180 px) a Samsung Galaxy S22
 - **Profil a chování:**
   - Pečlivě zvažuje návštěvu hromadných akcí podle bezbariérovosti a komfortu rodiny.
   - Zajímají ho odpolední koncerty world music, akustické sety a rodinné zázemí.
@@ -193,7 +184,7 @@ Informační architektura je plně relačně provázána bez slepých uliček:
   1. **Výběr dne:** Zvolí filtr **„Sobota 22. 8.“**.
   2. **Výběr akcí:** Postupně kliká na tlačítko **★ Přidat do mého programu** u klubového koncertu *Rain Motel Live* na *Riverside Club Stage* (10:00–11:15, `e41`) a u koncertu *Lunar District Live* ve *Forum Hall* (10:00–11:15, `e51`).
   3. **Detekce kolize:** Algoritmus v `schedule.js` okamžitě po přidání druhého souběžného slotu vyhodnotí překryv časových intervalů.
-  4. **Upozornění:** Nad harmonogramem se okamžitě zobrazí kontrastní varovný panel s ikonou varování a textem:  
+  4. **Upozornění:** Nad harmonogramem se okamžitě zobrazí kontrastní varovný panel s ikonou varování a textem:
      *„Upozornění na časový konflikt: Máte vybrány akce s překrývajícím se časem! Překryv: 75 minut.“* a obě karty událostí získají varovný rámeček a odznak *⚠️ Časová kolize v mém programu!*.
   5. **Vyřešení konfliktu:** Jakub přepne pohled tlačítkem **★ Zobrazit pouze můj program**. Vidí obě kolidující akce označené varovným rámečkem.
   6. **Odebrání:** Klikne na tlačítko odebrání u jednoho z koncertů. Varovný pruh i rámeček okamžitě zmizí a harmonogram se stává bezkolizním.
@@ -227,10 +218,3 @@ Projekt je vystavěn nad striktní klientskou datovou základnou `data.json` (a 
 | **Časoprostorová nekoliznost scén** | 0 překryvů na téže scéně | Na každé scéně platí: $\text{konec}_A \le \text{začátek}_B$ pro stejný den | 100% BEZKOLIZNÍ |
 | **Offline dostupnost bez CORS** | Běh přes `file:///` | Zajištěno synchronním in-memory adaptérem | 100% OFFLINE READY |
 
----
-
-## 7. Závaznost specifikace a pravidla změn (PEF ČZU)
-
-Dle oficiálních pravidel předmětu Web design (WEB) na PEF ČZU je tato specifikace společně s prototypem **závazným východiskem semestrálního projektu**.
-- Veškeré další úpravy v fázích Cvičení 3 až 6 smějí dosáhnout maximálně **cca 15 %** původního návrhu.
-- Každá změna musí být formálně zdůvodněna v průběžných zprávách (`progress-03.md`, `progress-04.md`) na základě výsledků uživatelského testování, validace, expertní oponentury nebo konzultace s vyučujícím.

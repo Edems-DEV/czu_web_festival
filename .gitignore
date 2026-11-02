@@ -18,3 +18,6 @@ package-lock.json
 
 # Generated zip archives (reproducible via npm run package)
 checkpoints/archives/*.zip
+
+# more
+submit/
