@@ -127,29 +127,18 @@ Pro návrh informační architektury a interaktivních funkcí byly definovány 
 ===================================================================================
 ```
 
-### 4.2 Relační datový tok mezi entitami
+### 4.2 Vztahy mezi daty
 
-Informační architektura je plně relačně provázána bez slepých uliček:
+Soubor `data.json` obsahuje objekt `festival` a pole `venues`, `performers` a `events`. Pole `events` představuje jednotlivá vystoupení. Každé vystoupení odkazuje přes `venueId` na jednu scénu a přes `performerId` na jednoho interpreta.
 
 ```text
-  ┌──────────────────────────────────────────────────────────────┐
-  │                 FESTIVAL (Aurora 2026)                       │
-  └──────────────┬──────────────────────────────┬────────────────┘
-                 │ 1:3                          │ 1:60
-                 ▼                              ▼
-  ┌──────────────────────────────┐    ┌──────────────────────────────┐
-  │        VENUES (v1..v3)       │    │     PERFORMERS (p1..p60)     │
-  │ id, name, capacity, access   │    │ id, name, genre, country     │
-  └──────────────┬───────────────┘    └──────────────┬───────────────┘
-                 │ 1:N                               │ 1:N
-                 │                                   │
-                 └──────────────► ┌──────────────────◄
-                                  │   EVENTS (e1..e60)           │
-                                  │ id, title, day, startTime,   │
-                                  │ durationMin, type, venueId,  │
-                                  │ performerId, description     │
-                                  └──────────────────────────────┘
+festival
+  ├── venues[]       1 scéna       → 0..N vystoupení
+  ├── performers[]   1 interpret   → 0..N vystoupení
+  └── events[]       1 vystoupení → 1 scéna + 1 interpret
 ```
+
+V aktuálních datech jsou 3 scény, 60 interpretů a 60 vystoupení. Číslo 60 je počet záznamů, nikoli násobnost vztahu: datový model umožňuje i více vystoupení jednoho interpreta.
 
 ### 4.3 Navigační standardy a prostorová orientace
 - **Globální hlavička (`header.site-header`):** Připíchnutá nahoře (`position: sticky`), obsahuje logo s návratem na úvod, 5 navigačních odkazů a akcentované tlačítko pro *Můj program* s čítačem položek v `localStorage`.
@@ -188,7 +177,7 @@ Informační architektura je plně relačně provázána bez slepých uliček:
      *„Upozornění na časový konflikt: Máte vybrány akce s překrývajícím se časem! Překryv: 75 minut.“* a obě karty událostí získají varovný rámeček a odznak *⚠️ Časová kolize v mém programu!*.
   5. **Vyřešení konfliktu:** Jakub přepne pohled tlačítkem **★ Zobrazit pouze můj program**. Vidí obě kolidující akce označené varovným rámečkem.
   6. **Odebrání:** Klikne na tlačítko odebrání u jednoho z koncertů. Varovný pruh i rámeček okamžitě zmizí a harmonogram se stává bezkolizním.
-- **Očekávaný výsledek:** Jakub má v `localStorage` bezpečně uložen reálný bezkolizní program pro sobotu, který si může na festivalu otevřít na svém mobilním telefonu.
+- **Očekávaný výsledek:** Jakub má v `localStorage` bezpečně uložen reálný bezkolizní program pro sobotu, který si může znovu otevřít ve stejném prohlížeči. Přenos mezi zařízeními prototyp nepodporuje.
 
 ### Scénář 3: Prověření bezbariérovosti a logistiky areálu (Martin Dvořák)
 - **Typ uživatele:** Návštěvník na elektrickém vozíku s rodinou (Persona 3).

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141612">
+  <meta name="description" content="Aurora 2026. Tři dny hudby v Praze. Objevte účinkující, prohlédněte si program a sestavte si vlastní festivalový plán.">
+  <title>Aurora 2026 — Tři dny. Vlastní frekvence.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Přeskočit na obsah</a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Aurora 2026 — úvod"><span class="brand-mark" aria-hidden="true">a</span> aurora<span class="brand-year">/26</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">+</span></button>
+    <nav id="navigation" aria-label="Hlavní navigace">
+      <a href="#/program" data-nav="program">Program</a>
+      <a href="#/ucinkujici" data-nav="ucinkujici">Účinkující</a>
+      <a href="#/sceny" data-nav="sceny">Scény</a>
+      <a href="#/info" data-nav="info">Praktické info</a>
+      <a href="#/hledat" data-nav="hledat">Hledat</a>
+      <a class="my-nav" href="#/muj-program" data-nav="muj-program">Můj program <span id="saved-count">0</span></a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <noscript><p class="notice">Pro interaktivní program zapněte JavaScript. Aurora 2026 se koná 20.–22. srpna v Praze, na Výstavišti a v okolí.</p></noscript>
+  <footer class="site-footer">
+    <a class="footer-brand" href="#/">aurora<span>2026</span></a>
+    <div><p>20.–22. srpna · Praha 7</p><p>Hudba. Setkání. Nové frekvence.</p></div>
+    <div><a href="#/info">Praktické info ↗</a><p class="muted">Aurora 2026 · Hudební festival</p></div>
+  </footer>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>
