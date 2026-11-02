@@ -4,4 +4,4 @@ Prototyp otevřete v prohlížeči ze souboru [project/prototype/index.html](pro
 
 Průběžná zpráva je v [project/progress-02.md](project/progress-02.md). Popisuje funkce, dva scénáře a použití AI. Před odevzdáním je potřeba scénáře projít v prohlížeči a doplnit skutečné výsledky ověření.
 
-Data jsou v `project/data.json`; jejich kopie v `project/prototype/js/data.js` umožňuje otevřít prototyp přímo ze souboru.
+Data jsou v `/prototype/js/data.js`
